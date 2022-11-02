@@ -5,7 +5,7 @@ public class BoletinBucles {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("4. Crea un programa que lea un número, e imprima en una misma línea tantos ceros como diga el número." +
+        /*System.out.println("4. Crea un programa que lea un número, e imprima en una misma línea tantos ceros como diga el número." +
                 "Por ejemplo: si se lee el 3 debe imprimirse: 0 0 0");
         System.out.println("Introduzca un número: ");
         int num4 = scan.nextInt();
@@ -141,30 +141,24 @@ public class BoletinBucles {
                     System.out.print("0 ");
                 }
             }System.out.println();
-        }
+        }*/
 
         System.out.println("13.Modifica el ejercicio 8 para que la primera fila y columna siempre imprima unos. Por\n" +
                 "ejemplo, si se lee el 3 debe imprimirse:\n" +
                 "1 1 1\n" +
                 "1 0 0\n" +
                 "1 0 0");
-        System.out.println("Introduzca el número: "); // Preguntar
+        System.out.println("Introduzca el número: ");
         int num13 = scan.nextInt();
-        for (int i = 0; i < num13; i++){
-            if (i == 0) {
-                System.out.print("1 ");
-            } else {
-                System.out.print("0 ");
-            }
-        }{
-            for (int j = 0; j < num13; j++){
-                if (j == 0){
+        for (int i = 0; i < num13; i++) {
+            for (int j = 0; j < num12; j++) {
+                if (i == 0 || j == 0) {
                     System.out.print("1 ");
                 } else {
                     System.out.print("0 ");
                 }
             }System.out.println();
-        }
+        }/*
 
         System.out.println("14. Modifica el ejercicio 8 para que la diagonal siempre imprima unos. Por ejemplo, si se\n" +
                 "lee el 3 debe imprimirse:\n" +
@@ -253,7 +247,7 @@ public class BoletinBucles {
 
 
         System.out.println("26. Modifica los dos anteriores para que todo se imprima en la misma línea, pero\n" +
-                "separando los números por coma en lugar de espacios en blanco.");
+                "separando los números por coma en lugar de espacios en blanco.");*/
 
 
     }
