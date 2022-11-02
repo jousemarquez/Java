@@ -107,6 +107,7 @@ public class BoletinBucles {
             System.out.println();
             }
         }
+        System.out.println("FIN");
 
         System.out.println("11. Modifica el ejercicio 8 para que la última línea siempre imprima unos. Por ejemplo, si\n" +
                 "se lee el 3 debe imprimirse:\n" +
@@ -125,6 +126,7 @@ public class BoletinBucles {
 
             }System.out.println();
         }
+        System.out.println("FIN");
 
         System.out.println("12. Modifica el ejercicio 8 para que la última columna siempre imprima unos. Por ejemplo,\n" +
                 "si se lee el 3 debe imprimirse:\n" +
@@ -141,7 +143,8 @@ public class BoletinBucles {
                     System.out.print("0 ");
                 }
             }System.out.println();
-        }*/
+        }
+        System.out.println("FIN");
 
         System.out.println("13.Modifica el ejercicio 8 para que la primera fila y columna siempre imprima unos. Por\n" +
                 "ejemplo, si se lee el 3 debe imprimirse:\n" +
@@ -151,34 +154,69 @@ public class BoletinBucles {
         System.out.println("Introduzca el número: ");
         int num13 = scan.nextInt();
         for (int i = 0; i < num13; i++) {
-            for (int j = 0; j < num12; j++) {
+            for (int j = 0; j < num13; j++) {
                 if (i == 0 || j == 0) {
-                    System.out.print("1 ");
+                    System.out.print(" 1 ");
                 } else {
-                    System.out.print("0 ");
+                    System.out.print(" 0 ");
                 }
             }System.out.println();
-        }/*
+        }
+        System.out.println("FIN");
 
         System.out.println("14. Modifica el ejercicio 8 para que la diagonal siempre imprima unos. Por ejemplo, si se\n" +
                 "lee el 3 debe imprimirse:\n" +
                 "0 0 1\n" +
                 "0 0 1\n" +
                 "1 1 1");
-
+        System.out.println("Introduzca el número: ");
+        int num14 = scan.nextInt();
+        for (int i = 0; i < num14; i++) {
+            for (int j = 0; j < num14; j++) {
+                if (i == num14-1 || j == num14-1) {
+                    System.out.print(" 1 ");
+                } else {
+                    System.out.print(" 0 ");
+                }
+            }System.out.println();
+        }
+        System.out.println("FIN");
 
         System.out.println("15. Modifica el ejercicio 8 para que el marco siempre imprima unos. Por ejemplo, si se lee\n" +
                 "el 3 debe imprimirse:\n" +
                 "1 1 1\n" +
                 "1 0 1\n" +
                 "1 1 1");
-
+        System.out.println("Introduzca el número: ");
+        int num15 = scan.nextInt();
+        for (int i = 0; i < num15; i++) {
+            for (int j = 0; j < num15; j++) {
+                if (i == 0 || i == num15-1 || j == 0 || j == num15-1) {
+                    System.out.print(" 1 ");
+                } else {
+                    System.out.print(" 0 ");
+                }
+            }System.out.println();
+        }
+        System.out.println("FIN");*/
 
         System.out.println("16. Modifica el ejercicio 8 para que la diagonal principal siempre imprima unos. Por\n" +
                 "ejemplo, si se lee el 3 debe imprimirse:\n" +
                 "1 0 0\n" +
                 "0 1 0\n" +
                 "0 0 1");
+        System.out.println("Introduzca el número: ");
+        int num16 = scan.nextInt();
+        for (int i = 0; i < num16; i++) {
+            for (int j = 0; j < num16; j++) {
+                if (i == j) {
+                    System.out.print(" 1 ");
+                } else {
+                    System.out.print(" 0 ");
+                }
+            }System.out.println();
+        }
+        System.out.println("FIN");/*
 
 
         System.out.println("17. Leer dos enteros e imprimir una tabla o matriz de tantas filas y columnas como los\n" +
