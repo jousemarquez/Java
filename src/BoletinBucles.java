@@ -198,7 +198,7 @@ public class BoletinBucles {
                 }
             }System.out.println();
         }
-        System.out.println("FIN");*/
+        System.out.println("FIN");
 
         System.out.println("16. Modifica el ejercicio 8 para que la diagonal principal siempre imprima unos. Por\n" +
                 "ejemplo, si se lee el 3 debe imprimirse:\n" +
@@ -216,7 +216,7 @@ public class BoletinBucles {
                 }
             }System.out.println();
         }
-        System.out.println("FIN");/*
+        System.out.println("FIN");*/
 
 
         System.out.println("17. Leer dos enteros e imprimir una tabla o matriz de tantas filas y columnas como los\n" +
@@ -224,9 +224,26 @@ public class BoletinBucles {
                 "y 4, se imprimiría:\n" +
                 "0 0 0 0\n" +
                 "0 0 0 0");
+        int matriz[][] = new int[3][3];
+        matriz[0][0] = 2;
+        matriz[0][1] = 4;
+        matriz[0][2] = 4;
+        matriz[1][0] = 6;
+        matriz[1][1] = 6;
+        matriz[1][2] = 9;
+        matriz[2][0] = 8;
+        matriz[2][1] = 10;
+        matriz[2][2] = 1;
+        for (int x=0; x < matriz.length; x++) {
+            System.out.print("|");
+            for (int y=0; y < matriz[x].length; y++) {
+                System.out.print (matriz[x][y]);
+                if (y!=matriz[x].length-1) System.out.print("\t");
+            }
+            System.out.println("|");
+        }
 
-
-        System.out.println("18. Modificar el ejercicio anterior para que contenga la sucesión 1,2,3,4,…, etc, con tantos\n" +
+       /*System.out.println("18. Modificar el ejercicio anterior para que contenga la sucesión 1,2,3,4,…, etc, con tantos\n" +
                 "términos como posiciones tenga la tabla o matriz. Para el caso del ejercicio anterior, se\n" +
                 "imprimiría:\n" +
                 "1 2 3 4\n" +
