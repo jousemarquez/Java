@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class PracticaCCC {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
     /*
         Validación de la cuenta corriente
         El algoritmo de validación de la cuenta corriente es el siguiente. Por cada número de cuenta corriente

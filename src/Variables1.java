@@ -45,7 +45,7 @@ public class Variables1{
             System.out.println(entera * entera);
             System.out.println(Math.pow(entera, 2));
 
-            // 8. A partir de aqui pueden estar desordenados
+            // 8. A partir de aquí pueden estar desordenados
             float a = 1.0f, b = 5.0f;
             System.out.println("a vale: " + a);
             System.out.println("b vale: " + b);

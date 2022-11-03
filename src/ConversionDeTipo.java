@@ -1,4 +1,3 @@
-import java.util.Scanner;
 public class ConversionDeTipo
 {
     public static void main(String[] args) {

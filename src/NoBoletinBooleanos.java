@@ -1,8 +1,7 @@
-import java.util.Scanner;
 public class NoBoletinBooleanos {
     public static void main(String[] args) {
 }
-    /**
+    /*
      * 1. Crea un algoritmo que imprima por pantalla la tabla de la verdad (truth table) de la operación
      * lógica NOT. Para ello, utiliza las siguientes instrucciones (cuidado con las comillas, puede que
      * se copien mal):

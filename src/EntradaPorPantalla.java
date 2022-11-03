@@ -4,79 +4,79 @@ public class EntradaPorPantalla {
 
     public static void main(String[] args) {
 
-        Scanner scan  = new Scanner(System.in); // Método para añadir a la variable Int el valor
+        Scanner sc  = new Scanner(System.in); // Método para añadir a la variable Int el valor
         System.out.println("Ejercicio 1: Recoge la edad del usuario");
         System.out.print("Introduce tu edad: "); // Impresión en pantalla para solicitar la introducción de datos
-        int edad = scan.nextInt(); // Se declara el tipo de variable y se indica que se obtendrá introduciendo por el teclado
+        int edad = sc.nextInt(); // Se declara el tipo de variable y se indica que se obtendrá introduciendo por el teclado
         System.out.println("Has introducido " + edad + " años"); // Impresión en pantalla del resultado, texto y variable
 
         System.out.println("----------------------------------");
 
         System.out.print("Introduce tu nueva edad: ");
-        edad = scan.nextInt();
+        edad = sc.nextInt();
         System.out.println("Has introducido " + edad + " años");
 
         System.out.println("----------------------------------");
 
         int edad2;
         System.out.print("Introduce la edad2: ");
-        edad2 = scan.nextInt();
+        edad2 = sc.nextInt();
         System.out.println("La segunda edad es: " + edad2 + " años");
 
         System.out.println("----------------------------------");
 
         System.out.println("Ejercicio 2: Recoge la altura del usuario");
         System.out.print("Introduce tu altura (en metros): ");
-        float altura = scan.nextFloat();
+        float altura = sc.nextFloat();
         System.out.println("Has introducido " + altura + "m");
 
         System.out.println("----------------------------------");
 
         System.out.println("Controla si un alumno es repetidor o no");
         System.out.print("¿Eres repetidor? ");
-        boolean esRepetidor = scan.nextBoolean();
+        boolean esRepetidor = sc.nextBoolean();
         System.out.println("Repite?: " + esRepetidor);
 
         System.out.println("----------------------------------");
 
         System.out.println("Resultado de un número complejo");
         System.out.print("Cálculo bestialmente grande: ");
-        double calc = scan.nextDouble();
+        double calc = sc.nextDouble();
         System.out.println("Has introducido " + calc);
 
         System.out.println("----------------------------------");
 
         System.out.println("Recoger el género de un usuario");
         System.out.print("Género: ");
-        String genero = scan.next(); // En String, como no es una variable como tal, no se declara en el escáner
+        String genero = sc.next(); // En String, como no es una variable como tal, no se declara en el escáner
         System.out.println("Has introducido " + genero);
 
         System.out.println("----------------------------------");
 
         System.out.println("Recoger el cambio a devolver a un cliente en la panadería");
         System.out.print("Su cambio: ");
-        float cambio = scan.nextFloat();
+        float cambio = sc.nextFloat();
         System.out.println("Has introducido: " + cambio + "€");
 
         System.out.println("----------------------------------");
 
         System.out.println("Recoger el DNI");
         System.out.print("Introduce su DNI: ");
-        String dni = scan.next();
+        String dni = sc.next();
         System.out.println("Has introducido: " + dni);
 
         System.out.println("----------------------------------");
 
         System.out.println("Recoger la matrícula");
         System.out.print("Introduce su matrícula: ");
-        String matricula = scan.next();
+        String matricula = sc.next();
         System.out.println("Has introducido: " + matricula);
 
         System.out.println("----------------------------------");
 
         System.out.println("Recoge la edad del usuario");
         System.out.print("Introduce tu edad: "); // Impresión en pantalla para solicitar la introducción de datos
-        int age = scan.nextInt(); // Se declara el tipo de variable y se indica que se obtendrá introduciendo por el teclado
+        int age = sc.nextInt(); // Se declara el tipo de variable y se indica que se obtendrá introduciendo por el teclado
         System.out.println("Has introducido " + age + " años"); // Impresión en pantalla del resultado, texto y variable
 
         System.out.println("----------------------------------");
@@ -246,9 +246,9 @@ public class EntradaPorPantalla {
         System.out.println("8. Crear dos variables de tipo float, dándoles un valor inicial e imprimiéndolas por pantalla.\n");
         float a,b;
         System.out.println("Da valor a la variable a: ");
-        a = scan.nextFloat();
+        a = sc.nextFloat();
         System.out.println("Da valor a la variable b: ");
-        b = scan.nextFloat();
+        b = sc.nextFloat();
         System.out.println("Las dos variables son: " + a +" y "+ b);
 
         System.out.println("----------------------------------");
@@ -297,31 +297,31 @@ public class EntradaPorPantalla {
                 "         * por pantalla.");
 
         System.out.println("Ingrese su nombre: ");
-        String nombre = scan.nextLine();
+        String nombre = sc.nextLine();
         System.out.println("Tu nombre es: "+nombre+".");
         System.out.println("---------------------");
 
         System.out.println("2. Lee por pantalla una edad y almacénalo en una variable. Imprime la variable\n" +
                 "         * por pantalla.");
-        int age2 = scan.nextInt();
+        int age2 = sc.nextInt();
         System.out.println("Ingrese su edad: ");
         System.out.println("Tu edad es: "+age2+ " años.");
         System.out.println("---------------------");
 
         System.out.println("3. ¿Pueden modificarse los ejercicios anteriores para ahorrarse la variable?");
-        scan.nextLine();
+        sc.nextLine();
         System.out.println("Cómo te llamas: ");
         System.out.println(nombre);
         System.out.println("---------------------");
 
         System.out.println("4.a Lee por pantalla una temperatura en grados Celsius e imprímela por pantalla.");
-        float celsius = scan.nextFloat();
+        float celsius = sc.nextFloat();
         System.out.println("Indique los grados: ");
         System.out.println("La temperatura es de: "+celsius +"ºC.");
         System.out.println("---------------------");
 
         System.out.println("4.b Repite pero imprimiendo por pantalla en grados Kelvin (hay que convertir).");
-        float kelvin = scan.nextFloat();
+        float kelvin = sc.nextFloat();
         System.out.println("La temperatura es de: "+(kelvin+273.15) +" K.");
         System.out.println("---------------------");
 
@@ -330,9 +330,9 @@ public class EntradaPorPantalla {
         float base;
         float height;
         System.out.println("Ingrese el valor de la base: ");
-        base = scan.nextFloat();
+        base = sc.nextFloat();
         System.out.println("Ingrese el valor de la base: ");
-        height = scan.nextFloat();
+        height = sc.nextFloat();
         System.out.println("El área del rectángulo es: "+base*height);
         System.out.println("---------------------");
 
@@ -340,9 +340,9 @@ public class EntradaPorPantalla {
                 "         * por pantalla los datos necesarios.");
         float pesoIMC,alturaIMC;
         System.out.println("Ingrese el valor de su peso en kg: ");
-        pesoIMC = scan.nextFloat();
+        pesoIMC = sc.nextFloat();
         System.out.println("Ingrese el valor de su altura en m: ");
-        alturaIMC = scan.nextFloat();
+        alturaIMC = sc.nextFloat();
         //float IMC = pesoIMC/(alturaIMC*alturaIMC);
         double IMC = pesoIMC/(Math.pow(alturaIMC,2));
         if (IMC<18.5){
@@ -360,9 +360,9 @@ public class EntradaPorPantalla {
                 "         * el valor final con IVA del mismo.");
         float sinIVA,IVA;
         System.out.println("Ingrese el importe del producto sin IVA: ");
-        sinIVA = scan.nextFloat();
+        sinIVA = sc.nextFloat();
         System.out.println("Ingrese el IVA a aplicar: ");
-        IVA = scan.nextFloat();
+        IVA = sc.nextFloat();
         System.out.println("El precio del producto con IVA es: "+sinIVA*(1+IVA/100)+" €.");
 
         System.out.println("---------------------");
@@ -372,13 +372,13 @@ public class EntradaPorPantalla {
                 "         * IVA.");
         float pro1,pro2,pro3,IVA2,total;
         System.out.println("Ingrese el precio del producto 1: ");
-        pro1 = scan.nextFloat();
+        pro1 = sc.nextFloat();
         System.out.println("Ingrese el precio del producto 2: ");
-        pro2 = scan.nextFloat();
+        pro2 = sc.nextFloat();
         System.out.println("Ingrese el precio del producto 3: ");
-        pro3 = scan.nextFloat();
+        pro3 = sc.nextFloat();
         System.out.println("Ingrese el % de IVA a aplicar: ");
-        IVA2 = scan.nextFloat();
+        IVA2 = sc.nextFloat();
         total = pro1*(1+IVA2/100)+pro2*(1+IVA2/100)+pro3*(1+IVA2/100);
         System.out.println("El valor total de todos los productos es: "+total+" € y la media" +
                 "es "+total/3+" €.");
@@ -387,23 +387,23 @@ public class EntradaPorPantalla {
         System.out.println("9. Crea un programa que lea el nombre de una persona, y a continuación su edad\n" +
                 "         * y altura, e imprima todo por pantalla en una misma línea. ¿Funciona?");
         System.out.println("Ingrese su nombre: ");
-        String name2 = scan.nextLine();
+        String name2 = sc.nextLine();
         System.out.println("Ingrese su edad: ");
-        int age3 = scan.nextInt();
+        int age3 = sc.nextInt();
         System.out.println("Ingrese su altura en m: ");
-        float height2 = scan.nextFloat();
+        float height2 = sc.nextFloat();
         System.out.println("Su nombre es "+name2+" tiene "+age3+" años y mide "+height2+" m de altura");
         System.out.println("----------------------");
 
         System.out.println("10. Repita el ejercicio anterior pero leyendo primero los numeros y después\n" +
                 "         * el nombre. ¿Funciona?");
         System.out.println("Ingrese su edad: ");
-        int age4 = scan.nextInt();
+        int age4 = sc.nextInt();
         System.out.println("Ingrese su altura en m: ");
-        float height3 = scan.nextFloat();
-        scan.nextLine();//Hay que declararlo por el problema del salto de línea.
+        float height3 = sc.nextFloat();
+        sc.nextLine();//Hay que declararlo por el problema del salto de línea.
         System.out.println("Ingrese su nombre: ");
-        String name3 = scan.next();
+        String name3 = sc.next();
         System.out.println("Su nombre es "+name3+" tiene "+age4+" años y mide "+height3+" m de altura");
         System.out.println("----------------------");
     }

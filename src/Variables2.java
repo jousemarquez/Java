@@ -5,7 +5,7 @@ public class Variables2 {
 
     {
 
-        Scanner scan  = new Scanner(System.in); // Método para añadir a la variable Int el valor
+        Scanner sc  = new Scanner(System.in); // Método para añadir a la variable Int el valor
 
         //EJERCICIO 1
 
@@ -28,7 +28,7 @@ public class Variables2 {
         System.out.println("Introduce un valor entero para realizar algunas operaciones.");
 
         //int eje1 = 10; // 1
-        int eje1 = scan.nextInt();
+        int eje1 = sc.nextInt();
         System.out.println(eje1); // 2
         System.out.println("Decrementa su valor una vez.");
         eje1 -= 1; // 3
@@ -69,9 +69,9 @@ public class Variables2 {
         //float b = 3.0f;
         //float h = 4.0f;
         System.out.println("Define la base: ");
-        float b = scan.nextFloat();
+        float b = sc.nextFloat();
         System.out.println("Define la altura: ");
-        float h = scan.nextFloat();
+        float h = sc.nextFloat();
         float a = b * h;
 
         System.out.println("El área del rectángulo es: " +a);
@@ -95,7 +95,7 @@ public class Variables2 {
         System.out.println("CALCULADORA");
         System.out.println("Convierte EUR a USD. Tasas de conversión=" +conver);
         System.out.println("Escribe los euros que quieras convertir (ejemplo: 2.5€): ");
-        float eur = scan.nextFloat();
+        float eur = sc.nextFloat();
         float usd = eur*conver;
         System.out.println("Usted tiene: " +"$"+usd);
         System.out.println("---FIN---");

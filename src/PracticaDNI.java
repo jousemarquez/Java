@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class PracticaDNI {
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         /*
         Validación de datos del usuario
@@ -17,7 +17,7 @@ public class PracticaDNI {
         Utilice un switch-case para comprobar que letra toca (ver documento adjunto).
          */
         System.out.println("Introduce su DNI (entero de 8 dígitos: ");
-        int numDni = scan.nextInt();
+        int numDni = sc.nextInt();
         int letraDni;
         if (numDni < 0 || numDni > 99999999){
             System.out.println("El DNI introducido es incorrecto");

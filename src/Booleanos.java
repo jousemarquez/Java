@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class Booleanos {
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("1. Lea por pantalla dos números enteros y almacene en una variable el resultado\n" +
                 "de comprobar si el primero es superior al segundo multiplicado por dos.\n");
         System.out.println("Introduzca el valor de a: ");
-        int a = scan.nextInt();
+        int a = sc.nextInt();
         System.out.println("Introduzca el valor de b: ");
-        int b = scan.nextInt();
+        int b = sc.nextInt();
         boolean res = a > (b*2);
         System.out.println(res);
             System.out.println("----------------");
@@ -18,7 +18,7 @@ public class Booleanos {
                 "si es mayor de edad.\n");
         int age;
         System.out.println("Introduzca su edad: ");
-        age = scan.nextInt();
+        age = sc.nextInt();
         boolean res2 = age >= 18;
         System.out.println(res2);
             System.out.println("----------------");
@@ -30,7 +30,7 @@ public class Booleanos {
 
         System.out.println("4. Lea por pantalla un número entero y almacene en una variable el resultado\n" +
                 "de comprobar si es par.\n");
-        int valor = scan.nextInt();
+        int valor = sc.nextInt();
         boolean resPar = valor%2 == 0;
             System.out.println("es una cifra par: " +resPar);
 
@@ -43,7 +43,7 @@ public class Booleanos {
                 "ambos incluidos.\n");
         int valorEjercicio6;
         System.out.println("Introduzca un valor entero entre 0 y 100: ");
-        valorEjercicio6 = scan.nextInt();
+        valorEjercicio6 = sc.nextInt();
         if (0 <= valorEjercicio6 && valorEjercicio6 <= 100){
             System.out.println("El valor está dentro del rango");
         }
@@ -59,7 +59,7 @@ public class Booleanos {
 
         System.out.print("Introduce un número (0 para acabar): ");
         int numero;
-        numero = scan.nextInt();
+        numero = sc.nextInt();
 
         while (numero != 0) {
 
@@ -75,11 +75,11 @@ public class Booleanos {
             }
 
             System.out.print("Introduce un número (0 para acabar): ");
-            numero = scan.nextInt();
+            numero = sc.nextInt();
         }
         System.out.println("8. Lea por pantalla un numero entero y compruebe si es el 3, el 7 o el 9.");
 
-        int entero = scan.nextInt();
+        int entero = sc.nextInt();
         boolean es3 = entero == 3;
         boolean es7 = entero == 7;
         boolean es9 = entero == 9;
@@ -88,7 +88,7 @@ public class Booleanos {
 
         System.out.println("o bien:");
 
-        int h = scan.nextInt();
+        int h = sc.nextInt();
         if(h == 3){
             System.out.println("El número es igual a 3");
         } else if (h == 7) {

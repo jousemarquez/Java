@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class Bucles {
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         /* Bucles while() */
         System.out.println("Ingrese un número: ");
-        int veces = scan.nextInt();
+        int veces = sc.nextInt();
         int contador = 0;
         while (contador < veces) {
             System.out.println("a");
