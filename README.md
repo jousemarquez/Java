@@ -66,4 +66,5 @@ Actualmente trabajamos en el desarrollo de videojuegos en la blockchain con **Si
 
 [![Email](https://img.shields.io/badge/jose@onikami.com-email_personal_(respuesta_lenta)-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=101010)](mailto:jose@onikami.com)
 </br>
+
 Made with 💜 in **Seville**
