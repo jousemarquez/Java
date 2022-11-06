@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/*import java.util.Scanner;
 
 public class BoletinBucles {
 
@@ -393,4 +393,4 @@ public class BoletinBucles {
         }
         System.out.println("FIN");
     }
-}
+}*/
