@@ -14,7 +14,7 @@ public class Condicionales {
         } else {
             System.out.println("El usuario tiene " + edad + " años, no tiene permiso para usar la aplicación.");
         }
-        System.out.println("Fin del programa");
+        System.out.println("FIN");
 
         /*Ejemplo de IF, ELSE IF y ELSE*/
         System.out.println("Introduce la temperatura: ");
@@ -26,6 +26,8 @@ public class Condicionales {
         } else {
             System.out.println("La temperatura es positiva");
         }
+        System.out.println("FIN");
+
         /*Ejemplo de SWITCH. En vez de usar un sistema if-else if para este programa, lo óptimo es usar switch debido a que los Switch está pensado para operar con ciertas variables.*/
         System.out.println("Introduce un día (1-7): ");
         int number = sc.nextInt();
@@ -55,7 +57,8 @@ public class Condicionales {
                 System.out.println("Número no válido");
                 break;
         }
-        //1. Leer dos números enteros e imprimir el mayor de ellos.
+        System.out.println("FIN");
+
         System.out.println("1. Leer dos números enteros e imprimir el mayor de ellos.");
         System.out.println("Ingrese el valor de a: ");
         int eje1a = sc.nextInt();
@@ -66,8 +69,8 @@ public class Condicionales {
         } else {
             System.out.println("b = " + eje1b);
         }
+        System.out.println("FIN");
 
-        //2. Leer un entero y comprobar si es negativo o positivo, imprimiendo por pantalla una frase al respecto. Considere el cero como positivo.
         System.out.println("2. Leer un entero y comprobar si es negativo o positivo, imprimiendo por pantalla una frase al respecto. Considere el cero como positivo.");
         System.out.println("Ingrese el valor de a: ");
         int eje2a = sc.nextInt();
@@ -76,8 +79,8 @@ public class Condicionales {
         } else {
             System.out.println("El valor de a es negativo.");
         }
+        System.out.println("FIN");
 
-        //3. Modifique el ejercicio anterior para que, en caso de introducir un cero, se imprima por pantalla un mensaje específico.
         System.out.println("3. Modifique el ejercicio anterior para que, en caso de introducir un cero, se imprima por pantalla un mensaje específico.");
         System.out.println("Ingrese el valor de a: ");
         int eje3a = sc.nextInt();
@@ -88,8 +91,8 @@ public class Condicionales {
         } else {
             System.out.println("El valor de a es negativo.");
         }
+        System.out.println("FIN");
 
-        //4. Leer una edad y comprobar si la persona es mayor de edad, imprimiendo una frase al respecto. Si es menor, imprimir también un mensaje.
         System.out.println("4. Leer una edad y comprobar si la persona es mayor de edad, imprimiendo una frase al respecto. Si es menor, imprimir también un mensaje.");
         int eje4a = sc.nextInt();
         if (eje4a > 18) {
@@ -97,7 +100,8 @@ public class Condicionales {
         } else {
             System.out.println("Es menor de edad.");
         }
-        //5. Modificar el ejercicio anterior para que además se compruebe si es jubilado (tiene más de 67 años), imprimiendo un mensaje al respecto.
+        System.out.println("FIN");
+
         System.out.println("5. Modificar el ejercicio anterior para que además se compruebe si es jubilado (tiene más de 67años), imprimiendo un mensaje al respecto.");
         int eje5a = sc.nextInt();
         if (eje5a >= 67) {
@@ -107,10 +111,11 @@ public class Condicionales {
         } else {
             System.out.println("Es mayor de edad.");
         }
+        System.out.println("FIN");
 
-        //6. Modificar el ejercicio anterior para que solo se permita una edad válida (0 a 120).
-        // En caso de ser válida hará todo lo implementado anteriormente. En caso de ser inválida,
-        //  se imprimirá un mensaje de error y el programa acabará.
+        System.out.println("6. Modificar el ejercicio anterior para que solo se permita una edad válida (0 a 120)." +
+                "En caso de ser válida hará todo lo implementado anteriormente." +
+                "En caso de ser inválida, se imprimirá un mensaje de error y el programa acabará.");
         System.out.println("Introduce tu edad (0-120): ");
         int eje6a = sc.nextInt();
         if (eje6a < 0 || eje6a > 120) {
@@ -144,6 +149,8 @@ public class Condicionales {
         } else {
             System.out.println("Sigue trabajando en el McDonald's");
         }
+        System.out.println("FIN");
+
         //8. Modificar el ejercicio anterior para que, al leerlos, se compruebe si todos los números leídos tienen el rango apropiado
         // (entre 1 y 49). Si no lo tienen, imprimir un mensaje de error y el programa acabará.
         System.out.println("7. Modificar el ejercicio anterior para que, al leerlos, se compruebe si todos los números leídos tienen el rango apropiado " +
@@ -167,7 +174,8 @@ public class Condicionales {
         } else {
             System.out.println("Sigue trabajando en el McDonald's");
         }
-        //9. Leer por pantalla un entero y comprobar si es par o impar (use el operador módulo %).
+        System.out.println("FIN");
+
         System.out.println("9. Leer por pantalla un entero y comprobar si es par o impar (use el operador módulo %).");
         System.out.println("Introducir un número: ");
         int eje9a = sc.nextInt();
@@ -176,10 +184,8 @@ public class Condicionales {
         } else {
             System.out.println("El número es impar.");
         }
+        System.out.println("FIN");
 
-        //10. Crear un programa que calcule el índice de masa corporal. Lea los datos que sean necesarios, imprima por pantalla el índice,
-        // y dependiendo de su valor imprima al usuario un mensaje informativo. Por ejemplo: está por debajo de lo normal,
-        // está normal o está por encima de lo normal.
         System.out.println("Crear un programa que calcule el índice de masa corporal. Lea los datos que sean necesarios, imprima por pantalla el índice, " +
                 "y dependiendo de su valor imprima al usuario un mensaje informativo. Por ejemplo: está por debajo de lo normal, " +
                 "está normal o está por encima de lo normal.");
@@ -199,9 +205,8 @@ public class Condicionales {
         } else {
             System.out.println("Su índice IMC es: " + IMC + " y su composición corporal es obesidad");
         }
+        System.out.println("FIN");
 
-        //11. Leer por pantalla un número entre 1 y 12 e imprimir por pantalla el nombre del mes correspondiente.
-        // En caso de leer un número fuera de rango, imprimir por pantalla un mensaje de error.
         System.out.println("11. Leer por pantalla un número entre 1 y 12 e imprimir por pantalla el nombre del mes correspondiente." +
                 "En caso de leer un número fuera de rango, imprimir por pantalla un mensaje de error.");
         System.out.println("Introduzca un número para descubrir el mes (1-12): ");
@@ -247,10 +252,8 @@ public class Condicionales {
                 System.out.println("Número no válido");
                 break;
         }
+        System.out.println("FIN");
 
-        //12. Establezca un número entre 0 y 9999, que servirá como contraseña. Puede elegir el que desee.
-        // Pida por pantalla un número y si coincide escriba “Contraseña correcta, accediendo al sistema”,
-        // en caso contrario escriba “Contraseña incorrecta, cerrando sesión”.
         System.out.println("12. Establezca un número entre 0 y 9999, que servirá como contraseña. Puede elegir el que desee." +
                 "Pida por pantalla un número y si coincide escriba “Contraseña correcta, accediendo al sistema”," +
                 "en caso contrario escriba “Contraseña incorrecta, cerrando sesión”.");
@@ -261,24 +264,22 @@ public class Condicionales {
         } else {
             System.out.println("Contraseña correcta, accediendo al sistema.");
         }
+        System.out.println("FIN");
 
-        //13. Desarrolle un sistema de cálculo de descuentos para una farmacia. Cuando el usuario introduzca un precio,
-        // usted deberá aplicar un descuento del 15% a ese valor, e imprimir por pantalla el precio final.
-        // Recuerde que debe imprimir el precio final tras aplicar el descuento, no la cantidad que se descuenta.
         System.out.println("13. Desarrolle un sistema de cálculo de descuentos para una farmacia. Cuando el usuario introduzca un precio," +
                 "usted deberá aplicar un descuento del 15% a ese valor, e imprimir por pantalla el precio final." +
                 "Recuerde que debe imprimir el precio final tras aplicar el descuento, no la cantidad que se descuenta.");
         System.out.println("Introduzca un precio: ");
         float precio = sc.nextFloat();
         System.out.println("El precio final del producto es: " + (precio * 0.85f) + " €.");
+        System.out.println("FIN");
 
-        //14. Modifique el anterior para que además se imprima la cantidad que se descuenta.
         System.out.println("14. Modifique el anterior para que además se imprima la cantidad que se descuenta.");
         System.out.println("Introduzca un precio: ");
         float precio2 = sc.nextFloat();
         System.out.println("Descuento aplicado:" + (precio2 * 0.15f) + " €.");
+        System.out.println("FIN");
 
-        //15. Diseñe un programa que lea la temperatura en centígrados del día e imprima el tipo de clima de acuerdo a la siguiente tabla.
         System.out.println("15. Diseñe un programa que lea la temperatura en centígrados del día e imprima el tipo de clima de acuerdo" +
                 "a la siguiente tabla.");
         System.out.println("Introduzca la temperatura en grados C: "); // Método Joaquín = Eficiente
@@ -303,7 +304,8 @@ public class Condicionales {
         } else {
             System.out.println("Tipo de clima: tropical.");
         }
-        //16. Pedir un número entre 0 y 99999 y decir cuántas cifras tiene.
+        System.out.println("FIN");
+
         System.out.println("16. Pedir un número entre 0 y 99999 y decir cuántas cifras tiene.");
         System.out.println("Ingrese un número (0-99999): ");
         sc.nextLine();
@@ -321,6 +323,7 @@ public class Condicionales {
         } else {
             System.out.println("Error. El número introducido no está en rango correcto (0-99999).");
         }
+        System.out.println("FIN");
 
         // Solución con incrementales
         System.out.println("Ingrese un número (0-99999): ");
@@ -347,11 +350,8 @@ public class Condicionales {
             cont++;
         }
         System.out.println("El número tiene" + cont + "digitos");
+        System.out.println("FIN");
 
-
-        //17. La universidad ha categorizado las matrículas de acuerdo a la facultad que va a estudiar el postulante.
-        // Ingrese por teclado el nombre de la facultad donde va a estudiar, y muestre el importe y la mensualidad.
-        // (Use el control switch-case, y recuerde que el nombre que introduzca debe coincidir exactamente con el nombre de universidad).
         System.out.println("17. La universidad ha categorizado las matrículas de acuerdo a la facultad que va a estudiar el postulante." +
                 "Ingrese por teclado el nombre de la facultad donde va a estudiar, y muestre el importe y la mensualidad." +
                 "(Use el control switch-case, y recuerde que el nombre que introduzca debe coincidir exactamente con el nombre de universidad).");
@@ -380,11 +380,10 @@ public class Condicionales {
                 System.out.println("Nombre inválido");
                 break;
         }
+        System.out.println("FIN");
 
-        //18. Escriba programa para ingresar 4 notas de un alumno, calcular y mostrar su promedio, sabiendo que la primera y segunda
-        // tiene 20% de peso cada una, la tercera y cuarta tienen 30% de peso cada una.
-        System.out.println("18. Escriba programa para ingresar 4 notas de un alumno, calcular y mostrar su promedio, sabiendo que la primera y segunda" +
-                "tiene 20% de peso cada una, la tercera y cuarta tienen 30% de peso cada una.");
+        System.out.println("18. Escriba programa para ingresar 4 notas de un alumno, calcular y mostrar su promedio," +
+                "sabiendo que la primera y segunda tiene 20% de peso cada una, la tercera y cuarta tienen 30% de peso cada una.");
         System.out.println("Introduce la nota del alumno ");
         float nota1 = sc.nextFloat();
         float nota2 = sc.nextFloat();
@@ -392,9 +391,11 @@ public class Condicionales {
         float nota4 = sc.nextFloat();
         float notaFinal = ((nota1 + nota2) * 0.20f) + ((nota3 + nota4) * 0.30f);
         System.out.println("Las notas son " + notaFinal);
+        System.out.println("FIN");
 
-        //19. Desarrolle un programa que pida cuantos hombres y mujeres hay en un aula y permita calcular el porcentaje de hombres y mujeres.
-        System.out.println("19. Desarrolle un programa que pida cuantos hombres y mujeres hay en un aula y permita calcular el porcentaje de hombres y mujeres.");
+
+        System.out.println("19. Desarrolle un programa que pida cuantos hombres y mujeres hay en un aula y" +
+                "permita calcular el porcentaje de hombres y mujeres.");
         System.out.println("Introduce cuantos hombres hay en tu aula: ");
         int men = sc.nextInt();
         System.out.println("Introduce cuantos mujeres hay en tu aula: ");
@@ -403,10 +404,8 @@ public class Condicionales {
 
         System.out.println("Total de porcentaje de hombres: " + (men / Total) * 100 + "%");
         System.out.println("Total de porcentaje de mujeres: " + (women / Total) * 100 + "%");
+        System.out.println("FIN");
 
-        //20. A partir de aquí, los ejercicios son complicados. No se frustre si no le salen.
-
-        //21. Leer por pantalla dos números enteros, e imprimirlos por pantalla en orden creciente.
         System.out.println("21. Leer por pantalla dos números enteros, e imprimirlos por pantalla en orden creciente.");
         System.out.println("Ingrese el primer número: ");
         int eje21a = sc.nextInt();
@@ -417,8 +416,8 @@ public class Condicionales {
         } else if (eje21b < eje21a) {
             System.out.println(eje21b + " " + eje21a);
         }
+        System.out.println("FIN");
 
-        //22. Leer por pantalla tres números enteros, e imprimirlos por pantalla en orden creciente.
         System.out.println("22. Leer por pantalla tres números enteros, e imprimirlos por pantalla en orden creciente.");
         System.out.println("Ingrese el primer número: ");
         int eje22a = sc.nextInt();
@@ -445,8 +444,8 @@ public class Condicionales {
         System.out.println(eje22a);
         System.out.println(eje22b);
         System.out.println(eje22c);
+        System.out.println("FIN");
 
-        //23. Repetir el ejercicio anterior, e imprimirlos en orden decreciente.
         System.out.println("23. Repetir el ejercicio anterior, e imprimirlos en orden decreciente.");
         System.out.println("Ingrese el primer número: ");
         int eje23a = sc.nextInt();
@@ -473,8 +472,8 @@ public class Condicionales {
         System.out.println(eje23a);
         System.out.println(eje23b);
         System.out.println(eje23c);
+        System.out.println("FIN");
 
-        //24. Lea un número por pantalla y determine si es múltiplo de 10 (use el operador módulo).
         System.out.println("24. Lea un número por pantalla y determine si es múltiplo de 10 (use el operador módulo).");
         System.out.println("Introduce un número: ");
         int eje24a = sc.nextInt();
@@ -483,9 +482,8 @@ public class Condicionales {
         } else {
             System.out.println(eje24a + "No es múltiplo de 10.");
         }
+        System.out.println("FIN");
 
-        //25. Leer por pantalla un número de tres cifras, e imprimir cada una de sus cifras en una línea.
-        // El mejor método es realizar sucesivas operaciones de módulo 10 para quedarnos con el resto que será la cifra de esa posición.
         System.out.println("25. Leer por pantalla un número de tres cifras, e imprimir cada una de sus cifras en una línea.");
         System.out.println("Introduce un número de 3 cifras (000-999): ");
         int eje25a = sc.nextInt();
@@ -498,14 +496,8 @@ public class Condicionales {
             eje25a = eje25a / 10;
             System.out.println(eje25a);
         }
+        System.out.println("FIN");
 
-        //26. Crea una aplicación llamada CalculadoraInversa, que lea por pantalla dos operandos (String) y un signo aritmético (String), y según este último se realizará la operación correspondiente. Al final mostrará el resultado en consola. Los signos aritméticos disponibles son:
-        //+: suma los dos operandos.
-        //-: resta los operandos.
-        //*: multiplica los operandos.
-        ///: divide los operandos, este debe dar un resultado con decimales (double)
-        //%: módulo, resto de la división entre operando1 y operando2.
-        //Para leer por pantalla usar únicamente nextLine.
         System.out.println("26. Crea una aplicación llamada CalculadoraInversa, que lea por pantalla dos operandos (String)" +
                 "y un signo aritmético (String), y según este último se realizará la operación correspondiente." +
                 "Al final mostrará el resultado en consola. Los signos aritméticos disponibles son:");
@@ -533,34 +525,30 @@ public class Condicionales {
             case "%":
                 System.out.println("El resultado es: " + (eje26a % eje26b));
                 break;
-            default: {
-
-                //27. En un casino de juegos se desea mostrar los mensajes respectivos por el puntaje obtenido en el lanzamiento de tres dados de un cliente, de acuerdo a los siguientes resultados:
-                //
-                //Si los tres dados son seis, mostrar el mensaje “Muy buena suerte”
-                //Si dos dados son seis, mostrar el mensaje “Buena suerte”
-                //Si un dado es seis, mostrar el mensaje “Mala Suerte”
-                //Si ningún dado se obtiene seis, mostrar el mensaje “Muy mala suerte”
-                //Simule los lanzamientos con tres números aleatorios, usando instrucciones Java que los genere.
-                System.out.println("27. En un casino de juegos se desea mostrar los mensajes respectivos por el puntaje obtenido en el lanzamiento de tres dados de un cliente, de acuerdo a los siguientes resultados:");
-                int dado = 6;
-                int dado2 = 6;
-                int dado3 = 6;
-                int dadoRand = rand.nextInt(dado) + 1;
-                int dadoRand2 = rand.nextInt(dado2) + 1;
-                int dadoRand3 = rand.nextInt(dado3) + 1;
-
-                System.out.println(dadoRand + " " + dadoRand2 + " " + dadoRand3);
-                if (dadoRand == 6 && dadoRand2 == 6 && dadoRand3 == 6) {
-                    System.out.println("Muy buena suerte.");
-                } else if ((dadoRand == 6 && dadoRand2 == 6) || (dadoRand == 6 && dadoRand3 == 6) || (dadoRand2 == 6 && dadoRand3 == 6)) {
-                    System.out.println("Buena suerte.");
-                } else if (dadoRand == 6 || dadoRand2 == 6 || dadoRand3 == 6) {
-                    System.out.println("Mala suerte");
-                } else {
-                    System.out.println("Muy mala suerte");
-                }
-            }
+            default:
+                System.out.println("El dato introducido es erróneo.");
+                break;
         }
+        System.out.println("FIN");
+
+        System.out.println("27. En un casino de juegos se desea mostrar los mensajes respectivos por el puntaje obtenido en el lanzamiento de tres dados de un cliente, de acuerdo a los siguientes resultados:");
+        int dado = 6;
+        int dado2 = 6;
+        int dado3 = 6;
+        int dadoRand = rand.nextInt(dado) + 1;
+        int dadoRand2 = rand.nextInt(dado2) + 1;
+        int dadoRand3 = rand.nextInt(dado3) + 1;
+
+        System.out.println(dadoRand + " " + dadoRand2 + " " + dadoRand3);
+        if (dadoRand == 6 && dadoRand2 == 6 && dadoRand3 == 6) {
+            System.out.println("Muy buena suerte.");
+        } else if ((dadoRand == 6 && dadoRand2 == 6) || (dadoRand == 6 && dadoRand3 == 6) || (dadoRand2 == 6 && dadoRand3 == 6)) {
+            System.out.println("Buena suerte.");
+        } else if (dadoRand == 6 || dadoRand2 == 6 || dadoRand3 == 6) {
+            System.out.println("Mala suerte");
+        } else {
+            System.out.println("Muy mala suerte");
+        }
+        System.out.println("FIN");
     }
 }
