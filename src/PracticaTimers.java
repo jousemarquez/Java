@@ -25,7 +25,6 @@ public class PracticaTimers {
         } while (num > 0 || num < 59);
     }
 }
-
 /*import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
