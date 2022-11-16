@@ -176,7 +176,7 @@ public class PracticaTimers {
                                 System.out.print(":0" + segundos);
                             }
 
-                            Thread.sleep(10);
+                            Thread.sleep(1000);
 
                             if (segundos == 0){
                                 minutos--;
