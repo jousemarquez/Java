@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Simulacro {
     public static void main(String[] arg) {
         Scanner sc = new Scanner(System.in);
-
+/*
         System.out.println("Ejercicio 1:");
         int genero;
         int clase;
@@ -105,13 +105,42 @@ public class Simulacro {
         for (int i = 0; i < altura*2; i++) {
             for (int j = 0; j < i; j++) {
                 if (i==0 || j==0) {
-                    System.out.print(rojo + " * " +reset);
+                    System.out.print(rojo + " * " + reset);
+                } else {
+                    System.out.print(amarillo + " * " + reset);
+                }
+            }
+            System.out.println();
+        }*/
+        System.out.println("FIN");
+        String rojo = "\033[0;31m";
+        String amarillo = "\033[0;33m";
+        String reset = "\033[0m";
+        System.out.println("Pide la altura2: ");
+        int numFilas = sc.nextInt();
+        System.out.println();
+        for(int altura2 = 0; altura2<=(numFilas); altura2++){
+            //Espacios en blanco
+            for(int asteriscos = 0; asteriscos<altura2; asteriscos++){
+                if (asteriscos == 0 || altura2 == 0) {
+                    System.out.print(rojo + " * " + reset);
                 } else {
                     System.out.print(amarillo + " * " + reset);
                 }
             }
             System.out.println();
         }
-        System.out.println("FIN");
+
+        for(int altura2 = (numFilas)+1; altura2>0; altura2--){
+            //Espacios en blanco
+            for(int asteriscos = 0; asteriscos<altura2; asteriscos++){
+                if (asteriscos == 0 || altura2 == 0) {
+                    System.out.print(rojo + " * " + reset);
+                } else {
+                    System.out.print(amarillo + " * " + reset);
+                }
+            }
+            System.out.println();
+        }
     }
 }
