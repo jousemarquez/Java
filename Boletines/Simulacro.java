@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Simulacro {
     public static void main(String[] arg) {
         Scanner sc = new Scanner(System.in);
-/*
+
         System.out.println("Ejercicio 1:");
         int genero;
         int clase;
@@ -111,11 +111,11 @@ public class Simulacro {
                 }
             }
             System.out.println();
-        }*/
+        }
         System.out.println("FIN");
-        String rojo = "\033[0;31m";
-        String amarillo = "\033[0;33m";
-        String reset = "\033[0m";
+        String rojo2 = "\033[0;31m";
+        String amarillo2 = "\033[0;33m";
+        String reset2 = "\033[0m";
         System.out.println("Pide la altura2: ");
         int numFilas = sc.nextInt();
         System.out.println();
