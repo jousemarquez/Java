@@ -64,7 +64,7 @@ public class Simulacro {
                 System.out.println("Comienza tu aventura, joven aventurero!");
         }
         System.out.println("FIN\n");
-
+        
         System.out.println("Ejercicio 2:");
         int num;
         do {
@@ -112,35 +112,17 @@ public class Simulacro {
             }
             System.out.println();
         }
-        System.out.println("FIN");
-        String rojo2 = "\033[0;31m";
-        String amarillo2 = "\033[0;33m";
-        String reset2 = "\033[0m";
-        System.out.println("Pide la altura2: ");
-        int numFilas = sc.nextInt();
-        System.out.println();
-        for(int altura2 = 0; altura2<=(numFilas); altura2++){
-            //Espacios en blanco
-            for(int asteriscos = 0; asteriscos<altura2; asteriscos++){
-                if (asteriscos == 0 || altura2 == 0) {
-                    System.out.print(rojo + " * " + reset);
-                } else {
-                    System.out.print(amarillo + " * " + reset);
-                }
-            }
-            System.out.println();
-        }
 
-        for(int altura2 = (numFilas)+1; altura2>0; altura2--){
-            //Espacios en blanco
-            for(int asteriscos = 0; asteriscos<altura2; asteriscos++){
-                if (asteriscos == 0 || altura2 == 0) {
-                    System.out.print(rojo + " * " + reset);
-                } else {
-                    System.out.print(amarillo + " * " + reset);
-                }
-            }
-            System.out.println();
-        }
+        System.out.println("Ejercicio 4: ");
+        System.out.println("Has hecho bien el ejercicio 1, 2 y 4?");
+        boolean b1 = sc.nextBoolean();
+        System.out.println("Has intentado el ejercicio 3?");
+        boolean b2 = sc.nextBoolean();
+        System.out.println("Has hecho bien el ejercicio 3?");
+        boolean b3 = sc.nextBoolean();
+        System.out.println("Te has olvidado de los ejercicios 1 y 2?");
+        boolean b4 = sc.nextBoolean();
+
+        System.out.println("\nVas por buen camino: " + (b1&&!b2 || b3&&!b4));
     }
 }
