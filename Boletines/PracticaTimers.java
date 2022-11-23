@@ -29,13 +29,8 @@ public class PracticaTimers {
                             }
                         } while (!dentroBucle); // Cuando el número está dentro de los valores, se rompe el bucle y termina de ejecutarlo.
 
-                        while (num >= 0) {
-                            if (num >= 10) {
-                                System.out.println(num);
-                            } else {
-                                System.out.println("0" + num);
-                            }
-                            num--;
+                        for(int i=num; i>=0; i--){
+                        System.out.printf("%02d\n",i);
                         }
                         System.out.println("FIN");
                         break;
@@ -57,14 +52,9 @@ public class PracticaTimers {
                             }
                         } while (!dentroBucle2); // Cuando el número está dentro de los valores, se rompe el bucle y termina de ejecutarlo.
 
-                        while (num2 >= 0) {
-                            if (num2 >= 10) {
-                                System.out.println(num2);
-                            } else {
-                                System.out.println("0" + num2);
-                            }
+                        for(int i=num2; i>=0; i--){
+                            System.out.printf("%02d\n",i);
                             Thread.sleep(1000);
-                            num2--;
                         }
                         System.out.println("FIN");
                         break;
@@ -89,11 +79,11 @@ public class PracticaTimers {
 
                         while (num3 >= 0) {
                             if (num3 >= 10) {
-                                System.out.print("\r" + "00: " + num3);
+                                System.out.printf("%02d:",num3);
                             } else if (num3 == 0) {
                                 System.out.println("FIN");
                             } else {
-                                System.out.print("\r" + "00:" + num3);
+                                System.out.printf("%02d:",num3);
                             }
                             Thread.sleep(1000);
                             num3--;
@@ -119,11 +109,11 @@ public class PracticaTimers {
 
                         while (num4 >= 0) {
                             if (num4 >= 10) {
-                                System.out.print("\r" + "00: " + num4);
+                                System.out.printf("\r%02d",num4);
                             } else if (num4 == 0) {
                                 System.out.println("FIN");
                             } else {
-                                System.out.print("\r" + "00:" + num4);
+                                System.out.printf("\r%02d:",num4);
                             }
                             Thread.sleep(1000);
                             num4--;
@@ -162,15 +152,15 @@ public class PracticaTimers {
 
                             while (minutos >= 0){ // Mientras los minutos sean mayores o iguales a cero se cumple que
                                 if (minutos >= 10){ // Se imprima en pantalla los minutos
-                                    System.out.print("\r" + minutos);
+                                    System.out.printf("%01d:\n",minutos);
                                 } else {
-                                    System.out.print("\r" + "0" + minutos); // Pero si los minutos son menores a 10, se añade un 0 por delante.
+                                    System.out.printf("%02d:\n",minutos); // Pero si los minutos son menores a 10, se añade un 0 por delante.
                                 }
 
                                 if(segundos >= 10){
-                                    System.out.print(":" + segundos);
+                                    System.out.printf(":%d\n",segundos);
                                 } else {
-                                    System.out.print(":0" + segundos);
+                                    System.out.printf(":%02d\n",segundos);
                                 }
 
                                 Thread.sleep(1000);
