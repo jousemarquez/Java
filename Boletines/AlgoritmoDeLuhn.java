@@ -17,7 +17,7 @@ public class AlgoritmoDeLuhn {
 
         while (tarjeta > 0){ // Primero se invierte el número de la tarjeta
             resto = tarjeta % 10;
-            invertido = invertido * 10 + resto;
+            /*invertido = invertido * 10 + resto;*/
             tarjeta /= 10;
         }
 
