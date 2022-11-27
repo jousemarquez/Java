@@ -17,7 +17,7 @@ public class LanzarDados {
         System.out.println("Jugador 1, ¿quieres lanzar un dado [Yes/No]? ");
         jugar = sc.next().equalsIgnoreCase("yes");
         if (!jugar){
-            System.out.println("¡Juego finalizado. Tu puntuación es: "+score);
+            System.out.println("¡Juego finalizado. Tu puntuación es: " +score);
         } else {
             int primerDado = (int) (Math.random() * 6 + 1);
             System.out.println("El primer dado ha sacado un:" + primerDado);
