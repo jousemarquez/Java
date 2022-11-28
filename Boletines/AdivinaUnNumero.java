@@ -37,3 +37,35 @@ public class AdivinaUnNumero {
     }
 
 }
+
+import java.util.Scanner;
+        import java.util.Random;
+
+public class AdivinaUnNumero {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random rand = new Random();
+
+        String d = "\uD83E\uDD14";
+        System.out.println("╔═══════════════════════════╗");
+        System.out.println("║   ADIVINA UN NÚMERO       ║");
+        System.out.println("║   JUEGO EN FAMILIA     ╔══╩═╗");
+        System.out.println("║     by Jouse Márquez   ║ "+d+" ║");
+        System.out.println("╚════════════════════════╩════╝");
+
+        int numero;
+        boolean turno = true;
+        int numeroRandom = rand.nextInt(0,101);
+
+        System.out.println("Introduce un número entre 0 y 100: ");
+        numero = sc.nextInt();
+        do {
+            if (numero >= 0 || numero <= 100 ){
+                numero = sc.nextInt();
+            } else {
+                System.out.println("Fin del juego.");
+            }
+        }while (numero!=numeroRandom);
+    }
+}
+
