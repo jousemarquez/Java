@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
-public class Mazmorra {
+public class MazmorraDeTimmy {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean jugar = false; // Boolean para preguntar si se quiere jugar
-        boolean fin = false; //Boolean para indicar que acaba el juego
+        boolean fin = false; // Boolean para indicar que acaba el juego
         boolean vivo = true; // Boolean para indicar que Timmy está vivo
-
         int posicionX = 1; //Posición X donde está Timmy
         int posicionY = 1; //Posición Y donde está Timmy
+
         do {
             //Impresión del perímetro
             for (int i = 0; i < 20; i++) { // i controla las filas de la matriz
