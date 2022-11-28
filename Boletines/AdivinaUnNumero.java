@@ -5,67 +5,28 @@ public class AdivinaUnNumero {
     public static void main(String[] args) {
         Random rand = new Random();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Bienvenido a 'ADIVINA'");
-        System.out.print("Estoy pensando en un número del 1 al 100, ¿cuál crees que es? ");
-
-        int numR = rand.nextInt();
-        int num;
-        int cont = 0;
-        do{
-            num = sc.nextInt();
-            System.out.println();
-            if (num > numR) {
-                System.out.print("El número tiene que ser menor, inténtalo de nuevo: ");
-            } else if (num < numR) {
-                System.out.print("El número tiene que ser mayor, inténtalo de nuevo: ");
-            }
-            cont++;
-
-        }while(num!=numR);
-
-        System.out.println("\nHAS ACERTADO!! Y sólo has necesitado " + cont + " intentos!");
-        /*
-        //Expresión utilizada de manera sarcástica cuando se hayan necesitado muchos intentos
-        int edad=38, peso = 75;
-        float altura=1.8f;
-
-        System.out.printf("El usuario tiene %d anos de edad, mide %f metros y pesa %d kilos", edad, altura, peso);
-        System.out.println();
-        System.out.printf("%.2f", 3.4856394);
-        System.out.println();
-        System.out.printf("%.4f", 3.24502450);*/
-    }
-
-}
-
-import java.util.Scanner;
-        import java.util.Random;
-
-public class AdivinaUnNumero {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Random rand = new Random();
-
-        String d = "\uD83E\uDD14";
+        String d = "\uD83E\uDDDE";
         System.out.println("╔═══════════════════════════╗");
         System.out.println("║   ADIVINA UN NÚMERO       ║");
         System.out.println("║   JUEGO EN FAMILIA     ╔══╩═╗");
         System.out.println("║     by Jouse Márquez   ║ "+d+" ║");
         System.out.println("╚════════════════════════╩════╝");
+        System.out.print("Me llamo Akinator de Triana y quiero que adivines un número del 1 al 100, ¿cuál crees que es?: ");
 
-        int numero;
-        boolean turno = true;
-        int numeroRandom = rand.nextInt(0,101);
-
-        System.out.println("Introduce un número entre 0 y 100: ");
-        numero = sc.nextInt();
-        do {
-            if (numero >= 0 || numero <= 100 ){
-                numero = sc.nextInt();
-            } else {
-                System.out.println("Fin del juego.");
-            }
-        }while (numero!=numeroRandom);
+        int numero, turnos = 1;
+        int numRandom = rand.nextInt(0,101);
+        do{
+            numero = sc.nextInt();
+                if (numero > numRandom) {
+                    System.out.printf("Turno%2d: Mmmm... Casi te aproximas con %2d, pero el número debe ser más pequeño, ¡inténtalo de nuevo!: ", turnos, numero);
+                } else if (numero < numRandom) {
+                    System.out.printf("Turno%2d: Mmm... %2d no es, pero andas cerca, ¡inténtalo con un número más grande!: ", turnos, numero);
+                }
+                turnos++;
+            }while(numero!=numRandom);
+        System.out.printf("¡CORRECTO! %2d era el número que pensaba! Turnos necesarios: %2d", numRandom, turnos-1);
     }
 }
+
+
 

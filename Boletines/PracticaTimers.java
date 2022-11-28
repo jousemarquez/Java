@@ -163,7 +163,7 @@ public class PracticaTimers {
                             for (int k = minutos; k >= 0; k--) {
                                 for (int l = segundos; l >= 0; l--) {
                                     System.out.printf("\r%02d:%02d:%02d:%02d", i, j, k, l);
-                                    Thread.sleep(500);
+                                    Thread.sleep(1000);
                                 }
                                 segundos = 59;
                             }

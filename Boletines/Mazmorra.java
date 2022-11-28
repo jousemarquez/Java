@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import static javafx.application.Platform.exit;
-
 public class Mazmorra {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
