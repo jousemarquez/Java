@@ -6,19 +6,29 @@ public class MazmorraDeTimmy {
         boolean fin = false; // Boolean para indicar que acaba el juego
         int posicionX = 1; //Posición X donde está Timmy
         int posicionY = 1; //Posición Y donde está Timmy
-
+        String d = "\uD83C\uDFC3";
+        String f = "\uD83D\uDD25";
+        String t = "\uD83C\uDFC3";
+        String m = "\uD83C\uDFC1";
+        String e = "\uD83E\uDDF1";
+        System.out.println("╔═══════════════════════════╗");
+        System.out.println("║   ¡CORRE TIMMY, CORRE!    ║");
+        System.out.println("║     UN SOLO JUGADOR    ╔══╩═╗");
+        System.out.println("║     by Jouse Márquez   ║ "+d+" ║");
+        System.out.println("╚════════════════════════╩════╝");
+        System.out.println("Me llamo Timmy y quiero llegar a la meta, ¿me ayudas?");
         do {
             //Impresión del perímetro
             for (int i = 0; i < 20; i++) { // i controla las filas de la matriz
                 for (int j = 0; j < 20; j++) { // j controla las columnas de la matriz
                     if (i == 0 || j == 0 || i == 19 || j == 19) {
-                        System.out.print("* ");
+                        System.out.print(f+ " ");
                     } else if (i == posicionY && j == posicionX) {
-                        System.out.print("T ");
+                        System.out.print(t+ " ");
                     } else if (i == 18 && j == 18) {
-                        System.out.print("H ");
+                        System.out.print(m+ " ");
                     } else {
-                        System.out.print("  ");
+                        System.out.print(e+ " ");
                     }
                 }
                 System.out.println();
