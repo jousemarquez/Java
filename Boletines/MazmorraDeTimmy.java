@@ -3,9 +3,7 @@ import java.util.Scanner;
 public class MazmorraDeTimmy {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        boolean jugar = false; // Boolean para preguntar si se quiere jugar
         boolean fin = false; // Boolean para indicar que acaba el juego
-        boolean vivo = true; // Boolean para indicar que Timmy está vivo
         int posicionX = 1; //Posición X donde está Timmy
         int posicionY = 1; //Posición Y donde está Timmy
 
@@ -25,39 +23,42 @@ public class MazmorraDeTimmy {
                 }
                 System.out.println();
             }
-            System.out.println("Siguiente movimiento (N = Norte, E = Este, S = Sur, O = Oeste. STOP si desea " +
-                    "finalizar el juego): ");
-            String posicion = sc.nextLine();
-            switch (posicion) {
-                case "N":
-                    posicionY--;
-                    break;
-                case "S":
-                    posicionY++;
-                    break;
-                case "E":
-                    posicionX++;
-                    break;
-                case "STOP": // Ya que no podemos usar equals, lo meto así a lo bruto.
-                case "stop":
-                case "Stop":
-                    fin = true;
-                    vivo = true;
-                    break;
-                default:
-                    posicionX--;
-                    break;
+            if (!fin) {
+                System.out.println("Siguiente movimiento (N = Norte, E = Este, S = Sur, O = Oeste. STOP si desea " +
+                        "finalizar el juego): ");
+                String posicion = sc.nextLine();
+                switch (posicion) {
+                    case "N":
+                    case "n":
+                        posicionY--;
+                        break;
+                    case "S":
+                    case "s":
+                        posicionY++;
+                        break;
+                    case "E":
+                    case "e":
+                        posicionX++;
+                        break;
+                    case "STOP": // Ya que no podemos usar equals, lo meto así a lo bruto.
+                    case "stop":
+                    case "Stop":
+                        fin = true;
+                        break;
+                    default:
+                        posicionX--;
+                        break;
+                }
             }
             if (posicionX == 0 || posicionY == 0 || posicionX == 19 || posicionY == 19){
+                System.out.println("¡Has perdido a Timmy! ¡Pobre Timmy!");
                 fin = true;
             } else if (posicionX == 18 && posicionY == 18) {
                 System.out.println("¡Has ganado!");
+                fin = true;
             }
-        }while (!fin);
-        if (vivo){
-            System.out.println("Se ha parado el juego. Timmy YA no es tu amigo.");
-        } else {
-            System.out.println("¡Has perdido a Timmy! ¡Pobre Timmy!");
-        }
+        } while (!fin);
+            System.out.println("El juego ha finalizado.");
     }
 }
+
