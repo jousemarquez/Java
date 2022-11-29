@@ -1,5 +1,5 @@
 public class CadenaCaracteres {
-    public static void main (String[]arg){
+    public static void main (String[]arg) throws InterruptedException{
         // Numerosos lenguajes de programación implementan una función printf (print formatted),
         // para mostrar una cadena con formato. Esta, originaria del lenguaje de programación C,
         // tiene un prototipo similar al siguiente:
@@ -24,5 +24,10 @@ public class CadenaCaracteres {
         int horas=3, minutos=5, segundos=4;
         System.out.printf("%02d:%02d:%02d",horas,minutos,segundos); // Imprimir en formato MM:SS
         System.out.printf("%.1f",peso); // Imprimir con 1 decimal. Se configura indicando %.1f.
+        System.out.println("hola\thola"); // Tabulación entre caracteres.
+        System.out.println(" ' "); // Imprimir comilla simple.
+        System.out.println(" \" "); // Cuando se quiera imprimir una comilla doble.
+        System.out.println("\\"); // Imprimir un Slash
+        System.out.println("%34");
     }
 }
