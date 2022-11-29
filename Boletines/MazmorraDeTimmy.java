@@ -69,7 +69,7 @@ public class MazmorraDeTimmy {
             }
         } while (!fin);
         System.out.println("╔════════════════════════╗");
-        System.out.println("║     Juego finalizado   ║");
+        System.out.println("║    Juego finalizado    ║");
         System.out.println("╚════════════════════════╝");
     }
 }
