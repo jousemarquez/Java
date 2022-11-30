@@ -11,12 +11,13 @@ public class MazmorraDeTimmy {
         String t = "\uD83C\uDFC3";
         String m = "\uD83C\uDFC1";
         String e = "\uD83E\uDDF1";
+        String c = "\uD83D\uDC80";
         System.out.println("╔═══════════════════════════╗");
         System.out.println("║   ¡CORRE TIMMY, CORRE!    ║");
         System.out.println("║     UN SOLO JUGADOR    ╔══╩═╗");
         System.out.println("║     by Jouse Márquez   ║ "+d+" ║");
         System.out.println("╚════════════════════════╩════╝");
-        System.out.println("Me llamo Timmy y quiero llegar a la meta, ¿me ayudas?");
+        System.out.println("Me llamo Timmy y quiero llegar a la meta, ¿me ayudas?\n");
         do {
             //Impresión del perímetro
             for (int i = 0; i < 20; i++) { // i controla las filas de la matriz
@@ -33,6 +34,7 @@ public class MazmorraDeTimmy {
                 }
                 System.out.println();
             }
+            System.out.println();
             if (!fin) {
                 System.out.println("Siguiente movimiento (N = Norte, E = Este, S = Sur, O = Oeste. STOP si desea " +
                         "finalizar el juego): ");
@@ -61,10 +63,15 @@ public class MazmorraDeTimmy {
                 }
             }
             if (posicionX == 0 || posicionY == 0 || posicionX == 19 || posicionY == 19){
-                System.out.println("¡Has perdido a Timmy! ¡Pobre Timmy!");
+                System.out.println("╔════════════════════════╗");
+                System.out.println("║  ¡Has perdido a Timmy! ║");
+                System.out.println("║    ¡Pobre Timmy!  "+c+"   ║");
+                System.out.println("╚════════════════════════╝");
                 fin = true;
             } else if (posicionX == 18 && posicionY == 18) {
-                System.out.println("¡Has ganado!");
+                System.out.println("╔════════════════════════╗");
+                System.out.println("║      ¡Has GANADO!      ║");
+                System.out.println("╚════════════════════════╝");
                 fin = true;
             }
         } while (!fin);
