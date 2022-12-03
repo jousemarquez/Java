@@ -16,7 +16,8 @@ public class CadenaCaracteres {
         System.out.println("El usuario tiene" +edad+ "años y" +altura+ "metros de altura."); // No optimizado
         // Para imprimir con anchura determinada, se sigue la siguiente fórmula:
         // printf("%[#_de_dígitos_a_la_derecha_del_punto].[#_de_dígitos_a_la_izquierda_del_punto]d")
-        System.out.printf("El usuario tiene %d años y %1.2f m de altura, peso %3.2f kg y vivo en la %s\n",edad,altura,peso,domicilio); // Optimizado
+        System.out.printf("El usuario tiene %d años y %1.2f m de altura, peso %3.2f kg y vivo en la %s\n"
+                ,edad,altura,peso,domicilio); // Optimizado
         System.out.printf("%02d\n",3); // Imprimimos 3 con anchura 2, rellenado con ceros.
         System.out.printf("%05d\n",3); // Imprimimos 3 con anchura 5, rellenado con ceros.
         System.out.printf("%05d\n",30000000);

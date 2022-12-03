@@ -7,7 +7,8 @@ public class Simulacro {
         System.out.println("Ejercicio 1:");
         int genero;
         int clase;
-        System.out.println("Bienvenido/a a Dragones y Vedrunas. Aventurero/a, primero debes elegir género para comenzar la aventura (1 = Mujer, 2 = Hombre): ");
+        System.out.println("Bienvenido/a a Dragones y Vedrunas. Aventurero/a, primero debes elegir género" +
+                "para comenzar la aventura (1 = Mujer, 2 = Hombre): ");
         genero = sc.nextInt();
 
         switch (genero) {

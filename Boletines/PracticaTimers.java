@@ -149,8 +149,8 @@ public class PracticaTimers {
                     do {
                         System.out.print("\r" + "Introduce los minutos entre 0 y 59: ");
                         minutos = sc.nextInt();
-                    } while (minutos < 0 || minutos > 59);// Cuando el número está dentro de los valores, se rompe el bucle
-                    // y termina de ejecutarlo.
+                    } while (minutos < 0 || minutos > 59);// Cuando el número está dentro de los valores,
+                    // se rompe el bucle y termina de ejecutarlo.
 
                     do {
                         System.out.print("Introduce los segundos entre 0 y 59: ");
