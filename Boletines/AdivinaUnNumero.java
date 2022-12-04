@@ -26,7 +26,7 @@ public class AdivinaUnNumero {
                             "grande!: ", turnos, numero);
                 }
                 turnos++;
-            }while(numero!=numRandom);
+            }while (numero!=numRandom);
         System.out.printf("¡CORRECTO! %2d era el número que pensaba! Turnos necesarios: %2d", numRandom, turnos-1);
     }
 }

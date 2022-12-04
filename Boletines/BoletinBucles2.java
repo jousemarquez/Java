@@ -556,6 +556,6 @@ public class BoletinBucles2 {
                     System.out.println("Número incorrecto. Vuelve a introducirlo.");
                     break;
             }
-        } while(n < 0 || n <= 26);
+        } while (n < 0 || n <= 26);
     }
 }

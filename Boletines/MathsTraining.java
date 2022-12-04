@@ -1,42 +1,153 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class MathsTraining {
     public static void main (String [] arg){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Desarrollar un juego que ayude a mejorar el cálculo mental de las operaciones básicas\n" +
-                "(suma, resta, multiplicación, división, y resto de la división).\n" +
-                "El juego comenzará con un mensaje de bienvenida por pantalla y la pregunta de si el\n" +
-                "usuario quiere jugar al juego. En caso afirmativo, se procede al juego, en caso negativo, se\n" +
-                "muestra por pantalla un mensaje de finalización, así como el récord de operaciones\n" +
-                "seguidas acertadas y en cuanto tiempo se consiguió dicho récord (Si no se ha jugado\n" +
-                "ninguna vez desde que ejecutamos el programa, estos datos valdrán 0).\n" +
-                "El juego se iniciará mientras que la respuesta del usuario a la pregunta de si quiere jugar\n" +
-                "sea SI (o alguna de sus variantes si, Si, sI). Una vez se inicie, mostraremos por pantalla un\n" +
-                "mensaje que marque el comienzo (por ejemplo: Ready, Steady... GO). En este punto, el\n" +
-                "usuario deberá empezar a contar las operaciones y el tiempo. Acto seguido, el programa\n" +
-                "generará 2 números enteros aleatorios entre 0 y 100 (que corresponden a las variables\n" +
-                "numéricas de la operación) y un número aleatorio entre 0 y 4 el cual nos indicará la\n" +
-                "operación a realizar entre las dos variables numéricas. A continuación, el juego preguntará\n" +
-                "por pantalla al usuario por el resultado de ésta operación. Si el resultado es correcto,\n" +
-                "aumentaremos en uno el número de aciertos y mostraremos un mensaje por pantalla para\n" +
-                "que el usuario sepa que ha introducido el resultado correcto y se volverá a ejecutar desde la\n" +
-                "instrucción de generar números enteros aleatorios. En caso contrario, dejaremos de contar\n" +
-                "el tiempo y mostraremos un mensaje de Game Over, así como la puntuación y el tiempo\n" +
-                "que has tardado hasta el fallo y dejaremos de generar cifras aleatorias.\n" +
-                "Una vez que hemos fallado, el juego comparará tu puntuación con el récord. Si la\n" +
-                "puntuación es mayor que el récord, ésta pasará a ser el nuevo récord tanto de puntuación\n" +
-                "como de tiempo. Si son iguales, nos quedaremos con el récord de tiempo que sea menor.\n" +
-                "Mostramos por pantalla el récord actual de la sesión y el tiempo que se tardó en conseguir\n" +
-                "dicho récord y acto seguido volvemos a preguntar al usuario si quiere seguir jugando o no.");
+        String d = "\uD83E\uDDDE";
+        String c = "\uD83D\uDC80";
+        String start;
+        long timeRecord = 0, time;
+        long startTime = 0, endTime = 0;
+        int hitRecord = 0, hits, operations, result, num, num2;
+        System.out.println("╔═══════════════════════════╗");
+        System.out.println("║      MATHS TRAINING       ║");
+        System.out.println("║      SINGLE PLAYER     ╔══╩═╗");
+        System.out.println("║     by Jouse Márquez   ║ "+d+" ║");
+        System.out.println("╚════════════════════════╩════╝");
+        System.out.println("╔═══════════════════════════╗");
+        System.out.println("║    Do you want to play?   ║");
+        System.out.println("║          (Yes/No)         ║");
+        System.out.println("╚═══════════════════════════╝");
+        System.out.println("Answer: ");
+        start = sc.next();
 
-        boolean jugar;
-        float record = 0.0f;
-        System.out.println("Bienvenido a Maths Training, ¿quiéres jugar? (Si/No): ");
-        jugar = sc.next().equalsIgnoreCase("si");
-        if (!jugar){
-            System.out.println("Programa finalizado. Tu récord es: "+ record + "puntos.");
-        } else {
-            System.out.println("Prepárate, vas a jugar a lo bestia.");
+        while (start.equalsIgnoreCase ("Yes")){
+            startTime = System.nanoTime();
+            hits = 0;
+            boolean checker = true;
+            System.out.println("╔═══════════════╗");
+            System.out.println("║     READY,    ║");
+            System.out.println("║ STEADY, GO!!  ║");
+            System.out.println("╚═══════════════╝");
+
+            while (checker) {
+
+                operations = (int) (Math.random() * 4);
+                num = (int) (Math.random() * 101);
+                num2 = (int) (Math.random() * 101);
+
+                switch (operations) {
+                    case 0:
+                        System.out.println("╔═══════════════════╗");
+                        System.out.println("║    CHALLENGE #1   ║");
+                        System.out.println("║   SUM OPERATION   ║");
+                        System.out.println("╚═══════════════════╝");
+                        System.out.print(num + " + " + num2+"= ");
+                        result = sc.nextInt();
+
+                        if ((num + num2) == result) {
+                            hits++;
+                            System.out.println("RIGHT!");
+                        } else {
+                            endTime = System.nanoTime();
+                            checker = false;
+                        }
+                        break;
+                    case 1:
+                        System.out.println("╔═══════════════════════╗");
+                        System.out.println("║      CHALLENGE #2     ║");
+                        System.out.println("║ SUBTRACTION OPERATION ║");
+                        System.out.println("╚═══════════════════════╝");
+                        System.out.print(num + " - " + num2+"= ");
+                        result = sc.nextInt();
+
+                        if ((num - num2) == result) {
+                            hits++;
+                            System.out.println("RIGHT!");
+                        }else{
+                            endTime = System.nanoTime();
+                            checker = false;
+                        }
+                        break;
+                    case 2:
+                        System.out.println("╔══════════════════════════╗");
+                        System.out.println("║       CHALLENGE #3       ║");
+                        System.out.println("║ MULTIPLICATION OPERATION ║");
+                        System.out.println("╚══════════════════════════╝");
+                        System.out.print(num + " * " + num2+"= ");
+                        result = sc.nextInt();
+
+                        if ((num * num2) == result) {
+                            hits++;
+                            System.out.println("RIGHT!");
+                        }else{
+                            endTime = System.nanoTime();
+                            checker = false;
+                        }
+                        break;
+                    case 3:
+                        System.out.println("╔═══════════════════════╗");
+                        System.out.println("║      CHALLENGE #4     ║");
+                        System.out.println("║  DIVISION OPERATION   ║");
+                        System.out.println("╚═══════════════════════╝");
+
+                        if(num2==0){
+                            num2++;
+                        }
+                        System.out.print(num + " % " + num2+"= ");
+                        result = sc.nextInt();
+
+                        if ((num / num2) == result) {
+                            hits++;
+                            System.out.println("RIGHT!");
+                        } else {
+                            endTime = System.nanoTime();
+                            checker = false;
+                        }
+                        break;
+                }
+            }
+            time = (endTime - startTime)/ 1000000000;
+            /*Fin de partida perdida. Muestra la puntuación del jugador y la duración en segundos.*/
+            System.out.println("╔═══════════════════════════╗");
+            System.out.println("║       GAME OVER"+c+"!        ║");
+            System.out.println("║ Good game, here your hits!║");
+            System.out.println("╚═══════════════════════════╝");
+            System.out.println("╔═══════════╗");
+            System.out.println("║   GAME    ║ "+hits+"Hits.");
+            System.out.println("║   SCORE   ║ Duration: "+time+" seconds.");
+            System.out.println("╚═══════════╝");
+            if (hits > hitRecord){
+                if (time > timeRecord){
+                    hits = hitRecord;
+                    time = timeRecord;
+                    // Fin de partida batiendo un récord nuevo.
+                    System.out.println("╔═══════════════════════════╗");
+                    System.out.println("║      CONGRATULATIONS!     ║");
+                    System.out.println("║ You've SMASH the ranking! ║");
+                    System.out.println("╚═══════════════════════════╝");
+                    System.out.println("╔═══════════╗");
+                    System.out.println("║   GAME    ║ "+hitRecord+" Hits.");
+                    System.out.println("║   RECORD  ║ Duration: "+timeRecord+" seconds.");
+                    System.out.println("╚═══════════╝");
+                }
+            }
+            // Pregunta al jugador si quiere volver a jugar una partida.
+            System.out.println("╔═══════════════════════════════════╗");
+            System.out.println("║ Do you want to play a next round? ║");
+            System.out.println("║             (Yes/No)              ║");
+            System.out.println("╚═══════════════════════════════════╝");
+            System.out.println("Answer: ");
+            start = sc.next();
         }
+        // Partida finalizada SIN batir un nuevo récord.
+        System.out.println("╔═════════════════════════════════╗");
+        System.out.println("║        THANKS FOR PLAYING!      ║");
+        System.out.println("╚═════════════════════════════════╝");
+        System.out.println("╔═══════════╗");
+        System.out.println("║   GAME    ║ "+hitRecord+" Hits.");
+        System.out.println("║   RECORD  ║ Duration: "+timeRecord+" seconds");
+        System.out.println("╚═══════════╝");
     }
 }

@@ -4,7 +4,7 @@ public class Bucles {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        /* Bucles while() */
+        /* Bucles while () */
         System.out.println("Ingrese un número: ");
         int veces = sc.nextInt();
         int contador = 0;

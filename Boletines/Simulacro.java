@@ -103,11 +103,23 @@ public class Simulacro {
         String reset = "\033[0m";
         System.out.println("Introduce la altura de la bandera: ");
         int altura = sc.nextInt();
-        for (int i = 0; i < altura*2; i++) {
-            for (int j = 0; j < i; j++) {
-                if (i==0 || j==0) {
+        for (int i=0;i<altura;i++){
+            for(int j=0;j<i+1;j++){
+                if (j==i ||j==0){
                     System.out.print(rojo + " * " + reset);
-                } else {
+
+                } else if (j!=i){
+                    System.out.print(amarillo + " * " + reset);
+                }
+
+            }
+            System.out.println();
+        }
+        for (int i=altura;i>=0;i--){
+            for(int j=0;j<i+1;j++){
+                if (j==i ||j==0){
+                    System.out.print(rojo + " * " + reset);
+                } else if (j!=i){
                     System.out.print(amarillo + " * " + reset);
                 }
             }
