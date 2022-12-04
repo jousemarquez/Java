@@ -136,6 +136,6 @@ public class Simulacro {
         System.out.println("Te has olvidado de los ejercicios 1 y 2?");
         boolean b4 = sc.nextBoolean();
 
-        System.out.println("\nVas por buen camino: " + (b1&&!b2 || b3&&!b4));
+        System.out.println("\n¿Vas por buen camino: " + (b1&&!b2 || b3&&!b4));
     }
 }

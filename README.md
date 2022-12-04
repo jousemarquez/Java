@@ -12,7 +12,7 @@ Soy estudiante de Desarrollo Web y acabo de comenzar mi carrera ⛏️ código d
 
 He estado trabajando los últimos 10 años en la producción de contenidos como redactor, editor web, blogger, gestor de cuentas en redes sociales, gestión de proyectos y creador de contenido audiovisual para Youtube y Twitch. He tenido la suerte de trabajar con clientes tanto nacionales como internacionales (Arabia Saudí, Qatar, Omán, Rusia, entre otros) donde el inglés ha sido mi principal idioma de comunicación a lo largo de mi carrera.
 
-Autodidacta nato. Devoro contenido que me ayuda a potenciar mi perfil profesional, por lo que siempre aprendo técnicas o mecánicas nuevas para mejorar mi trabajo.
+Autodidacta nato. Devoro contenido que me ayuda a potenciar mi perfil profesional, por lo que siempre aprendo técnicas o mecánicas nue¿Vas para mejorar mi trabajo.
 
 ## Tecnologías:
 
