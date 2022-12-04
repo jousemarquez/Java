@@ -92,12 +92,12 @@ public class Rgbooleans {
         System.out.println("¿Vas a usar MEDIO bote azul? (True/False)");
         medioAzul = sc.nextBoolean();
 
-        System.out.println("¿Se va a pintar Verde o Azul?"+" "+(!rojo & verde & azul || !medioRojo & medioVerde & medioAzul));
-        /*SOLO PRIMER VALOR*/
-        System.out.println("¿Se va a pintar Verde o Negro?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
-        System.out.println("¿Se va a pintar Verde o Amarillo?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
-        System.out.println("¿Se va a pintar Verde o Fucsia?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
+        System.out.println("¿Se va a pintar Verde o Azul?"+" "+(!rojo & verde & azul || !medioRojo & !medioVerde & !medioAzul));
+        System.out.println("¿Se va a pintar Verde o Negro?"+" "+(!rojo & verde & !azul || !medioRojo & !medioVerde & !medioAzul));
+        System.out.println("¿Se va a pintar Verde o Amarillo?"+" "+(rojo & verde & !azul || !medioRojo & !medioVerde & !medioAzul));
+        System.out.println("¿Se va a pintar Verde o Fucsia?"+" "+(rojo & verde & azul || !medioRojo & !medioVerde & !medioAzul));
         System.out.println("¿Se va a pintar Verde o Celeste?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
+        /*HASTA AQUÍ*/
         System.out.println("¿Se va a pintar Verde o Blanco?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
         System.out.println("¿Se va a pintar Verde o Naranja?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
         System.out.println("¿Se va a pintar Verde o Verde Lima?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
@@ -112,8 +112,6 @@ public class Rgbooleans {
         System.out.println("¿Se va a pintar Verde o Celeste Oscuro?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
         System.out.println("¿Se va a pintar Verde o Morado Oscuro?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
         System.out.println("¿Se va a pintar Verde o Gris?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
-
-        /*ME QUEDÉ AQUÍ*/
         System.out.println("¿Se va a pintar Verde o ( 127 , 255 , 127 )?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
         System.out.println("¿Se va a pintar Verde o ( 127 , 255 , 255 )?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
         System.out.println("¿Se va a pintar Verde o ( 255 , 127 , 127 )?"+" "+(!rojo & verde & !azul || !medioRojo & medioVerde & medioAzul));
@@ -643,9 +641,5 @@ public class Rgbooleans {
         System.out.println("¿Se va a pintar ( 127, 127 , 255 ) o Oro?"+" "+(!rojo & verde & azul || !medioRojo & medioVerde & medioAzul));
         System.out.println("¿Se va a pintar ( 127, 127 , 255 ) o Celeste Oscuro?"+" "+(!rojo & verde & azul || !medioRojo & medioVerde & medioAzul));
         System.out.println("¿Se va a pintar ( 127, 127 , 255 ) o Morado Oscuro?"+" "+(!rojo & verde & azul || !medioRojo & medioVerde & medioAzul));
-
-        /*
-
-        */
     }
 }
