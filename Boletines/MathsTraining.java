@@ -7,9 +7,8 @@ public class MathsTraining {
         String d = "\uD83E\uDDDE";
         String c = "\uD83D\uDC80";
         String start;
-        long timeRecord = 0, time;
-        long startTime = 0, endTime = 0;
-        int hitRecord = 0, hits, operations, result, num, num2;
+        long timeRecord = 0, startTime = 0, endTime = 0, time;
+        int hitRecord = 0, score = 0, operations, result, num, num2;
         System.out.println("╔═══════════════════════════╗");
         System.out.println("║      MATHS TRAINING       ║");
         System.out.println("║      SINGLE PLAYER     ╔══╩═╗");
@@ -24,7 +23,7 @@ public class MathsTraining {
 
         while (start.equalsIgnoreCase ("Yes")){
             startTime = System.nanoTime();
-            hits = 0;
+            score = 0;
             boolean checker = true;
             System.out.println("╔═══════════════╗");
             System.out.println("║     READY,    ║");
@@ -43,11 +42,11 @@ public class MathsTraining {
                         System.out.println("║    CHALLENGE #1   ║");
                         System.out.println("║   SUM OPERATION   ║");
                         System.out.println("╚═══════════════════╝");
-                        System.out.print(num + " + " + num2+"= ");
+                        System.out.print(num + " + " + num2+" = ");
                         result = sc.nextInt();
 
                         if ((num + num2) == result) {
-                            hits++;
+                            score++;
                             System.out.println("RIGHT!");
                         } else {
                             endTime = System.nanoTime();
@@ -59,13 +58,13 @@ public class MathsTraining {
                         System.out.println("║      CHALLENGE #2     ║");
                         System.out.println("║ SUBTRACTION OPERATION ║");
                         System.out.println("╚═══════════════════════╝");
-                        System.out.print(num + " - " + num2+"= ");
+                        System.out.print(num + " - " + num2+" = ");
                         result = sc.nextInt();
 
                         if ((num - num2) == result) {
-                            hits++;
+                            score++;
                             System.out.println("RIGHT!");
-                        }else{
+                        } else {
                             endTime = System.nanoTime();
                             checker = false;
                         }
@@ -75,13 +74,13 @@ public class MathsTraining {
                         System.out.println("║       CHALLENGE #3       ║");
                         System.out.println("║ MULTIPLICATION OPERATION ║");
                         System.out.println("╚══════════════════════════╝");
-                        System.out.print(num + " * " + num2+"= ");
+                        System.out.print(num + " * " + num2+" = ");
                         result = sc.nextInt();
 
                         if ((num * num2) == result) {
-                            hits++;
+                            score++;
                             System.out.println("RIGHT!");
-                        }else{
+                        } else {
                             endTime = System.nanoTime();
                             checker = false;
                         }
@@ -92,14 +91,14 @@ public class MathsTraining {
                         System.out.println("║  DIVISION OPERATION   ║");
                         System.out.println("╚═══════════════════════╝");
 
-                        if(num2==0){
+                        if (num2 == 0){
                             num2++;
                         }
-                        System.out.print(num + " % " + num2+"= ");
+                        System.out.print(num + " % " + num2+" = ");
                         result = sc.nextInt();
 
                         if ((num / num2) == result) {
-                            hits++;
+                            score++;
                             System.out.println("RIGHT!");
                         } else {
                             endTime = System.nanoTime();
@@ -115,12 +114,12 @@ public class MathsTraining {
             System.out.println("║ Good game, here your hits!║");
             System.out.println("╚═══════════════════════════╝");
             System.out.println("╔═══════════╗");
-            System.out.println("║   GAME    ║ "+hits+"Hits.");
+            System.out.println("║   GAME    ║ "+score+" Hits.");
             System.out.println("║   SCORE   ║ Duration: "+time+" seconds.");
             System.out.println("╚═══════════╝");
-            if (hits > hitRecord){
+            if (score > hitRecord){
                 if (time > timeRecord){
-                    hits = hitRecord;
+                    score = hitRecord;
                     time = timeRecord;
                     // Fin de partida batiendo un récord nuevo.
                     System.out.println("╔═══════════════════════════╗");
@@ -129,7 +128,7 @@ public class MathsTraining {
                     System.out.println("╚═══════════════════════════╝");
                     System.out.println("╔═══════════╗");
                     System.out.println("║   GAME    ║ "+hitRecord+" Hits.");
-                    System.out.println("║   RECORD  ║ Duration: "+timeRecord+" seconds.");
+                    System.out.println("║   RECORD  ║ Duration: "+timeRecord+ " seconds.");
                     System.out.println("╚═══════════╝");
                 }
             }
