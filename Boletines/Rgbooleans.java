@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Rgbooleans {
     public static void main(String[] arg) {
 
-        /*Para la realización de este ejercicio se ha comprobado los códigos de color RGB en la siguiente página web:
+        /* Para la realización de este ejercicio se ha comprobado los códigos de color RGB en la siguiente página web:
          * https://www.color-blindness.com/color-name-hue/ realizando correcciones en el ejercicio.*/
 
         Scanner sc = new Scanner(System.in);
