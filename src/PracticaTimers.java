@@ -213,7 +213,7 @@ public class PracticaTimers {
                     System.out.println("Número incorrecto.");
                     break;
             }
-            System.out.println("\n¿Quieres hacer otro ejercicio (Si/No)?");
+            System.out.println("\n¿Quieres hacer otro ejercicio (Si/No)?: ");
                 b = sc.next().equalsIgnoreCase("si");
         } while (b);
     }
