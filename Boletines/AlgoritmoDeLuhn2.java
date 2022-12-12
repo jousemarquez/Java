@@ -17,30 +17,29 @@ public class AlgoritmoDeLuhn2 {
         } else if (tarjeta == 6011) {
             System.out.println("La tarjeta es Discover");
         }
+
         String numero = sc.nextLine();
         System.out.println("Ahora introduzca su tarjeta hasta el penultimo numero sin espacios ni guiones");
         numero = sc.nextLine();
-        System.out.println(luhnTest(numero));
-    }
-
-    public static boolean luhnTest(String numero) {
 
         int s1 = 0, s2 = 0;
         String reversa = new StringBuffer(numero).reverse().toString();
         for (int i = 0; i < reversa.length(); i++) {
             int digito = Character.digit(reversa.charAt(i), 10);
-            if (i % 2 == 0) {//this is for odd digits, they are 1-indexed in the algorithm
+            if (i % 2 == 0) {
                 s1 += digito;
-            } else {//add 2 * digit for 0-4, add 2 * digit - 9 for 5-9
+            } else {
                 s2 += 2 * digito;
                 if (digito >= 5) {
                     s2 -= 9;
                 }
             }
         }
-        System.out.println("La tarjeta es:");
-        return (s1 + s2) % 10 == 0;
 
-
+        if ((s1 + s2) % 10 == 0) {
+            System.out.println("La tarjeta es válida");
+        } else {
+            System.out.println("La tarjeta no es válida");
+        }
     }
 }
