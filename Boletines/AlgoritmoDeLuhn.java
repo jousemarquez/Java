@@ -2,84 +2,86 @@ import java.util.Scanner;
 
 public class AlgoritmoDeLuhn {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         System.out.println("╔═════════════════════════════════╗");
         System.out.println("║        ALGORITMO DE LUHN        ║");
         System.out.println("╚═════════════════════════════════╝");
         System.out.println("El objetivo de esta práctica es estudiar un algoritmo para validar los números de\n" +
                 "algunas tarjetas de crédito que consiste en aplicar los siguientes pasos a los dígitos del número\n" +
-                "de la tarjeta");/*:
+                "de la tarjeta");
 
-        - Se invierten los dígitos del número.
+        /*- Se invierten los dígitos del número.
         - Se duplican los dígitos que se encuentran en la posición par (CUIDADO).
         - Se suman los dígitos de cada número.
         - Una vez tengamos la suma total, si el resto de dividir dicho número entre 10 es 0, el
-        número es válido. Es inválido en caso contrario.*/
+        número es válido. Es inválido en caso contrario.
 
-        // Visa: primer número 4
-        // Mastercard: primer número 5
-        // American Express: primer número 3
-        String marca;
-        int contador = 1;
-        long tarjeta, invertido = 0, temp, sum = 0;
+        Visa: primer número 4
+        Mastercard: primer número 5
+        American Express: primer número 3*/
 
+        // Declaración de variables
+        int contador = 0;
+        long tarjeta, temporal, suma = 0, inverso = 0;
 
-        // Introducir el número de tu tarjeta para saber si está en rango.
-        do {
-            System.out.println("╔════════════════════════════════════╗");
-            System.out.println("║ Introduce el número de tu tarjeta: ║");
-            System.out.println("╚════════════════════════════════════╝");
-            Scanner sc = new Scanner(System.in);
-            tarjeta = sc.nextLong();
-        } while (tarjeta <= 0 || tarjeta > 9999999999999999L);
+        System.out.println("╔════════════════════════════════════╗");
+        System.out.println("║ Introduce el número de tu tarjeta: ║");
+        System.out.println("╚════════════════════════════════════╝");
 
-        // Conocer la marca de la tarjeta
-        if (tarjeta >= 510 && tarjeta <= 559) {
-            System.out.println("La tarjeta es Mastercard");
-        } else if (tarjeta >= 3000 && tarjeta <= 3059) {
-            System.out.println("La tarjeta es Diners Club");
-        } else if (tarjeta >= 3400 && tarjeta <= 3799) {
-            System.out.println("La tarjeta es American Express");
-        } else if (tarjeta >= 4000 && tarjeta <= 4999) {
-            System.out.println("La tarjeta es VISA");
-        } else if (tarjeta == 6011) {
-            System.out.println("La tarjeta es Discover");
-        }
+        tarjeta = sc.nextLong();
 
-        // Invertir el número de la tarjeta
-        while (tarjeta > 0) {
-            temp = tarjeta % 10;
-            invertido *= 10;
+        // Algoritmo para contar los dígitos del número
+
+        // Si tarjeta fuera 0 le sumo uno para que diese una cifra si fuese el caso.
+        if (tarjeta == 0)
+            contador++;
+        // Se descarta el número negativo con el método absoluto, se aplica logaritmo de 10 y se redondea para entero.
+        // Además se suma 1 porque los números menores de 10 su potencia es 0.
+        System.out.println("╔═══════════════════════════════╗");
+        System.out.println("║ El número tiene: " +(Math.floor(Math.log10(Math.abs(tarjeta)) + 1))+" cifras. ║");
+        System.out.println("╚═══════════════════════════════╝");
+
+        // Algoritmo para invertir los dígitos de la tarjeta
+
+        for (int i = 0; tarjeta > 0; i--) {
+            temporal = tarjeta % 10;
+            inverso *= 10;
+            inverso += temporal;
             tarjeta /= 10;
         }
-        System.out.println("╔════════════════════════════════════════════════════════════╗");
-        System.out.println("║ El número invertido es:" +invertido+" ║");
-        System.out.println("╚════════════════════════════════════════════════════════════╝");
 
-        // Se duplican los dígitos que se encuentren en posición par
-        while (invertido > 9) {
+        System.out.println("╔═════════════════════════════════════════╗");
+        System.out.println("║ El número invertido es:" +inverso+" ║");
+        System.out.println("╚═════════════════════════════════════════╝");
 
-            temp = (invertido % 10);
+        // Algoritmo para sumar los dígitos
 
-            if ((contador % 2) == 0) {
-                sum += temp;
+        for (int j = 1; inverso > 9; j++) {
+
+            temporal = (inverso % 10);
+
+            if ((j % 2) == 0) {
+                suma += temporal;
             } else {
-                temp *= 2;
+                temporal *= 2;
 
-                if (temp > 9) {
-                    sum += (temp % 10);
-                    temp /= 10;
-                    sum += temp;
-                } else {
-                    sum += temp;
+                if(temporal > 9){
+                    suma+=(temporal % 10);
+                    temporal /= 10;
+                    suma += temporal;
+                }else{
+                    suma += temporal;
                 }
             }
-            invertido /= 10;
-            contador++;
+            inverso /= 10;
         }
 
-        sum += invertido;
+        suma += inverso;
 
-        if ((sum % 10) == 0) {
+        // Comprobación final que revisa si la suma es divisible entre 10 es Luhn, en caso contrario no lo es.
+
+        if ((suma % 10) == 0) {
             System.out.println("╔═══════════════════════╗");
             System.out.println("║ Es un número de Luhn  ║");
             System.out.println("╚═══════════════════════╝");
