@@ -18,7 +18,6 @@ public class AlgoritmoDeLuhn {
         // Visa: primer número 4
         // Mastercard: primer número 5
         // American Express: primer número 3
-        String marca;
         int contador = 1;
         long tarjeta, invertido = 0, temp, sum = 0;
 
@@ -31,19 +30,6 @@ public class AlgoritmoDeLuhn {
             Scanner sc = new Scanner(System.in);
             tarjeta = sc.nextLong();
         } while (tarjeta <= 0 || tarjeta > 9999999999999999L);
-
-        // Conocer la marca de la tarjeta
-        if (tarjeta >= 510 && tarjeta <= 559) {
-            System.out.println("La tarjeta es Mastercard");
-        } else if (tarjeta >= 3000 && tarjeta <= 3059) {
-            System.out.println("La tarjeta es Diners Club");
-        } else if (tarjeta >= 3400 && tarjeta <= 3799) {
-            System.out.println("La tarjeta es American Express");
-        } else if (tarjeta >= 4000 && tarjeta <= 4999) {
-            System.out.println("La tarjeta es VISA");
-        } else if (tarjeta == 6011) {
-            System.out.println("La tarjeta es Discover");
-        }
 
         // Invertir el número de la tarjeta
         while (tarjeta > 0) {
