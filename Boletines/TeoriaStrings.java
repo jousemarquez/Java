@@ -118,7 +118,7 @@ public class TeoriaStrings {
         System.out.println((char) ('a' + 1));
 
         // Método concat()
-        String calle = "San Ignacio";
+        String calle = "Avenida de la Concordia";
         String calle2 = calle.concat(" De Dios nº5");
         System.out.println(calle);
         System.out.println(calle2);
