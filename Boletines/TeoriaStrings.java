@@ -93,7 +93,83 @@ public class TeoriaStrings {
         String pais = new String("España"); // Se asigna el valor a la cadena pais
         for (int i = 0; i < pais.length(); i++){ // Se establece como límite la longitud de la cadena
             System.out.println(pais.charAt(i)); // Se imprime en pantalla el caracter en la posición i.
+
+        // Substrings
+
+        String subcadena = "Jorge".substring(1,5); //Método formal de declarar un Substring.
+            System.out.println(subcadena);
+            System.out.println("Jorge".substring(1)); // Otro método para usar Substring dentro del print.
+            System.out.println("Jorge".substring(1, "Jorge".length())); // Otro método interesante porque devuelve como
+            // máximo la longitud de la cadena.
         }
+
+        // Crear una cadena mediante un literal de cadena
+        // Dividir la cadena en dos mitades e imprimir cada mitad en una línea. Debe usar el método substring y lenght.
+        String ejercicio = "Hola-mundo";
+        String sub1 = ejercicio.substring(0,ejercicio.length()/2);
+        System.out.println(sub1);
+        String sub2 = ejercicio.substring(ejercicio.length()/2);
+        System.out.println(sub2);
+
+        // Concatenación
+        System.out.println(sub1 + sub2);
+        System.out.println("Hola" + "Mundo" + 44); // Concatenación de strings con entero.
+        System.out.println("44" + 1); // Aquí está concatenando un string con un entero
+        System.out.println((char) ('a' + 1));
+
+        // Método concat()
+        String calle = "San Ignacio";
+        String calle2 = calle.concat(" De Dios nº5");
+        System.out.println(calle);
+        System.out.println(calle2);
+        calle += calle2; // Concatena y almacena, crea un nuevo objeto llamado calle. El anterior String se ha borrado de memoria
+        System.out.println(calle);
+        calle += (calle2 + 44); // Esta opción es posible y se recomienda poner paréntesis.
+
+        // Método indexOf()
+        String producto = "Coca cola, stock 2 stock";
+        System.out.println(producto.indexOf("stock")); // Se indica la cadena que se quiere buscar.
+        System.out.println(producto.indexOf("Stock")); // Ojo porque Java discrimina mayus y minus. Devuelve -1
+        System.out.println(producto.indexOf("stockage")); // No está incluida en la cadena, devuelve -1.
+        System.out.println(producto.indexOf(',')); // Puede buscar chars (recordar que se declaran con ' '
+        System.out.println(producto.indexOf('\t')); // También se puede buscar caracateres especiales.
+        System.out.println(producto.indexOf("stock", 16)); // Busca desde una posición.
+
+        // Ejercicio
+        // A partir de una cadena que contiene un espacio en blanco (y solo uno), usar indexOf o lastIndexOf para
+        // obtener el índice donde está el espacio. A partir de ese índice, dividir la cadena en dos partes distintas
+        // que no tengan espacio.
+
+        String galaxia = "Vía Láctea"; // Se define la cadena a estudiar
+        int posicion = galaxia.indexOf(' '); // Se declara un entero para definir dónde está el espacio
+        System.out.println("El espacio está en la posición: " +posicion); // Se imprime la posición
+        String substring1 = galaxia.substring(0,posicion); // Se realiza un substring desde el caracter 1 hasta el espacio.
+        System.out.println(substring1); // Se imprime
+        System.out.println("Longitud de la primera parte: " +substring1.length()); // Se imprime la longitud de la primera cadena
+        String substring2 = galaxia.substring(posicion + 1);
+        System.out.println(substring2);
+        System.out.println("Longitud de la segund parte: " +substring2.length());
+
+        // Método equals()
+        // Método con booleanos para igualar cadenas.
+        System.out.println("Jouse".equals("jouse")); // Imprimiría false
+        System.out.println("Jouse".equals("Jouse")); // Imprimiría true
+        System.out.println("Jouse".equalsIgnoreCase("jouse")); // Condición que ignora todos los casos.
+        // ADVERTENCIA: NO SE USA ESTA FORMA PARA IGUALAR CADENAS
+        System.out.println("Hola" == "Mundo"); // MAL. == solo vale para los tipos primitivos.
+
+        // Método compareTo()
+        // Compara dos strings, si la primera o la segunda son iguales. Si A < B = -1, A = B = 0, A > B = 1
+        System.out.println("jouse".compareTo("jouse")); // Devuelve 0
+        System.out.println("aaaaaa".compareTo("bbbbbb")); // Devuelve -1. La primera va antes por orden alfabético.
+        System.out.println("zzzzzz".compareTo("bbbbbb")); // Devuelve 1. La primera va antes por orden alfabético.
+
+
+
+
+
+
+
 
     }
 }
