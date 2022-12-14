@@ -14,16 +14,16 @@ public class TeoriaStrings {
 
         LITERALES DE CADENA (valor hardcodeado)
 
-        Ej. String nombre = “José Antonio”;
+        Ej. String nombre = "José Antonio";
 
         Una declaración int numero = 4; NO es un tipo objeto.
 
         - Son objetos de la clase String.
-        - Se definen por agrupar el texto entre comillas dobles. “Esta es una cadena literal”.
+        - Se definen por agrupar el texto entre comillas dobles. "Esta es una cadena literal".
         - No tiene que ser construido con new. Es obligatorio utilizarlo cuando se crea un nuevo objeto.
 
         Es más correcto usar:
-        String nombre = new String (“José Antonio”);
+        String nombre = new String ("José Antonio");
 
         - Pueden ser asignados a variables de cadena.
         - Se pueden pasar a métodos y constructores como parámetros.
@@ -164,12 +164,39 @@ public class TeoriaStrings {
         System.out.println("aaaaaa".compareTo("bbbbbb")); // Devuelve -1. La primera va antes por orden alfabético.
         System.out.println("zzzzzz".compareTo("bbbbbb")); // Devuelve 1. La primera va antes por orden alfabético.
 
+        int diff;
+        //negative differences
+        diff = "apple".compareTo("berry");//a before b
+        diff = "Zebra".compareTo("apple");//Z before a
+        diff = "dig".compareTo("dug");//i before u
+        diff = "dig".compareTo("digs");//dig is shorter
+
+        //zero differences
+        diff = "apple".compareTo("apple");//equal
+        diff = "dig".compareToIgnoreCase("DIG");//equal
+
+        //positive differences
+        diff = "berry".compareTo("apple");//b after a
+        diff = "apple".compareTo("Apple");//a after A
+        diff = "BIT".compareTo("BIG");//T after G
+        diff = "huge".compareTo("hug");//huge is longer
+
+        //Método trim() - Elimina los espacios que existan en la cadena.
+        String ejemploTrim = "     Hola Mundo     ";
+        ejemploTrim.trim();
+        System.out.println(ejemploTrim);
+
+        // Método replace() - Intercambia caracteres en la cadena.
+        String ejemploReplace = "Hola Mundo";
+        ejemploReplace.replace('a','o'); // Cambia la 'a' por 'o' -> Holo Mundo
+        System.out.println(ejemploReplace);
+
+        // Métodos toUpperCase() y toLowerCase() - Transforma la cadena en mayúsculas o minúsculas.
 
 
-
-
-
-
-
+        // Método toString() - Intercambia enteros por cadena.
+        int n = 1;
+        String ejemploToString = Integer.toString(n);
+        System.out.println(numero+1);
     }
 }
