@@ -192,11 +192,26 @@ public class TeoriaStrings {
         System.out.println(ejemploReplace);
 
         // Métodos toUpperCase() y toLowerCase() - Transforma la cadena en mayúsculas o minúsculas.
-
+        String ejemploMayus = new String("hola mundo");
+        System.out.println(ejemploMayus.toLowerCase());
+        String ejemploMinus = new String("HOLA MUNDO");
+        System.out.println(ejemploMinus.toUpperCase());
 
         // Método toString() - Intercambia enteros por cadena.
         int n = 1;
         String ejemploToString = Integer.toString(n);
         System.out.println(numero+1);
+
+        // Convertir String a Intero o Double
+        String numeroInt = new String("123"); // Convierte este tipo String
+        int numeroIntConvertida = Integer.parseInt(numeroInt); // Usando de la librería de Int .parseInt()
+        System.out.println(numeroIntConvertida);
+        String numeroDouble = new String("123.45"); // Lo mismo con Double
+        double numeroDoubleConvertido = Double.parseDouble(numeroDouble);
+        System.out.println(numeroDoubleConvertido);
+        String numeroFloat = new String("123.45f"); // Y con Float.
+        float numeroFloatConvertido = Float.parseFloat(numeroFloat);
+        System.out.println(numeroFloatConvertido);
+
     }
 }

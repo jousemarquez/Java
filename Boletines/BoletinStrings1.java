@@ -64,6 +64,7 @@ public class BoletinStrings1 {
                     ejercicio12();
                     break;
                 case "Z":
+                    System.out.println("Fin del programa.");
                     break;
                 default:
                 System.out.println("Gracias por usar la aplicación. Vuelva Pronto");
@@ -116,8 +117,16 @@ public class BoletinStrings1 {
     public void ejercicio4() {
         System.out.println("Del siguiente String “La lluvia en Sevilla es una maravilla” cuenta cuántas" +
                 "vocales hay en total (recorre el String con un bucle y charAt).");
+        char a, e, i, o, u;
+        int conteo = 0;
         String dicho = new String("La lluvia en Sevilla es una maravilla");
-
+        for (int vocal = 0; vocal < dicho.length(); vocal++){
+            if (dicho.charAt(vocal) == 'a' || dicho.charAt(vocal) == 'e' || dicho.charAt(vocal) == 'i' ||
+                    dicho.charAt(vocal) == 'o' || dicho.charAt(vocal) == 'u') {
+                conteo++;
+            }
+        }
+        System.out.printf("Hay un total de %d vocales\n", conteo);
     }
 
     public void ejercicio5() {
@@ -131,6 +140,15 @@ public class BoletinStrings1 {
                 "Ejemplo:\n" +
                 "Entrada: cad = \"Hola tu\"\n" +
                 "Salida: La cantidad de vocales es 3");
+        int contador = 0;
+        String cad = new String("Hola tu");
+        for (int vocal = 0; vocal < cad.length(); vocal++){
+            if (cad.charAt(vocal) == 'a' || cad.charAt(vocal) == 'e' || cad.charAt(vocal) == 'i' ||
+                    cad.charAt(vocal) == 'o' || cad.charAt(vocal) == 'u') {
+                contador++;
+            }
+        }
+        System.out.printf("La cantidad de vocales es %d\n", contador);
     }
 
     public void ejercicio7() {
@@ -138,6 +156,15 @@ public class BoletinStrings1 {
                 "Ejemplo:\n" +
                 "Entrada: \"casa blanca\"\n" +
                 "Salida: \"acnalb asac\"");
+        String casaBlanca = new String("casa blanca");
+        String invertida = new String("");
+        // Recorremos la original con un bucle for desde el final hasta el inicio
+        for (int indice = casaBlanca.length()-1; indice >= 0; indice-- ){
+            // Se van concatenando cada caracter en la nueva cadena
+            invertida += casaBlanca.charAt(indice);
+        }
+        System.out.printf("La cadena original es %s.", casaBlanca);
+        System.out.printf("La cadena invertida es %s.", invertida);
     }
 
     public void ejercicio8() {
@@ -147,6 +174,7 @@ public class BoletinStrings1 {
                 "Entrada: cad = \"casa blanca\", car = 'a'\n" +
                 "Salida: El carácter 'a' se repite 4 veces");
     }
+
 
     public void ejercicio9() {
         System.out.println("Lee un número por teclado y muestra por consola, el carácter al que pertenece" +
