@@ -100,7 +100,7 @@ public class BoletinStrings1 {
             System.out.println("Introducir la contraseña: ");
             String contraseña = sc.nextLine();
             checker = checkerContraseña.equals(contraseña);
-            if (checker == true) {
+            if (checker) {
                 System.out.println("La contraseña es correcta");
             } else {
                 intentos--;
@@ -117,7 +117,6 @@ public class BoletinStrings1 {
     public void ejercicio4() {
         System.out.println("Del siguiente String “La lluvia en Sevilla es una maravilla” cuenta cuántas" +
                 "vocales hay en total (recorre el String con un bucle y charAt).");
-        char a, e, i, o, u;
         int conteo = 0;
         String dicho = new String("La lluvia en Sevilla es una maravilla");
         for (int vocal = 0; vocal < dicho.length(); vocal++){
@@ -142,9 +141,13 @@ public class BoletinStrings1 {
                 "Salida: La cantidad de vocales es 3");
         int contador = 0;
         String cad = new String("Hola tu");
-        for (int vocal = 0; vocal < cad.length(); vocal++){
+        for (int vocal = 0; vocal < cad.length(); vocal++) {
             if (cad.charAt(vocal) == 'a' || cad.charAt(vocal) == 'e' || cad.charAt(vocal) == 'i' ||
                     cad.charAt(vocal) == 'o' || cad.charAt(vocal) == 'u') {
+                contador++;
+                //En caso de querer contar con las vocales en mayúsculas, aunque no lo pida el ejercicio se haría así.
+            } else if (cad.charAt(vocal) == 'A' || cad.charAt(vocal) == 'E' || cad.charAt(vocal) == 'I' ||
+                    cad.charAt(vocal) == 'O' || cad.charAt(vocal) == 'U') {
                 contador++;
             }
         }
@@ -173,15 +176,15 @@ public class BoletinStrings1 {
                 "Ejemplo:\n" +
                 "Entrada: cad = \"casa blanca\", car = 'a'\n" +
                 "Salida: El carácter 'a' se repite 4 veces");
-        int conteoA = 0;
+        int contadorAes = 0;
         String casaBlanca = new String("casa blanca");
 
         for (int caracterA = 0; caracterA < casaBlanca.indexOf('a'); caracterA++ ){
             if (casaBlanca.charAt(caracterA) == 'a'){
-                conteoA++;
+                contadorAes++;
             }
         }
-        System.out.printf("Resultado: el carácter 'a' se repite %d veces.\n", conteoA);
+        System.out.printf("Resultado: el carácter 'a' se repite %d veces.\n", contadorAes);
     }
 
     public void ejercicio9() {
