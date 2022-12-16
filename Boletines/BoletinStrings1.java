@@ -169,12 +169,20 @@ public class BoletinStrings1 {
 
     public void ejercicio8() {
         System.out.println("Dada una cadena cad, y un carácter car, verificar cuántas veces se repite" +
-                "el carácter car en la cadena cad." +
+                "el carácter 'a' en la cadena cad." +
                 "Ejemplo:\n" +
                 "Entrada: cad = \"casa blanca\", car = 'a'\n" +
                 "Salida: El carácter 'a' se repite 4 veces");
-    }
+        int conteoA = 0;
+        String casaBlanca = new String("casa blanca");
 
+        for (int caracterA = 0; caracterA < casaBlanca.indexOf('a'); caracterA++ ){
+            if (casaBlanca.charAt(caracterA) == 'a'){
+                conteoA++;
+            }
+        }
+        System.out.printf("Resultado: el carácter 'a' se repite %d veces.\n", conteoA);
+    }
 
     public void ejercicio9() {
         System.out.println("Lee un número por teclado y muestra por consola, el carácter al que pertenece" +
