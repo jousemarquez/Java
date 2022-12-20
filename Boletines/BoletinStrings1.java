@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 public class BoletinStrings1 {
@@ -21,7 +23,7 @@ public class BoletinStrings1 {
                     + "\nI. Ejercicio 9"
                     + "\nJ. Ejercicio 10"
                     + "\nK. Ejercicio 11"
-                    + "\nL. Ejercicio 12"
+                    + "\nL. Calculadora Polaca InversaApp"
                     + "\nZ. Salir"
                     + "\nIngrese una opción: ");
             opc = sc.nextLine();
@@ -61,7 +63,7 @@ public class BoletinStrings1 {
                     ejercicio11();
                     break;
                 case "L":
-                    ejercicio12();
+                    CalculadoraPolacaInversaApp();
                     break;
                 case "Z":
                     System.out.println("Fin del programa.");
@@ -258,7 +260,7 @@ public class BoletinStrings1 {
         System.out.println();
     }
 
-    public void ejercicio12() {
+    public void CalculadoraPolacaInversaApp() {
         System.out.println("Crea una aplicación llamada CalculadoraPolacaInversaApp, nos pedirá 2 operandos" +
                 "(int, pero se leerán como String y luego se convertirán) y un signo aritmético (String)," +
                 "según este último se realizará la operación correspondiente." +
@@ -270,6 +272,35 @@ public class BoletinStrings1 {
                 "/: divide los operandos, este debe dar un resultado con decimales (double)\n" +
                 "^:  1º operando como base y 2º como exponente.\n" +
                 "%:  módulo, resto de la división entre operando1 y operando2.");
+        System.out.println("Bienvenido a CalculadoraPolacaInversaApp.");
+        System.out.print("Introduce el primer operando: ");
+        String operando1 = sc.nextLine();
+        System.out.print("Introduce el segundo operando: ");
+        String operando2 = sc.nextLine();
+        System.out.println("Ahora introduzca la operación matemática que desee realizar\n" +
+                "(Sumar +, Restar -, Multiplicar *, Dividir /, Potencia ^ o Resto %): ");
+        String signoAritmetico = sc.nextLine();
+        int entero1 = Integer.parseInt(operando1);
+        int entero2 = Integer.parseInt(operando2);
+
+        if (signoAritmetico.equals("+")) {
+            int resultadoSumar = entero1+entero2;
+            System.out.println("El resultado es: " + resultadoSumar);
+        } else if (signoAritmetico.contains("-")) {
+            int resultadoRestar = entero1 - entero2;
+            System.out.println("El resultado es: " + resultadoRestar);
+        } else if (signoAritmetico.equals("*")) {
+        int resultadoMultiplicar = entero1 * entero2;
+        System.out.println("El resultado es: " + resultadoMultiplicar);
+        } else if (signoAritmetico.equals("/")) {
+            int resultadoDividir = entero1 / entero2;
+            System.out.println("El resultado es: " + resultadoDividir);
+        } else if (signoAritmetico.equals("%")) {
+            int resultadoModulo = entero1 % entero2;
+            System.out.println("El resultado es: " + resultadoModulo);
+        } else {
+            System.out.println("La operación introducida no es correcta.");
+        }
     }
 
     public static void main(String[] args) {
