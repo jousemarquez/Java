@@ -77,15 +77,16 @@ public class BoletinStrings1 {
     public void ejercicio1() {
         System.out.println("Declara un String que contenga tu nombre, después muestra un mensaje de bienvenida" +
                 "por consola. Por ejemplo: si introduzco “Fernando”, me aparezca “Bienvenido Fernando”.\n");
-        String nombre = new String("José Antonio");
-        System.out.println("Bienvenido "+nombre);
+        String miNombre = "Jouse"; // Cadena literal
+        String miNombre2 = new String("Jouse"); // Constructor
+        System.out.println("Bienvenido "+miNombre);
     }
 
     public void ejercicio2() {
-        System.out.println("Modifica la aplicación anterior, para que nos pida el nombre que queremos introducir.");
+        System.out.print("Modifica la aplicación anterior, para que nos pida el nombre que queremos introducir.");
         String nombreSolicitado = sc.nextLine();
+        String nombreSolicitado2 = new String(sc.nextLine()); // Scanner con constructor
         System.out.println("Bienvenido "+nombreSolicitado);
-        System.out.println();
     }
 
     public void ejercicio3() {
@@ -97,7 +98,7 @@ public class BoletinStrings1 {
         String checkerContraseña = new String("Mordekaiser");
         boolean checker;
         do {
-            System.out.println("Introducir la contraseña: ");
+            System.out.print("Introducir la contraseña: ");
             String contraseña = sc.nextLine();
             checker = checkerContraseña.equals(contraseña);
             if (checker == true) {
@@ -112,27 +113,69 @@ public class BoletinStrings1 {
         } else {
             System.out.println("Accediendo el programa...");
         }
+
+        // Método de Jorge
+        String password = "Abcd1234";
+        boolean fallo = true;
+        for (int i = 0; i<3 && fallo; i++){
+            System.out.print("Introduce tu password: ");
+            String leida = sc.nextLine();
+            fallo = !password.equals(leida);
+        }
+        if (!fallo){
+            System.out.println("¡Enhorabuena! La contreña es correcta.");
+        } else {
+            System.out.println("Has agotado los intentos. La contreña es incorrecta.");
+        }
     }
 
     public void ejercicio4() {
         System.out.println("Del siguiente String “La lluvia en Sevilla es una maravilla” cuenta cuántas" +
                 "vocales hay en total (recorre el String con un bucle y charAt).");
-        char a, e, i, o, u;
         int conteo = 0;
         String dicho = new String("La lluvia en Sevilla es una maravilla");
-        for (int vocal = 0; vocal < dicho.length(); vocal++){
-            if (dicho.charAt(vocal) == 'a' || dicho.charAt(vocal) == 'e' || dicho.charAt(vocal) == 'i' ||
-                    dicho.charAt(vocal) == 'o' || dicho.charAt(vocal) == 'u') {
+        String dicho2 = dicho.toLowerCase(); // Pasamos el método .toLowerCase() para convertir toda la
+        // frase en minúscula.
+        for (int vocal = 0; vocal < dicho2.length(); vocal++){
+            if (dicho2.charAt(vocal) == 'a' || dicho2.charAt(vocal) == 'e' || dicho2.charAt(vocal) == 'i' ||
+                    dicho2.charAt(vocal) == 'o' || dicho2.charAt(vocal) == 'u') {
                 conteo++;
             }
         }
         System.out.printf("Hay un total de %d vocales\n", conteo);
+
+        // Ejemplo de Jorge
+        String frase = "La lluvia en Sevilla es una maravilla";
+        String vocales = "aeiouAEIOU";
+        int contador = 0;
+        for (int i = 0; i<frase.length();i++) {
+            char letra = frase.charAt(i); // con el contador extraemos el carácter en la posición i.
+            if(vocales.contains(letra+"")) { // El método .contains() recibe el argumento una cadena y retorna
+                // si incluye el argumento. Como el método solo funciona con Strings, se debe convertir tal que así.
+                contador++;
+            }
+        }
+        System.out.printf("Hay un total de %d vocales\n", contador++);
     }
 
     public void ejercicio5() {
         System.out.println("Reemplaza todas las a del String anterior por una e.");
         String dicho = new String("La lluvia en Sevilla es una maravilla");
+        System.out.println(dicho); // Se imprime la cadena original
         System.out.println(dicho.replace('a','e'));
+
+        // Método Jorge
+        String frase6 = sc.nextLine();
+        String vocales = "aeiouAEIOU";
+        int contadores = 0;
+        for (int i = 0; i<frase6.length();i++) {
+            char letra = frase6.charAt(i); // con el contador extraemos el carácter en la posición i.
+            if(vocales.contains(letra+"")) { // El método .contains() recibe el argumento una cadena y retorna
+                // si incluye el argumento. Como el método solo funciona con Strings, se debe convertir tal que así.
+                contadores++;
+            }
+        }
+        System.out.printf("Hay un total de %d vocales\n", contadores++);
     }
 
     public void ejercicio6() {
@@ -157,11 +200,12 @@ public class BoletinStrings1 {
                 "Entrada: \"casa blanca\"\n" +
                 "Salida: \"acnalb asac\"");
         String casaBlanca = new String("casa blanca");
-        String invertida = new String("");
+        String invertida = new String(""); // Se declara una nueva string para almacenar la invertida.
         // Recorremos la original con un bucle for desde el final hasta el inicio
         for (int indice = casaBlanca.length()-1; indice >= 0; indice-- ){
             // Se van concatenando cada caracter en la nueva cadena
             invertida += casaBlanca.charAt(indice);
+            invertida.concat(casaBlanca.charAt(indice)+""); // Otra forma de realizar el ejercicio con .concat()
         }
         System.out.printf("La cadena original es %s.", casaBlanca);
         System.out.printf("La cadena invertida es %s.", invertida);
@@ -173,30 +217,45 @@ public class BoletinStrings1 {
                 "Ejemplo:\n" +
                 "Entrada: cad = \"casa blanca\", car = 'a'\n" +
                 "Salida: El carácter 'a' se repite 4 veces");
-        int conteoA = 0;
-        String casaBlanca = new String("casa blanca");
-
-        for (int caracterA = 0; caracterA < casaBlanca.indexOf('a'); caracterA++ ){
-            if (casaBlanca.charAt(caracterA) == 'a'){
-                conteoA++;
+        int contador8 = 0;
+        String frase8 = new String("casa blanca");
+        char car = 'a';
+        for (int i = 0; i < frase8.length(); i++ ){
+            char caracterLeido = frase8.charAt(i);
+            if (caracterLeido == 'a'){
+                contador8++;
             }
         }
-        System.out.printf("Resultado: el carácter 'a' se repite %d veces.\n", conteoA);
+        System.out.printf("Resultado: el carácter 'a' se repite %d veces.\n", contador8);
     }
 
     public void ejercicio9() {
         System.out.println("Lee un número por teclado y muestra por consola, el carácter al que pertenece" +
                 "en la tabla ASCII. Por ejemplo: si introduzco un 97, me muestre una a.");
+        System.out.print("Introduce un número entero: ");
+        int valor = sc.nextInt();
+        char caracter = (char) valor; // Aquí se hace un casting para pasar el entero a carácter.
+        System.out.println(caracter);
     }
 
     public void ejercicio10() {
         System.out.println("Modifica el ejercicio anterior para que, en lugar de pedir un número," +
                 "pida un carácter y muestre su código en la tabla ASCII.");
+        System.out.print("Introduce un carácter: ");
+        String cadena10 = sc.nextLine();
+        char caracter10 = cadena10.charAt(0);
+        System.out.println((int) caracter10);
     }
 
     public void ejercicio11() {
         System.out.println("Recorre el String del ejercicio anterior y transforma cada carácter a su código ASCII." +
                 "Muéstralos en línea recta, separados por un espacio entre cada carácter.");
+        String emosido = "emosido engañados";
+        for (int i=0; i<emosido.length();i++){
+            System.out.print((int) emosido.charAt(i));
+            System.out.print(" ");
+        }
+        System.out.println();
     }
 
     public void ejercicio12() {
