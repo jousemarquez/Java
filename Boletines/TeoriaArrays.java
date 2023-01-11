@@ -20,6 +20,14 @@ public class TeoriaArrays {
         System.out.println(arrayDeEnteros[1]); // Muestra el valor por defecto de la posición 1 del array.
         System.out.println(arrayDeEnteros[2]); // Muestra el valor por defecto de la posición 2 del array.
         System.out.println(arrayDeEnteros.length); // Ojo, no es un método sino un atributo (no lleva paréntesis).
+
+        /* NOTA SOBRE MÉTODOS Y ATRIBUTOS:
+        La idea es que un atributo representa una propiedad determinada de un objeto.
+        Rutinas o métodos: es una componente de un objeto que lleva a cabo una determinada acción o
+        tarea con los atributos. En principio, todas las variables y rutinas de un programa de Java
+        deben pertenecer a una clase.
+        */
+
         System.out.println("*******************************");
 
         // Creando un array con una serie de valores.
@@ -36,7 +44,7 @@ public class TeoriaArrays {
         // Cómo leer un array con un bucle for() e imprimirlos.
 
         for(int i = 0; i < arrayDeEnteros2.length; i++) {
-            System.out.print(arrayDeEnteros2[i] + " ");
+            System.out.print(arrayDeEnteros2[i] + ", ");
         }
         System.out.println();
         System.out.println("*******************************");
@@ -44,7 +52,7 @@ public class TeoriaArrays {
         // Cambiando el contenido de las celdas de un array.
         arrayDeEnteros[arrayDeEnteros.length-1] = 33;
         for(int i = 0; i < arrayDeEnteros.length; i++) {
-            System.out.print(arrayDeEnteros[i] + " ");
+            System.out.print(arrayDeEnteros[i] + ", ");
 
         }
         System.out.println();
@@ -54,11 +62,11 @@ public class TeoriaArrays {
 
         // Leer por pantalla un número y crear un array de String de ese tamaño.
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         System.out.print("Introduce un número: ");
 
-        String[] ejercicio1 = new String[sc.nextInt()]; //En los corchetes se puede añadir cualquier expresión que se evalúe
-        // como un entero por lo que puede añadirse el scanner.
+        String[] ejercicio1 = new String[scan.nextInt()]; //En los corchetes se puede añadir cualquier expresión
+        // que se evalúe como un entero por lo que puede añadirse el scanner.
 
         System.out.println(ejercicio1.length); // Además, esta variable no es necesaria declarala porque ya tenemos
         // el atributo que nos define la longitud del array.
@@ -68,7 +76,7 @@ public class TeoriaArrays {
 
         for (int i = 0; i < ejercicio1.length; i++) {
             System.out.print("Intoduce un nombre (que no sea compuesto): ");
-            String nombreLeido = sc.next();
+            String nombreLeido = scan.next();
             ejercicio1[i] = nombreLeido;
         }
 
@@ -78,5 +86,57 @@ public class TeoriaArrays {
         System.out.println();
         System.out.println("Fin del ejercicio");
         System.out.println("*******************************");
+
+        // Ejercicio 2:
+        /*
+        * Crear un array de float de tamaño 10 mediante un inicializador (dando valores iniciales a su gusto).
+        * Imprimir el contenido del array por consola.
+        * Modificar el array para que en cada posición se almacene el índice que le corresponde.
+        * Una vez que el array esté completamente modificado, volver a imprimir el array y comprobar que
+        * ha hecho el ejercicio de forma correcta.
+        * Siga las instrucciones al pie de la letra (siempre).
+        */
+
+        // Crear un array de float de tamaño 10 mediante un inicializador (dando valores iniciales a su gusto).
+        float[] arrayFloat = {0.0f, 1.4f, 2.3f, 3.2f, 4.4f, 56.76f, 69.0f, 77.3f, 899.0f, 999.99f};
+        // Imprimir el contenido del array por consola
+        for (int i = 0; i < arrayFloat.length; i++) {
+            System.out.print(arrayFloat[i] + ", ");
+        }
+        // Modificar el array para que en cada posición se almacene el índice que le corresponde.
+        for (int i = 0; i < arrayFloat.length; i++) {
+            arrayFloat[i] = i;
+        }
+        System.out.println();
+        // Una vez que el array esté completamente modificado, volver a imprimir el array y comprobar que ha hecho
+        // el ejercicio de forma correcta.
+        for (int i = 0; i < arrayFloat.length; i++) {
+            System.out.print(arrayFloat[i] + ", ");
+        }
+
+        // Ejercicio 3
+        // Modificar el ejercicio anterior para que en vez de ser float el array sea de strings.
+
+        // Crear un array de Strings de tamaño 10 mediante un inicializador (dando valores iniciales a su gusto).
+        String[] arrayString = {"Huelva", "Sevilla", "Cádiz", "Málaga", "Granada", "Córdoba", "Jaén", "Almería",
+        "Murcia", "Albacete"};
+        // Imprimir el contenido del array por consola
+        for (int i = 0; i < arrayString.length; i++) {
+            System.out.print(arrayString[i] + ", ");
+        }
+        // Modificar el array para que en cada posición se almacene el índice que le corresponde.
+        for (int i = 0; i < arrayString.length; i++) {
+            // Varios métodos para convertir Int a String
+            // Método concatenación: (i + " "). Método menos recomendado.
+            // Método String.valueOf(i). Método más eficiente.
+            // Método Integer.toString(i). Método que se necesita conocer el tipo primitivo.
+            arrayString[i] = Integer.toString(i);
+        }
+        System.out.println();
+        // Una vez que el array esté completamente modificado, volver a imprimir el array y comprobar que ha hecho
+        // el ejercicio de forma correcta.
+        for (int i = 0; i < arrayString.length; i++) {
+            System.out.print(arrayString[i] + ", ");
+        }
     }
 }
