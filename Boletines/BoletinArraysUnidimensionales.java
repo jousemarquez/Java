@@ -4,7 +4,7 @@ public class BoletinArraysUnidimensionales {
 
     Scanner scan = new Scanner(System.in);
 
-    public void menu() {
+    public void menuArray() {
         String opc = " ";
 
         do {
@@ -20,55 +20,55 @@ public class BoletinArraysUnidimensionales {
                     ejercicio2();
                     break;
                 case "3":
-                    ejercicio1();
+                    ejercicio3();
                     break;
                 case "4":
-                    ejercicio1();
+                    ejercicio4();
                     break;
                 case "5":
-                    ejercicio1();
+                    ejercicio5();
                     break;
                 case "6":
-                    ejercicio1();
+                    ejercicio6();
                     break;
                 case "7":
-                    ejercicio1();
+                    ejercicio7();
                     break;
                 case "8":
-                    ejercicio1();
+                    ejercicio8();
                     break;
                 case "9":
-                    ejercicio1();
+                    ejercicio9();
                     break;
                 case "10":
-                    ejercicio1();
+                    ejercicio10();
                     break;
                 case "11":
-                    ejercicio1();
+                    ejercicio11();
                     break;
                 case "12":
-                    ejercicio1();
+                    ejercicio12();
                     break;
                 case "13":
-                    ejercicio1();
+                    ejercicio13();
                     break;
                 case "14":
-                    ejercicio1();
+                    ejercicio14();
                     break;
                 case "15":
-                    ejercicio1();
+                    ejercicio15();
                     break;
                 case "16":
-                    ejercicio1();
+                    ejercicio16();
                     break;
                 case "17":
-                    ejercicio1();
+                    ejercicio17();
                     break;
                 case "18":
-                    ejercicio1();
+                    ejercicio18();
                     break;
                 case "19":
-                    ejercicio1();
+                    ejercicio19();
                     break;
                 default:
                     System.out.println("Gracias por usar la aplicación. Vuelva Pronto");
@@ -166,7 +166,7 @@ public class BoletinArraysUnidimensionales {
         // Elija el tipo que desee y los valores iniciales que desee.
         int[] arrayInt = {5, 4, 3, 2, 1};
         for (int i = 0; i < arrayInt.length; i++) {
-            System.out.print(i + ", ");
+            System.out.print(arrayInt[i] + ", ");
         }
         System.out.println();
     }
@@ -181,33 +181,29 @@ public class BoletinArraysUnidimensionales {
         }
         for (int i = 0; i < arrayInt.length; i++) {
             System.out.print("Intoduce un valor entero: ");
-            int num = scan.nextInt();
-            arrayInt[i] = num;
+            arrayInt[i] = scan.nextInt(); // Se introduce por teclado el nuevo valor de la posición de i.
         }
         for (int i = 0; i < arrayInt.length; i++) {
-            System.out.print(i + ", ");
+            System.out.print(arrayInt[i] + ", ");
         }
     }
 
     public void ejercicio6() {
         // Ejercicio 6:
         // Modifica el programa anterior para que el número de posiciones del array se lea por pantalla.
-        int[] arrayInt = {5, 4, 3, 2, 1};
+        System.out.println("¿Qué tamaño quieres para el array?: ");
+        int[] arrayInt = new int[scan.nextInt()]; // Se pide por teclado el tamaño del array.
+
         for (int i = 0; i < arrayInt.length; i++) {
-            System.out.print(i + ", ");
-        }
-        for (int i = 0; i < arrayInt.length; i++) {
-            System.out.print("Intoduce un valor entero: ");
-            int num = scan.nextInt();
-            arrayInt[i] = num;
-        }
-        for (int i = 0; i < arrayInt.length; i++) {
-            System.out.print(i + ", ");
+            System.out.print(arrayInt[i] + ", ");
         }
 
-        System.out.println("Ahora se imprime la posición del array por pantalla.");
         for (int i = 0; i < arrayInt.length; i++) {
-            System.out.print(arrayInt.length + ", ");
+            System.out.print("Intoduce un valor entero: ");
+            arrayInt[i] = scan.nextInt();
+        }
+        for (int i = 0; i < arrayInt.length; i++) {
+            System.out.print(arrayInt[i] + ", ");
         }
     }
 
@@ -259,8 +255,77 @@ public class BoletinArraysUnidimensionales {
         }
     }
 
+    public void ejercicio9() {
+        // Ejercicio 9:
+        // Crea un array de números de 100 posiciones, que contendrá los números del 1 al 100.
+        // Partiendo del array ya creado y completamente relleno, obtener la suma de todos ellos y la media.
+        int[] arrayCenturia = new int[100]; // Se declara un array de enteros vacío de 100 posiciones.
+        for (int i = 0; i < arrayCenturia.length; i++) {
+            arrayCenturia[i] = i+1; // Se lanza un bucle que añade a cada posición la posición +1.
+        }
+        int sumatorio = 0; // Se declara un entero acumulador para añadir la suma.
+        for (int j = 0; j < arrayCenturia.length; j++) {
+            sumatorio =+ arrayCenturia[j];
+        }
+        System.out.println("La suma de todos los elementos es: " + sumatorio);
+        System.out.println("La media de todos los elementos es: " + sumatorio/arrayCenturia.length);
+
+
+        System.out.println("Ahora se imprime la posición del array por pantalla.");
+        for (int i = 0; i < arrayCenturia.length; i++) {
+            System.out.print(arrayCenturia.length + ", ");
+        }
+    }
+
+    public void ejercicio10() {
+        // Ejercicio 10:
+        // 10. Crea un array de caracteres que contenga de la ‘A’ a la ‘Z’ (solo las mayúsculas).
+        // Después, ve pidiendo posiciones del array por teclado y si la posición es correcta,
+        // se añadirá a una cadena inicialmente vacía que se mostrará al final del ejercicio.
+        // Se dejará de pedir numeros cuando se introduzca un número negativo.
+        char[] arrayAbecedario = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+                'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}; // Array con valores hardcodeados.
+        char[] arrayAbecedario2 = new char[26]; // Crear array de caracteres con dimesión 25.
+        for (int i = 0; i < arrayAbecedario2.length; i++) {
+            arrayAbecedario2[i] = (char) (i + 17 + '0'); // Se hace un casteo de int a char y se rellena.
+        }
+
+        for (int j = 0; j < arrayAbecedario2.length; j++) { // Impresión de cada uno de los valores por pantalla.
+            System.out.print("'" + arrayAbecedario2[j] + "', ");
+        }
+        System.out.println();
+
+    }
+
+    public void ejercicio11() {
+    }
+
+    public void ejercicio12() {
+    }
+
+    public void ejercicio13() {
+    }
+
+    public void ejercicio14() {
+    }
+
+    public void ejercicio15() {
+    }
+
+    public void ejercicio16() {
+    }
+
+    public void ejercicio17() {
+    }
+
+    public void ejercicio18() {
+    }
+
+    public void ejercicio19() {
+    }
+
     public static void main(String[] args) {
-        Menu fc = new Menu();
-        fc.menu();
+        BoletinArraysUnidimensionales fc = new BoletinArraysUnidimensionales();
+        fc.menuArray();
     }
 }
