@@ -138,5 +138,36 @@ public class TeoriaArrays {
         for (int i = 0; i < arrayString.length; i++) {
             System.out.print(arrayString[i] + ", ");
         }
+
+        System.out.println("Ejercicio 4:");
+        System.out.println("Parte a) Dada el siguiente array imprimir su posición y contenido.");
+
+        int[] arrayNumeros = {40,20,5,7,8}; // Se hardcodean los valores en el array.
+        for (int i = 0; i < arrayNumeros.length; i++) { // Se lanza el bucle para recorrer el array.
+            System.out.println(i + ", " + arrayNumeros[i]); // Se imprime en cada línea la posición y el contenido.
+        }
+        System.out.println("Parte b) Imprimir la posición central y su contenido.");
+
+        System.out.println(arrayNumeros.length/2 + ", " + arrayNumeros[arrayNumeros.length/2]);
+
+        System.out.println("Parte c) Duplicar el contenido del array.");
+        for (int i = 0; i < arrayNumeros.length; i++) { // Se lanza el bucle para recorrer el array.
+            arrayNumeros[i] = arrayNumeros[i] * 2; // Se multiplica el contenido por 2.
+        }
+        for (int i = 0; i < arrayNumeros.length; i++) { // Se lanza el bucle para recorrer el array.
+            System.out.println(i + ", " + arrayNumeros[i]); // Se imprime en cada línea la posición y el contenido.
+        }
+
+        System.out.println("Parte d) Con un bucle de incremento positivo realizar el ejercicio anterior del final al" +
+                "principio.");
+        for (int i = 0; i < arrayNumeros.length; i++) { // Se lanza el bucle para recorrer el array.
+            System.out.println(arrayNumeros[arrayNumeros.length-1-i]);
+
+            // Explicación de este cambio:
+            // Sin modificar las condiciones del for() nos piden imprimir
+        }
+        for (int i = 0; i < arrayNumeros.length; i++) { // Se lanza el bucle para recorrer el array.
+            System.out.println(i + ", " + arrayNumeros[i]); // Se imprime en cada línea la posición y el contenido.
+        }
     }
 }
