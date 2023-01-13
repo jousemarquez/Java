@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class BoletinArraysUnidimensionales {
 
     Scanner scan = new Scanner(System.in);
+    private int num;
 
     public void menuArray() {
         String opc = " ";
@@ -279,21 +280,26 @@ public class BoletinArraysUnidimensionales {
 
     public void ejercicio10() {
         // Ejercicio 10:
-        // 10. Crea un array de caracteres que contenga de la ‘A’ a la ‘Z’ (solo las mayúsculas).
+        // Crea un array de caracteres que contenga de la ‘A’ a la ‘Z’ (solo las mayúsculas).
         // Después, ve pidiendo posiciones del array por teclado y si la posición es correcta,
         // se añadirá a una cadena inicialmente vacía que se mostrará al final del ejercicio.
         // Se dejará de pedir numeros cuando se introduzca un número negativo.
         char[] arrayAbecedario = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
                 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}; // Array con valores hardcodeados.
-        char[] arrayAbecedario2 = new char[26]; // Crear array de caracteres con dimesión 25.
-        for (int i = 0; i < arrayAbecedario2.length; i++) {
-            arrayAbecedario2[i] = (char) (i + 17 + '0'); // Se hace un casteo de int a char y se rellena.
+        for (int i = 0; i < arrayAbecedario.length; i++) {
+            /*arrayAbecedario2[i] = (char) (i + 17 + '0'); // Se hace un casteo de int a char y se rellena.*/
+            arrayAbecedario[i]++;
         }
 
-        for (int j = 0; j < arrayAbecedario2.length; j++) { // Impresión de cada uno de los valores por pantalla.
-            System.out.print("'" + arrayAbecedario2[j] + "', ");
+        for (int j = 0; j < arrayAbecedario.length; j++) { // Impresión de cada uno de los valores por pantalla.
+            System.out.print(arrayAbecedario[j] + ", ");
         }
         System.out.println();
+        num = 0;
+        do {
+            System.out.print("Indica una posición del array (0 - 26: ");
+        } while (num > 0); // HASTA AQUÍ
+
 
     }
 
@@ -313,6 +319,13 @@ public class BoletinArraysUnidimensionales {
     }
 
     public void ejercicio16() {
+        // Ejercicio 16:
+        // Crear un array de enteros de 5 posiciones. Leer por pantalla una cadena y
+        // almacenar en cada posición del array el número de ocurrencias de cada vocal: en la
+        // posición 0 la cantidad de a, en la 1 la de e, y así sucesivamente, mostrando al final
+        // el contenido del array.
+
+
     }
 
     public void ejercicio17() {
