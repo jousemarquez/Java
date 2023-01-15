@@ -164,7 +164,9 @@ public class TeoriaArrays {
             System.out.println(arrayNumeros[arrayNumeros.length-1-i]);
 
             // Explicación de este cambio:
-            // Sin modificar las condiciones del for() nos piden imprimir
+            // Sin modificar las condiciones del for() nos piden imprimir desde la última posición hasta el principio
+            // y para ello se está modificando la posición dentro del array restándole la misma posición, de esta forma
+            // cada vez que i se lea, esta se resta a la longitud mostrando la posición más alejada hasta 0.
         }
         for (int i = 0; i < arrayNumeros.length; i++) { // Se lanza el bucle para recorrer el array.
             System.out.println(i + ", " + arrayNumeros[i]); // Se imprime en cada línea la posición y el contenido.
