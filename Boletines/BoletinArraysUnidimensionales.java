@@ -237,23 +237,20 @@ public class BoletinArraysUnidimensionales {
         // Crear un array de enteros donde indicamos por teclado el tamaño del array,
         // rellenamos el array con números aleatorios entre 0 y 9, y mostramos por pantalla
         // el valor de cada posición y la suma de todos los valores.
-        boolean[] arrayBoolean = {true, false, true, false, false};
-        for (int i = 0; i < arrayBoolean.length; i++) {
-            System.out.print(i + ", ");
-        }
-        for (int i = 0; i < arrayBoolean.length; i++) {
-            System.out.print("Intoduce un valor booleano (true or false): ");
-            boolean bool = scan.nextBoolean();
-            arrayBoolean[i] = bool;
-        }
-        for (int i = 0; i < arrayBoolean.length; i++) {
-            System.out.print(i + ", ");
-        }
+        System.out.print("¿Qué tamaño quieres de array?: ");
+        int[] arrInt = new int[scan.nextInt()]; // Se pide por teclado la dimensión del array.
 
-        System.out.println("Ahora se imprime la posición del array por pantalla.");
-        for (int i = 0; i < arrayBoolean.length; i++) {
-            System.out.print(arrayBoolean.length + ", ");
+        for (int i = 0; i < arrInt.length; i++) { // Se imprime
+            System.out.print(i + ", ");
         }
+        for (int i = 0; i < arrInt.length; i++) {
+            arrInt[i] = (int) (Math.random()*10);// Se hace un casting a Int porque por defecto Math.Random() es double.
+        }
+        int sum = 0;
+        for (int i = 0; i < arrInt.length; i++) {
+
+        }
+        System.out.println("\n"+sum);
     }
 
     public void ejercicio9() {
@@ -264,18 +261,17 @@ public class BoletinArraysUnidimensionales {
         for (int i = 0; i < arrayCenturia.length; i++) {
             arrayCenturia[i] = i+1; // Se lanza un bucle que añade a cada posición la posición +1.
         }
+        for (int i = 0; i < arrayCenturia.length; i++) { // Se imprime el array.
+            System.out.print(i + ", ");
+        }
+        System.out.println();
+
         int sumatorio = 0; // Se declara un entero acumulador para añadir la suma.
         for (int j = 0; j < arrayCenturia.length; j++) {
-            sumatorio =+ arrayCenturia[j];
+            sumatorio += arrayCenturia[j];
         }
         System.out.println("La suma de todos los elementos es: " + sumatorio);
         System.out.println("La media de todos los elementos es: " + sumatorio/arrayCenturia.length);
-
-
-        System.out.println("Ahora se imprime la posición del array por pantalla.");
-        for (int i = 0; i < arrayCenturia.length; i++) {
-            System.out.print(arrayCenturia.length + ", ");
-        }
     }
 
     public void ejercicio10() {
@@ -284,32 +280,86 @@ public class BoletinArraysUnidimensionales {
         // Después, ve pidiendo posiciones del array por teclado y si la posición es correcta,
         // se añadirá a una cadena inicialmente vacía que se mostrará al final del ejercicio.
         // Se dejará de pedir numeros cuando se introduzca un número negativo.
-        char[] arrayAbecedario = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-                'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}; // Array con valores hardcodeados.
+
+        char[] arrayAbecedario = new char[26]; // Se declara el array con la longitud.
         for (int i = 0; i < arrayAbecedario.length; i++) {
-            /*arrayAbecedario2[i] = (char) (i + 17 + '0'); // Se hace un casteo de int a char y se rellena.*/
-            arrayAbecedario[i]++;
+            arrayAbecedario[i] = (char)('A' + i); // Se introduce todos los caracteres sumándoles la posición de i
         }
-
-        for (int j = 0; j < arrayAbecedario.length; j++) { // Impresión de cada uno de los valores por pantalla.
-            System.out.print(arrayAbecedario[j] + ", ");
+        String resultado = ""; // Inicializar el String donde se va a alojar los caracteres.
+        int posicion = 0;
+        while (posicion >= 0) {
+            System.out.print("Introducir una posición entre 0 y 25: ");
+            posicion = scan.nextInt();
+            if (posicion >= 0 && posicion < 26) {
+                resultado += arrayAbecedario[posicion];
+            } else if (posicion > 25) {
+                System.out.println("Error, inserte otro número.");
+            }
         }
-        System.out.println();
-        num = 0;
-        do {
-            System.out.print("Indica una posición del array (0 - 26: ");
-        } while (num > 0); // HASTA AQUÍ
-
-
+        System.out.println("Fin");
+        System.out.println("La cadena es: " + resultado);
     }
 
     public void ejercicio11() {
+        // Ejercicio 11:
+        // Crear un array de String de tamaño 3, con los nombres de tres compañeros de clase.
+        // A continuación, pedir por teclado un nombre, y comprobar si está en el array,
+        // escribiendo un mensaje al respecto de tipo: Juan esta en el array.
+
+        String[] arrayCompaneros = {"Ricardo","Alberto","Chema"};
+        System.out.print("Introduce un nombre: ");
+        String nombreTeclado = scan.nextLine();
+        boolean estaEnArray = false;
+        for (int i = 0; i < arrayCompaneros.length; i++) {
+            if (arrayCompaneros[i].equalsIgnoreCase(nombreTeclado)){
+                estaEnArray = true;
+                break;
+            }
+        }
+        if (estaEnArray) {
+            System.out.println(nombreTeclado + " está en el array.");
+        } else {
+            System.out.println(nombreTeclado + " no está en el array.");
+        }
     }
 
     public void ejercicio12() {
+        // Ejercicio 12:
+        // Repetir el ejercicio anterior pero escribiendo un mensaje de tipo: Juan esta en el array en la posición 2.
+
+        String[] arrayCompaneros = {"Ricardo","Alberto","Chema"};
+        System.out.print("Introduce un nombre: ");
+        String nombreTeclado = scan.nextLine();
+        boolean estaEnArray = false;
+        int posicionArray = 0;
+        for (int i = 0; i < arrayCompaneros.length; i++) {
+            if (arrayCompaneros[i].equalsIgnoreCase(nombreTeclado)){
+                estaEnArray = true;
+                posicionArray = i;
+                break;
+            }
+        }
+        if (estaEnArray) {
+            System.out.println(nombreTeclado + " está en el array en la posición " + posicionArray);
+        } else {
+            System.out.println(nombreTeclado + " no está en el array.");
+        }
     }
 
     public void ejercicio13() {
+        // Ejercicio 13:
+        // Leer por pantalla un numero entero y crear un array de ese tamaño, con valores aleatorios entre 1 y 300.
+        // A continuación, pedir un número entero entre 0 y 9, e imprimir todas las posiciones del array que tengan
+        // un número acabado en ese dígito. Esos números, además de imprimirlos, almacenarlos en un array de salida
+        // con el tamaño adecuado.
+        System.out.println("Introducir la longitud del array: ");
+        int[] arrayInt = new int[scan.nextInt()];
+        int min = 1;
+        int max = 300;
+        for (int i = 0; i < arrayInt.length; i++) {
+            // HASTA AQUI
+        }
+
     }
 
     public void ejercicio14() {
