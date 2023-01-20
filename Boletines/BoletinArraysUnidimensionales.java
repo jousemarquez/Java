@@ -352,20 +352,106 @@ public class BoletinArraysUnidimensionales {
         // A continuación, pedir un número entero entre 0 y 9, e imprimir todas las posiciones del array que tengan
         // un número acabado en ese dígito. Esos números, además de imprimirlos, almacenarlos en un array de salida
         // con el tamaño adecuado.
-        System.out.println("Introducir la longitud del array: ");
-        int[] arrayInt = new int[scan.nextInt()];
-        int min = 1;
-        int max = 300;
-        for (int i = 0; i < arrayInt.length; i++) {
-            // HASTA AQUI
+        System.out.print("Introducir la longitud del array: ");
+        int[] arrayAleatorios = new int[scan.nextInt()];
+        int limiteInferior = 1;
+        int limiteSuperior = 300;
+        // Número aleatorio entre limiteInferior y limiteSuperior
+
+        for (int i = 0; i < arrayAleatorios.length; i++) {
+            arrayAleatorios[i] = (int) (Math.random()) * (limiteSuperior - limiteInferior + 1) + limiteInferior;
+            System.out.print(arrayAleatorios[i] + ", ");
+        }
+        System.out.println();
+
+        System.out.print("Introducir un número entre 0 y 9");
+        int n = scan.nextInt();
+        int contador = 0; // Contador para dimensionar el array salida
+        for (int i = 0; i < arrayAleatorios.length; i++) {
+            if(arrayAleatorios[i] % 10 == n) {
+                System.out.print(n + ", ");
+                contador++;
+            }
+        }
+        System.out.println();
+
+        int[] arraySalida = new int[contador];
+        int posicion = 0;
+
+        for (int i = 0; i < arrayAleatorios.length; i++) {
+            if(arrayAleatorios[i] % 10 == n) {
+                arraySalida[posicion] = arrayAleatorios[i];
+                System.out.print(arraySalida[i] + ", ");
+            }
+        }
+        System.out.println("FIN");
+
+        // Ejemplo de Joaquin:
+
+        System.out.println("introduce tamaño array");
+        int[] aleatorios = new int[scan.nextInt()];
+
+        int limiteInterior2 = 1;
+        int limiteSuperior2 = 300;
+        //Numero aleatorio entre limiteInferior y limiteSuperior
+
+        for (int i = 0; i < aleatorios.length; i++) {
+            aleatorios[i] = (int) (Math.random() * (limiteSuperior2-limiteInterior2+1)+limiteInterior2);
+        }
+
+        System.out.print("Array aleatorio: ");
+        for (int i = 0; i < aleatorios.length; i++) {
+            System.out.print(aleatorios[i] + " ");
+        }
+
+        System.out.println("\nEntre 0 y 9");
+        int num = scan.nextInt();
+
+        System.out.print("Posiciones: ");
+        int cont = 0;
+        for (int i = 0; i < aleatorios.length; i++) {
+            if (aleatorios[i]%10 == num) {
+                System.out.print(i + " ");
+                cont++;
+            }
+        }
+
+        System.out.print("\nLos numeros en esas posiciones:");
+        cont = 0;
+        for (int i = 0; i < aleatorios.length; i++) {
+            if (aleatorios[i]%10 == num) {
+                System.out.print(aleatorios[i] + " ");
+                cont++;
+            }
+        }
+
+        int[] salida = new int[cont];
+        int pos = 0;
+
+        for (int i = 0; i < aleatorios.length; i++) {
+            if (aleatorios[i]%10 == num) {
+                salida[pos] = aleatorios[i];
+                pos++;
+            }
+        }
+
+        System.out.print("\nArray de salida:");
+        for (int i = 0; i < salida.length; i++) {
+            System.out.print(salida[i] + " ");
         }
 
     }
 
     public void ejercicio14() {
+        // Ejercicio 14:
+        // Crear dos arrays de enteros del mismo tamaño (4). Inicializarlos con números aleatorios de una cifra.
+        // Comparar si el contenido de ambos es exactamente el mismo, imprimiendo un mensaje al respecto.
     }
 
     public void ejercicio15() {
+        // Ejercicio 15:
+        // Repetir el ejercicio anterior, sumando ambos arrays y guardando el resultado en un
+        // tercer array que deberá imprimirse por pantalla.
     }
 
     public void ejercicio16() {
@@ -374,17 +460,31 @@ public class BoletinArraysUnidimensionales {
         // almacenar en cada posición del array el número de ocurrencias de cada vocal: en la
         // posición 0 la cantidad de a, en la 1 la de e, y así sucesivamente, mostrando al final
         // el contenido del array.
-
-
     }
 
     public void ejercicio17() {
+        // Ejercicio 17:
+        // Crear un array de enteros de 5 posiciones. Leer por pantalla una cadena y
+        // almacenar en cada posicióndel array el número de ocurrencias de cada vocal: en la
+        // posición 0 la cantidad de a, en la 1 la de e, y así sucesivamente, mostrando al final
+        // el contenido del array. Repetir, pero contando todas las letras del abecedario.
     }
 
     public void ejercicio18() {
+        // Ejercicio 18:
+        // Leer una cadena que contenga varias palabras separadas por espacios.
+        // Buscar información del método split de la clase String, y utilizarlo para
+        // dividir la cadena en las distintas palabras.
     }
 
     public void ejercicio19() {
+        // 19. Introduce por pantalla el número de tu DNI, y vuelve a imprimirlo seguido de la letra.
+        // Para calcular la letra, cogeremos el resto de dividir nuestro dni entre 23, el resultado
+        // debe estar entre 0 y 22. Tendrás que crear un array que contenga:
+
+        int[] arrayPosicion = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
+        char[] arrayLetra = {'R','T','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C',
+                'K','E'};
     }
 
     public static void main(String[] args) {
