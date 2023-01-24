@@ -192,9 +192,6 @@ public class BoletinStrings2 {
         System.out.println("Lee por pantalla dos cadenas y compáralas." +
                 "Debes imprimir ‘La primera va antes’,‘La segunda va antes’ o ‘Son iguales’," +
                 "dependiendo del resultado de la comparación.");
-        System.out.println("Lee por pantalla dos cadenas y compáralas.\n" +
-                "Debes imprimir ‘La primera va antes’,‘La segunda va antes’ o ‘Son iguales’,\n" +
-                "dependiendo del resultado de la comparación.\n");
         System.out.print("Introduce cadena 1: ");
         String cadena1 = sc.nextLine();
         System.out.print("Introduce cadena 2: ");
@@ -214,19 +211,62 @@ public class BoletinStrings2 {
 
     public void ejercicio14() {
         System.out.println("Repite el ejercicio 13 pero ignorando mayúsculas.");
+
+        System.out.print("Ingrese la primera cadena: ");
+        String first = sc.nextLine();
+        System.out.print("Ingrese la segunda cadena: ");
+        String second = sc.nextLine();
+
+        // Comparar las cadenas ignorando mayúsculas o minúsculas
+        int comparison = first.compareToIgnoreCase(second);
+        if (comparison < 0) {
+            System.out.println("La primera va antes");
+        } else if (comparison > 0) {
+            System.out.println("La segunda va antes");
+        } else {
+            System.out.println("Son iguales");
+        }
     }
 
     public void ejercicio15() {
         System.out.println("Lee por pantalla dos cadenas y comprueba si son iguales.");
+        System.out.println("Ingrese la primera cadena:");
+        String first = sc.nextLine();
+        System.out.println("Ingrese la segunda cadena:");
+        String second = sc.nextLine();
+
+        // Comparar las cadenas
+        if (first.equals(second)) {
+            System.out.println("Las cadenas son iguales");
+        } else {
+            System.out.println("Las cadenas son diferentes");
+        }
     }
 
     public void ejercicio16() {
         System.out.println("Repite el ejercicio 15 pero ignorando mayúsculas.");
+        System.out.println("Ingrese la primera cadena:");
+        String first = sc.nextLine();
+        System.out.println("Ingrese la segunda cadena:");
+        String second = sc.nextLine();
+
+        // Comparar las cadenas ignorando mayúsculas
+        if (first.equalsIgnoreCase(second)) {
+            System.out.println("Las cadenas son iguales");
+        } else {
+            System.out.println("Las cadenas son diferentes");
+        }
     }
 
     public void ejercicio17() {
         System.out.println("Lee un carácter por teclado y muestra por consola el código ASCII al que pertenece." +
                 "Por ejemplo: si introduzco una a, debe mostrar 97.");
+        System.out.println("Ingrese un carácter:");
+        char input = sc.next().charAt(0); // Lee un carácter de la entrada
+
+        // Obtener el código ASCII del carácter
+        int asciiCode = (int) input;
+        System.out.println("El código ASCII del carácter ingresado es: " + asciiCode);
     }
 
     public void ejercicio18() {
@@ -263,6 +303,38 @@ public class BoletinStrings2 {
                 "Ejemplo: “adios365”\n" +
                 "Nota: puede usar todo lo aprendido sobre Java. Suponga que la cadena solo tiene letras y números," +
                 "nunca caracteres especiales.");
+
+        Scanner scanner = new Scanner(System.in);
+        String password = "inventedpassword"; // La contraseña inventada
+        int attempts = 3; // Número de intentos permitidos
+        int count = 0; // Contador de intentos fallidos
+        boolean success = false; // Indicador de éxito en el inicio de sesión
+
+        while (!success && count < attempts) {
+            System.out.println("Introduzca la contraseña:");
+            String input = scanner.nextLine();
+            if (input.equals(password)) {
+                success = true;
+                System.out.println("Logged in");
+            } else {
+                count++;
+                if (count < attempts) {
+                    System.out.println("Prueba otra vez...");
+                } else {
+                    System.out.println("Error");
+                }
+            }
+        }
+
+        // Evaluar seguridad de la contraseña
+        if (password.length() < 5) {
+            System.out.println("La contraseña es débil.");
+        } else if (password.matches("^[a-zA-Z]+$") || password.matches("^[0-9]+$")) {
+            System.out.println("La contraseña es media.");
+        } else {
+            System.out.println("La contraseña es fuerte.");
+        }
+
     }
     public static void main(String[] args) {
         BoletinStrings2 fc = new BoletinStrings2();
