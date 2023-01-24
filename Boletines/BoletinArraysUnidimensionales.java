@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Random;
+
 
 public class BoletinArraysUnidimensionales {
 
@@ -446,6 +448,32 @@ public class BoletinArraysUnidimensionales {
         // Ejercicio 14:
         // Crear dos arrays de enteros del mismo tamaño (4). Inicializarlos con números aleatorios de una cifra.
         // Comparar si el contenido de ambos es exactamente el mismo, imprimiendo un mensaje al respecto.
+
+        int size = 4;
+        int[] array1 = new int[size];
+        int[] array2 = new int[size];
+        Random rand = new Random();
+
+        // Inicializar los arrays con números aleatorios de una cifra
+        for (int i = 0; i < size; i++) {
+            array1[i] = rand.nextInt(10);
+            array2[i] = rand.nextInt(10);
+        }
+
+        // Comparar si el contenido de ambos arrays es exactamente el mismo
+        boolean isEqual = true;
+        for (int i = 0; i < size; i++) {
+            if (array1[i] != array2[i]) {
+                isEqual = false;
+                break;
+            }
+        }
+
+        if (isEqual) {
+            System.out.println("Los contenidos de los dos arrays son exactamente iguales.");
+        } else {
+            System.out.println("Los contenidos de los dos arrays son diferentes.");
+        }
     }
 
     public void ejercicio15() {
@@ -460,14 +488,54 @@ public class BoletinArraysUnidimensionales {
         // almacenar en cada posición del array el número de ocurrencias de cada vocal: en la
         // posición 0 la cantidad de a, en la 1 la de e, y así sucesivamente, mostrando al final
         // el contenido del array.
+
+        System.out.println("Ingrese una cadena:");
+        String inputVocales = scan.nextLine();
+
+        int[] vocales = {0, 0, 0, 0, 0};
+        for (int i = 0; i < inputVocales.length(); i++) {
+            char c = inputVocales.charAt(i);
+            if (c == 'a' || c == 'A') {
+                vocales[0]++;
+            } else if (c == 'e' || c == 'E') {
+                vocales[1]++;
+            } else if (c == 'i' || c == 'I') {
+                vocales[2]++;
+            } else if (c == 'o' || c == 'O') {
+                vocales[3]++;
+            } else if (c == 'u' || c == 'U') {
+                vocales[4]++;
+            }
+        }
+
+        System.out.println("Cantidad de aes: " + vocales[0]);
+        System.out.println("Cantidad de es: " + vocales[1]);
+        System.out.println("Cantidad de ius: " + vocales[2]);
+        System.out.println("Cantidad de os: " + vocales[3]);
+        System.out.println("Cantidad de ues: " + vocales[4]);
     }
 
     public void ejercicio17() {
-        // Ejercicio 17:
         // Crear un array de enteros de 5 posiciones. Leer por pantalla una cadena y
         // almacenar en cada posicióndel array el número de ocurrencias de cada vocal: en la
         // posición 0 la cantidad de a, en la 1 la de e, y así sucesivamente, mostrando al final
         // el contenido del array. Repetir, pero contando todas las letras del abecedario.
+
+        System.out.print("Ingrese una cadena: ");
+        String inputAbecedario = scan.nextLine();
+
+        int[] lettersCount = new int[26];
+        for (int i = 0; i < inputAbecedario.length(); i++) {
+            char c = inputAbecedario.charAt(i);
+            if (Character.isLetter(c)) {
+                int index = Character.toLowerCase(c) - 'a';
+                lettersCount[index]++;
+            }
+        }
+
+        for (int i = 0; i < 26; i++) {
+            System.out.println("Cantidad de " + (char)(i + 'a') + ": " + lettersCount[i]);
+        }
     }
 
     public void ejercicio18() {
@@ -475,16 +543,30 @@ public class BoletinArraysUnidimensionales {
         // Leer una cadena que contenga varias palabras separadas por espacios.
         // Buscar información del método split de la clase String, y utilizarlo para
         // dividir la cadena en las distintas palabras.
+
+        System.out.print("Ingrese una cadena con varias palabras separadas por espacios: ");
+        String input = scan.nextLine();
+
+        String[] words = input.split(" ");
+        System.out.println("Palabras divididas: ");
+        for (String word : words) {
+            System.out.println(word);
+        }
     }
 
     public void ejercicio19() {
-        // 19. Introduce por pantalla el número de tu DNI, y vuelve a imprimirlo seguido de la letra.
+        // Introduce por pantalla el número de tu DNI, y vuelve a imprimirlo seguido de la letra.
         // Para calcular la letra, cogeremos el resto de dividir nuestro dni entre 23, el resultado
         // debe estar entre 0 y 22. Tendrás que crear un array que contenga:
 
-        int[] arrayPosicion = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
-        char[] arrayLetra = {'R','T','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C',
-                'K','E'};
+        String[] letras = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"};
+
+        System.out.print("Ingrese el número de su DNI: ");
+        int dniNumber = scan.nextInt();
+
+        int remainder = dniNumber % 23;
+        String dniLetter = letras[remainder];
+        System.out.println("Su DNI es: " + dniNumber + dniLetter);
     }
 
     public static void main(String[] args) {
