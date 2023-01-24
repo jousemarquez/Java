@@ -480,6 +480,32 @@ public class BoletinArraysUnidimensionales {
         // Ejercicio 15:
         // Repetir el ejercicio anterior, sumando ambos arrays y guardando el resultado en un
         // tercer array que deberá imprimirse por pantalla.
+
+        int size = 4;
+        int[] array1 = new int[size];
+        int[] array2 = new int[size];
+        Random rand = new Random();
+
+        // Inicializar los arrays con números aleatorios de una cifra.
+        for (int i = 0; i < size; i++) {
+            array1[i] = rand.nextInt(10);
+            array2[i] = rand.nextInt(10);
+        }
+
+        int[] arrayPlus = new int[size];
+        // Sumar los valores de cada array en su posición.
+        for (int i = 0; i < size; i++) {
+            arrayPlus[i] = array1[i] + array2[i];
+        }
+
+        for (int i = 0; i < size; i++) {
+            if(arrayPlus[i] == size - 1) {
+                System.out.print(arrayPlus[i] + ".");
+            } else {
+                System.out.print(arrayPlus[i] + ", ");
+            }
+        }
+        System.out.println();
     }
 
     public void ejercicio16() {
