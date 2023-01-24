@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class TeoriaArraysBidimensionales {
     public static void main(String[] Arg) {
-        Scanner scan = new Scanner(System.in);
         // ARRAYS BIDIMENSIONALES
 
         // Formas clásicas de declarar arrays de 1 dimensión.
@@ -53,5 +52,40 @@ public class TeoriaArraysBidimensionales {
             }
             System.out.println();
         }
+        System.out.println("FIN EJERCICIO");
+        
+        // Ejemplo de recorrido de arrays bidimensionales solo con un bucle
+        
+        int[][] arrayInt = {
+                {0,2},
+                {3,1},
+                {4,7},
+        };
+
+        for (int i = 0; i < arrayInt.length; i++) {
+            // arrayInt[i] es la fila número i, o sub-array i
+            System.out.print("{");
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                System.out.print( arrayInt[i][j] + "");
+            }
+            System.out.println("}");
+        }
+        System.out.println("FIN EJERCICIO");
+
+        int[][] arrayInt2 = {
+                {0,2},
+                {3,1,8,7},
+                {4,7},
+        };
+
+        for (int i = 0; i < arrayInt2.length; i++) {
+            // arrayInt[i] es la fila número i, o sub-array i
+            System.out.print("{");
+            for (int j = 0; j < arrayInt2[i].length; j++) {
+                System.out.print( arrayInt2[i][j] + ",");
+            }
+            System.out.println("}");
+        }
+        System.out.println("FIN EJERCICIO");
     }
 }
