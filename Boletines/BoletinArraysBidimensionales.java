@@ -1,7 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class BoletinArraysBidimensionales {
 
     Scanner scan = new Scanner(System.in);
@@ -12,57 +11,59 @@ public class BoletinArraysBidimensionales {
 
         do {
             System.out.print("----- Menú Principal -----"
-                    + "\nIngrese una opción (1-19). 0 para salir: ");
+                    + "\nIngrese una opción (1-16)"
+                    + "\nParte A (1-8) Parte B (9-16): ");
+
             opc = scan.nextLine();
 
             switch (opc) {
                 case "1":
-                    ejercicio1();
+                    parteA0();
                     break;
                 case "2":
-                    ejercicio2();
+                    parteA1();
                     break;
                 case "3":
-                    ejercicio3();
+                    parteA2();
                     break;
                 case "4":
-                    ejercicio4();
+                    parteA3();
                     break;
                 case "5":
-                    ejercicio5();
+                    parteA4();
                     break;
                 case "6":
-                    ejercicio6();
+                    parteA5();
                     break;
                 case "7":
-                    ejercicio7();
+                    parteA6();
                     break;
                 case "8":
-                    ejercicio8();
+                    parteA7();
                     break;
                 case "9":
-                    ejercicio9();
+                    parteB1();
                     break;
                 case "10":
-                    ejercicio10();
+                    parteB2();
                     break;
                 case "11":
-                    ejercicio11();
+                    parteB3();
                     break;
                 case "12":
-                    ejercicio12();
+                    parteB4();
                     break;
                 case "13":
-                    ejercicio13();
+                    parteB5();
                     break;
                 case "14":
-                    ejercicio14();
+                    parteB6();
                     break;
                 case "15":
-                    ejercicio15();
+                    parteB7();
                     break;
                 case "16":
-                    ejercicio16();
+                    parteB8();
                     break;
                 default:
                     System.out.println("Gracias por usar la aplicación. Vuelva Pronto");
@@ -72,9 +73,9 @@ public class BoletinArraysBidimensionales {
         } while (!opc.equals("0"));
     }
 
-    public void ejercicio1() {
+    public void parteA0() {
         /*
-        Ejercicio 1:
+        Ejercicio 0:
         Partiendo de la siguiente matriz haga los siguientes ejercicios:
         0 0 0
         0 0 0
@@ -85,9 +86,9 @@ public class BoletinArraysBidimensionales {
         System.out.println("FIN");
     }
 
-    public void ejercicio2() {
+    public void parteA1() {
         /*
-        Ejercicio 2:
+        Ejercicio 1:
         Modifica la matriz sin utilizar bucles para que tenga el siguiente contenido, y tras
         modificarla completamente imprímela por pantalla sin utilizar bucles:
         1 1 1
@@ -107,9 +108,9 @@ public class BoletinArraysBidimensionales {
         System.out.println("FIN");
     }
 
-    public void ejercicio3() {
+    public void parteA2() {
         /*
-        Ejercicio 3:
+        Ejercicio 2:
         Modifica la matriz sin utilizar bucles para que tenga el siguiente contenido, y tras
         modificarla completamente imprímela por pantalla sin utilizar bucles:
         1 0 0
@@ -128,9 +129,9 @@ public class BoletinArraysBidimensionales {
         System.out.println("FIN");
     }
 
-    public void ejercicio4() {
+    public void parteA3() {
         /*
-        Ejercicio 4:
+        Ejercicio 3:
         Modifica la matriz sin utilizar bucles para que tenga el siguiente contenido, y tras
         modificarla completamente imprímela por pantalla sin utilizar bucles:
         0 0 0
@@ -150,9 +151,9 @@ public class BoletinArraysBidimensionales {
         System.out.println("FIN");
     }
 
-    public void ejercicio5() {
+    public void parteA4() {
         /*
-        Ejercicio 5:
+        Ejercicio 4:
         Modifica la matriz sin utilizar bucles para que tenga el siguiente contenido, y tras
         modificarla completamente imprímela por pantalla sin utilizar bucles:
         0 0 1
@@ -172,9 +173,9 @@ public class BoletinArraysBidimensionales {
         System.out.println("FIN");
     }
 
-    public void ejercicio6() {
+    public void parteA5() {
         /*
-        Ejercicio 6:
+        Ejercicio 5:
         Modifica la matriz sin utilizar bucles para que tenga el siguiente contenido, y tras
         modificarla completamente imprímela por pantalla sin utilizar bucles:
         1 0 0
@@ -194,9 +195,9 @@ public class BoletinArraysBidimensionales {
         System.out.println("FIN");
     }
 
-    public void ejercicio7() {
+    public void parteA6() {
         /*
-        Ejercicio 7:
+        Ejercicio 6:
         Modifica la matriz sin utilizar bucles para que tenga el siguiente contenido, y tras
         modificarla completamente imprímela por pantalla sin utilizar bucles:
         0 0 1
@@ -216,9 +217,42 @@ public class BoletinArraysBidimensionales {
         System.out.println("FIN");
     }
 
-    public void ejercicio8() {
+    public void parteA7() {
         /*
-        Ejercicio 8:
+        Ejercicio 7:
+        Modifica todos los ejercicios anteriores para que la modificación y la impresión se
+        realicen mediante bucles.
+        */
+
+        // RELLENAR JOAQUÍN
+
+        int[][] arrayInt = new int[3][3];
+
+        arrayInt[0][0] = 1;
+        arrayInt[0][1] = 1;
+        arrayInt[0][2] = 1;
+
+        for (int i = 0; i < arrayInt.length; i++) {
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                if (i == 0) {
+                    arrayInt[i][j] = 1;
+                }
+            }
+        }
+
+        for (int i = 0; i < arrayInt.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                System.out.print(arrayInt[i][j] + "");
+            }
+            System.out.println("}");
+        }
+        System.out.println("FIN");
+    }
+
+    public void parteB1() {
+        /*
+        Ejercicio 1:
         Leer por pantalla un número entero n, y generar una matriz de dimensiones nxn
         como la que se muestra a continuación. Imprimir la matriz por pantalla tras haberla
         generado completamente.
@@ -233,19 +267,24 @@ public class BoletinArraysBidimensionales {
         int[][] arrayInt = new int[n][n];
 
         for (int i = 0; i < arrayInt.length; i++) {
-            System.out.print("{");
             for (int j = 0; j < arrayInt[i].length; j++) {
                 arrayInt[i][j] = 1;
-                System.out.print(arrayInt[i][j] + "");
+            }
+        }
+
+        for (int i = 0; i < arrayInt.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                System.out.print(arrayInt[i][j] + " ");
             }
             System.out.println("}");
         }
         System.out.println("FIN");
     }
 
-    public void ejercicio9() {
+    public void parteB2() {
         /*
-        Ejercicio 9:
+        Ejercicio 2:
         Modificar el ejercicio anterior para que cada posición tenga un número aleatorio
         entre 0 y 9.
         */
@@ -268,9 +307,9 @@ public class BoletinArraysBidimensionales {
         System.out.println("FIN");
     }
 
-    public void ejercicio10() {
+    public void parteB3() {
         /*
-        Ejercicio 10:
+        Ejercicio 3:
         Modificar el ejercicio anterior para que las dimensiones sean nxm.
         */
         int rowSize = 0, columnSize = 0, random = 0;
@@ -286,16 +325,16 @@ public class BoletinArraysBidimensionales {
             System.out.print("{");
             for (int j = 0; j < arrayInt[i].length; j++) {
                 arrayInt[i][j] = rand.nextInt(10);
-                System.out.print(arrayInt[i][j] + "");
+                System.out.print(arrayInt[i][j] + " ");
             }
             System.out.println("}");
         }
         System.out.println("FIN");
     }
 
-    public void ejercicio11() {
+    public void parteB4() {
         /*
-        Ejercicio 11:
+        Ejercicio 4:
         Leer por pantalla un carácter y un número n, e imprimir por pantalla una matriz
         cuadrada como la siguiente. Ejemplo para ‘a’ y 4:
         a a a a
@@ -304,29 +343,32 @@ public class BoletinArraysBidimensionales {
         a 0 0 0
         */
 
-        int rowSize = 0, columnSize = 0, random = 0;
-        Random rand = new Random();
+        int dimension;
+        char caracter;
+        System.out.print("Introducir un caracter: ");
+        caracter = scan.next().charAt(0);
+        System.out.print("Introducir la dimensión: ");
+        dimension = scan.nextInt();
+        char[][] arrayChar = new char[dimension][dimension];
 
-        System.out.print("Introducir la dimensión de filas de la matriz: ");
-        rowSize = scan.nextInt();
-        System.out.print("Introducir la dimensión de columnas de la matriz: ");
-        columnSize = scan.nextInt();
-        int[][] arrayInt = new int[rowSize][columnSize];
-
-        for (int i = 0; i < arrayInt.length; i++) {
+        for (int i = 0; i < arrayChar.length; i++) {
             System.out.print("{");
-            for (int j = 0; j < arrayInt[i].length; j++) {
-                arrayInt[i][j] = rand.nextInt(10);
-                System.out.print(arrayInt[i][j] + "");
+            for (int j = 0; j < arrayChar[i].length; j++) {
+                if (i == 0 || j == 0) {
+                    arrayChar[i][j] = caracter;
+                } else {
+                    arrayChar[i][j] = (int) ('0');
+                }
+                System.out.print(arrayChar[i][j] + " ");
             }
             System.out.println("}");
         }
         System.out.println("FIN");
     }
 
-    public void ejercicio12() {
+    public void parteB5() {
         /*
-        Ejercicio 12:
+        Ejercicio 5:
         Leer por pantalla un carácter y un número n, e imprimir por pantalla una matriz
         cuadrada como la siguiente. Ejemplo para ‘a’ y 4:
         0 0 0 a
@@ -334,24 +376,68 @@ public class BoletinArraysBidimensionales {
         0 0 0 a
         a a a a
         */
+
+        int dimension;
+        char caracter;
+        System.out.print("Introducir un caracter: ");
+        caracter = scan.next().charAt(0);
+        System.out.print("Introducir la dimensión: ");
+        dimension = scan.nextInt();
+        char[][] arrayChar = new char[dimension][dimension];
+
+        for (int i = 0; i < arrayChar.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayChar[i].length; j++) {
+                if (i == arrayChar[i].length-1 || j == arrayChar[j].length-1) {
+                    arrayChar[i][j] = caracter;
+                } else {
+                    arrayChar[i][j] = (int) ('0');
+                }
+                System.out.print(arrayChar[i][j] + " ");
+            }
+            System.out.println("}");
+        }
+        System.out.println("FIN");
     }
 
-    public void ejercicio13() {
+    public void parteB6() {
         /*
-        Ejercicio 13:
+        Ejercicio 6:
         Leer por pantalla un carácter y un número n, e imprimir por pantalla una matriz
         cuadrada como la siguiente. Ejemplo para ‘a’ y 4:
-        a a a a
-        a 0 0 a
-        a 0 0 a
-        a a a a
+        a  a  a  a
+        a  0  0  a
+        a  0  0  a
+        a  a  a  a
         */
+
+        int dimension;
+        char caracter;
+        System.out.print("Introducir un caracter: ");
+        caracter = scan.next().charAt(0);
+        System.out.print("Introducir la dimensión: ");
+        dimension = scan.nextInt();
+        char[][] arrayChar = new char[dimension][dimension];
+
+        for (int i = 0; i < arrayChar.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayChar[i].length; j++) {
+                if (i == 0 || j == 0 || i == arrayChar[i].length-1 || j == arrayChar[j].length-1){
+                    arrayChar[i][j] = caracter;
+                } else {
+                    arrayChar[i][j] = (int) ('0');
+                }
+                System.out.print(arrayChar[i][j] + " ");
+            }
+            System.out.println("}");
+        }
+        System.out.println("FIN");
 
     }
 
-    public void ejercicio14() {
+    public void parteB7() {
         /*
-        Ejercicio 14:
+        Ejercicio 7:
         Leer por pantalla un número entero n, y crear una matriz de dimensiones nxn como
         la que se muestra a continuación. Imprimir la matriz por pantalla.
         Ejemplo para n = 4:
@@ -360,42 +446,31 @@ public class BoletinArraysBidimensionales {
         0 1 0 1
         1 0 1 0
         */
-    }
 
-    public void ejercicio15() {
-        // Ejercicio 15:
-        // Repetir el ejercicio anterior, sumando ambos arrays y guardando el resultado en un
-        // tercer array que deberá imprimirse por pantalla.
+        int dimension;
+        System.out.print("Introducir la dimensión: ");
+        dimension = scan.nextInt();
+        int[][] arrayInt = new int[dimension][dimension];
 
-        int size = 4;
-        int[] array1 = new int[size];
-        int[] array2 = new int[size];
-        Random rand = new Random();
-
-        // Inicializar los arrays con números aleatorios de una cifra.
-        for (int i = 0; i < size; i++) {
-            array1[i] = rand.nextInt(10);
-            array2[i] = rand.nextInt(10);
-        }
-
-        int[] arrayPlus = new int[size];
-        // Sumar los valores de cada array en su posición.
-        for (int i = 0; i < size; i++) {
-            arrayPlus[i] = array1[i] + array2[i];
-        }
-
-        for (int i = 0; i < size; i++) {
-            if (arrayPlus[i] == size - 1) {
-                System.out.print(arrayPlus[i] + ".");
-            } else {
-                System.out.print(arrayPlus[i] + ", ");
+        for (int i = 0; i < arrayInt.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                if (i % 2 == 0){
+                    arrayInt[i][0] = 0;
+                    arrayInt[0][j] = 1;
+                } else {
+                    arrayInt[i][0] = 1;
+                    arrayInt[0][j] = 0;
+                }
+                System.out.print(arrayInt[i][j] + " ");
             }
+            System.out.println("}");
         }
-        System.out.println();
+        System.out.println("FIN");
     }
 
-    public void ejercicio16() {
-        // Ejercicio 16:
+    public void parteB8() {
+        // Ejercicio 8:
         /*(MUY DIFICIL) Modificar el ejercicio 2 para que una vez generada la matriz, se cree
         otra nueva que contenga en cada posición la media aritmética de los elementos que
         la rodean. Por ejemplo, para la siguiente matriz aleatoria:
@@ -407,6 +482,23 @@ public class BoletinArraysBidimensionales {
         4.0 3.125 2.4
         2.33 2.4 2.67
         */
+
+        int n = 0, random = 0;
+        Random rand = new Random();
+
+        System.out.print("Introducir la dimensión de la matriz: ");
+        n = scan.nextInt();
+        int[][] arrayInt = new int[n][n];
+
+        for (int i = 0; i < arrayInt.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                arrayInt[i][j] = rand.nextInt(10);
+                System.out.print(arrayInt[i][j] + "");
+            }
+            System.out.println("}");
+        }
+        System.out.println("FIN");
     }
 
     public static void main(String[] args) {
