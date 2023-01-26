@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class BoletinArraysBidimensionales {
+public class BoletinArraysMultidimensionales {
 
     Scanner scan = new Scanner(System.in);
     private int num;
@@ -295,11 +295,16 @@ public class BoletinArraysBidimensionales {
         System.out.print("Introducir la dimensión de la matriz: ");
         n = scan.nextInt();
         int[][] arrayInt = new int[n][n];
-
+        // Rellenar array
+        for (int i = 0; i < arrayInt.length; i++) {
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                arrayInt[i][j] = rand.nextInt(10);
+            }
+        }
+        // Imprimir array
         for (int i = 0; i < arrayInt.length; i++) {
             System.out.print("{");
             for (int j = 0; j < arrayInt[i].length; j++) {
-                arrayInt[i][j] = rand.nextInt(10);
                 System.out.print(arrayInt[i][j] + "");
             }
             System.out.println("}");
@@ -312,15 +317,24 @@ public class BoletinArraysBidimensionales {
         Ejercicio 3:
         Modificar el ejercicio anterior para que las dimensiones sean nxm.
         */
+
         int rowSize = 0, columnSize = 0, random = 0;
         Random rand = new Random();
 
-        System.out.print("Introducir la dimensión de filas de la matriz: ");
+        System.out.print("Introducir la cantidad de filas de la matriz: ");
         rowSize = scan.nextInt();
-        System.out.print("Introducir la dimensión de columnas de la matriz: ");
+        System.out.print("Introducir la cantidad de columnas de la matriz: ");
         columnSize = scan.nextInt();
         int[][] arrayInt = new int[rowSize][columnSize];
 
+        // Rellenar array
+        for (int i = 0; i < arrayInt.length; i++) {
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                arrayInt[i][j] = rand.nextInt(10);
+            }
+        }
+
+        // Imprimir array
         for (int i = 0; i < arrayInt.length; i++) {
             System.out.print("{");
             for (int j = 0; j < arrayInt[i].length; j++) {
@@ -337,10 +351,10 @@ public class BoletinArraysBidimensionales {
         Ejercicio 4:
         Leer por pantalla un carácter y un número n, e imprimir por pantalla una matriz
         cuadrada como la siguiente. Ejemplo para ‘a’ y 4:
-        a a a a
-        a 0 0 0
-        a 0 0 0
-        a 0 0 0
+        a  a  a  a
+        a  0  0  0
+        a  0  0  0
+        a  0  0  0
         */
 
         int dimension;
@@ -351,14 +365,20 @@ public class BoletinArraysBidimensionales {
         dimension = scan.nextInt();
         char[][] arrayChar = new char[dimension][dimension];
 
+        // Rellenar array
         for (int i = 0; i < arrayChar.length; i++) {
-            System.out.print("{");
             for (int j = 0; j < arrayChar[i].length; j++) {
                 if (i == 0 || j == 0) {
                     arrayChar[i][j] = caracter;
                 } else {
-                    arrayChar[i][j] = (int) ('0');
+                    arrayChar[i][j] = '0';
                 }
+            }
+        }
+        // Imprimir array
+        for (int i = 0; i < arrayChar.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayChar[i].length; j++) {
                 System.out.print(arrayChar[i][j] + " ");
             }
             System.out.println("}");
@@ -371,10 +391,10 @@ public class BoletinArraysBidimensionales {
         Ejercicio 5:
         Leer por pantalla un carácter y un número n, e imprimir por pantalla una matriz
         cuadrada como la siguiente. Ejemplo para ‘a’ y 4:
-        0 0 0 a
-        0 0 0 a
-        0 0 0 a
-        a a a a
+        0  0  0  a
+        0  0  0  a
+        0  0  0  a
+        a  a  a  a
         */
 
         int dimension;
@@ -388,10 +408,10 @@ public class BoletinArraysBidimensionales {
         for (int i = 0; i < arrayChar.length; i++) {
             System.out.print("{");
             for (int j = 0; j < arrayChar[i].length; j++) {
-                if (i == arrayChar[i].length-1 || j == arrayChar[j].length-1) {
+                if (i == arrayChar[i].length - 1 || j == arrayChar[j].length - 1) {
                     arrayChar[i][j] = caracter;
                 } else {
-                    arrayChar[i][j] = (int) ('0');
+                    arrayChar[i][j] = '0';
                 }
                 System.out.print(arrayChar[i][j] + " ");
             }
@@ -422,10 +442,10 @@ public class BoletinArraysBidimensionales {
         for (int i = 0; i < arrayChar.length; i++) {
             System.out.print("{");
             for (int j = 0; j < arrayChar[i].length; j++) {
-                if (i == 0 || j == 0 || i == arrayChar[i].length-1 || j == arrayChar[j].length-1){
+                if (i == 0 || j == 0 || i == arrayChar[i].length - 1 || j == arrayChar[j].length - 1) {
                     arrayChar[i][j] = caracter;
                 } else {
-                    arrayChar[i][j] = (int) ('0');
+                    arrayChar[i][j] = '0';
                 }
                 System.out.print(arrayChar[i][j] + " ");
             }
@@ -452,16 +472,21 @@ public class BoletinArraysBidimensionales {
         dimension = scan.nextInt();
         int[][] arrayInt = new int[dimension][dimension];
 
+        // Rellenar array
+
+        for (int i = 0; i < arrayInt.length; i++) {
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                if (i % 2 == 0 && j % 2 == 1) {
+                    arrayInt[i][j] = 1;
+                } else if (i % 2 == 1 && j % 2 == 0) {
+                    arrayInt[i][j] = 1;
+                }
+            }
+        }
+
         for (int i = 0; i < arrayInt.length; i++) {
             System.out.print("{");
             for (int j = 0; j < arrayInt[i].length; j++) {
-                if (i % 2 == 0){
-                    arrayInt[i][0] = 0;
-                    arrayInt[0][j] = 1;
-                } else {
-                    arrayInt[i][0] = 1;
-                    arrayInt[0][j] = 0;
-                }
                 System.out.print(arrayInt[i][j] + " ");
             }
             System.out.println("}");
@@ -482,27 +507,10 @@ public class BoletinArraysBidimensionales {
         4.0 3.125 2.4
         2.33 2.4 2.67
         */
-
-        int n = 0, random = 0;
-        Random rand = new Random();
-
-        System.out.print("Introducir la dimensión de la matriz: ");
-        n = scan.nextInt();
-        int[][] arrayInt = new int[n][n];
-
-        for (int i = 0; i < arrayInt.length; i++) {
-            System.out.print("{");
-            for (int j = 0; j < arrayInt[i].length; j++) {
-                arrayInt[i][j] = rand.nextInt(10);
-                System.out.print(arrayInt[i][j] + "");
-            }
-            System.out.println("}");
-        }
-        System.out.println("FIN");
     }
 
     public static void main(String[] args) {
-        BoletinArraysBidimensionales fc = new BoletinArraysBidimensionales();
+        BoletinArraysMultidimensionales fc = new BoletinArraysMultidimensionales();
         fc.menuArray();
     }
 }
