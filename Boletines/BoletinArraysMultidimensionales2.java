@@ -276,24 +276,87 @@ public class BoletinArraysMultidimensionales2 {
 
     public void ejercicio5() {
         /*
-        Ejercicio 4:
-        Modifica la matriz sin utilizar bucles para que tenga el siguiente contenido, y tras
-        modificarla completamente imprímela por pantalla sin utilizar bucles:
-        0 0 1
-        0 0 1
-        0 0 1
+        Ejercicio 5:
+        Repetir el ejercicio anterior para que el contenido de M1 y M2 se genere de forma aleatoria
+        (números entre 0 y 9).
         */
+        Random rand = new Random();
+        int random = 0;
 
+        int[][] arrayInt = new int[3][3];
+
+        // Se llena la matriz arrayInt de valores aleatorios de números entre 0 y 9.
+        for (int i = 0; i < arrayInt.length; i++) {
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                arrayInt[i][j] = rand.nextInt(10);
+            }
+        }
+
+        int[][] arrayInt2 = new int[3][3];
+
+        // Se llena la matriz arrayInt2 de valores aleatorios de números entre 0 y 9.
+        for (int i = 0; i < arrayInt2.length; i++) {
+            for (int j = 0; j < arrayInt2[i].length; j++) {
+                arrayInt2[i][j] = rand.nextInt(10);
+            }
+        }
+        // Se llena la matriz arraySuma con los valores de arrayInt y arrayInt2.
+        int[][] arraySuma = new int[3][3];
+
+        for (int i = 0; i < arraySuma.length; i++) {
+            for (int j = 0; j < arraySuma[0].length; j++){
+                arraySuma[i][j] = arrayInt[i][j] + arrayInt2[i][j];
+            }
+        }
+        // Imprimir arrayInt1
+        System.out.println("Contenido de arrayInt1: ");
+        for (int i = 0; i < arrayInt.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                if (j == arrayInt[i].length - 1) {
+                    System.out.print(arrayInt[i][j] + "");
+                } else {
+                    System.out.print(arrayInt[i][j] + ", ");
+                }
+            }
+            System.out.println("}");
+        }
+
+        // Imprimir arrayInt2
+        System.out.println("Contenido de arrayInt2: ");
+        for (int i = 0; i < arrayInt2.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayInt2[i].length; j++) {
+                if (j == arrayInt2[i].length - 1) {
+                    System.out.print(arrayInt2[i][j] + "");
+                } else {
+                    System.out.print(arrayInt2[i][j] + ", ");
+                }
+            }
+            System.out.println("}");
+        }
+
+        // Imprimir arraySuma
+        System.out.println("Contenido de arraySuma: ");
+        for (int i = 0; i < arraySuma.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arraySuma[i].length; j++) {
+                if (j == arraySuma[i].length-1) {
+                    System.out.print(arraySuma[i][j] + "");
+                } else {
+                    System.out.print(arraySuma[i][j] + ", ");
+                }
+            }
+            System.out.println("}");
+        }
+        System.out.println("FIN");
     }
 
     public void ejercicio6() {
         /*
-        Ejercicio 5:
-        Modifica la matriz sin utilizar bucles para que tenga el siguiente contenido, y tras
-        modificarla completamente imprímela por pantalla sin utilizar bucles:
-        1 0 0
-        0 1 0
-        0 0 1
+        Ejercicio 6:
+        Repetir el ejercicio 4 para que, además, el tamaño n de ambas matrices se genere de forma aleatoria
+        (ambas matrices serán de tamaño nxn).
         */
 
 
@@ -302,12 +365,9 @@ public class BoletinArraysMultidimensionales2 {
 
     public void ejercicio7() {
         /*
-        Ejercicio 6:
-        Modifica la matriz sin utilizar bucles para que tenga el siguiente contenido, y tras
-        modificarla completamente imprímela por pantalla sin utilizar bucles:
-        0 0 1
-        0 1 0
-        1 0 0
+        Ejercicio 7:
+        Dadas las matrices del ejercicio 3, desarrollar un programa para multiplicarlas.
+        Busque en internet como se multiplican dos matrices.
         */
 
         System.out.println("FIN");
