@@ -87,5 +87,87 @@ public class TeoriaArraysBidimensionales {
             System.out.println("}");
         }
         System.out.println("FIN EJERCICIO");
+
+        // TIPOS PRIMITIVOS
+        int a = 7;
+        int b = 7; //Esto copia el valor de a en b
+        a++; //a = 8 y b = 7
+        System.out.println(b); //-> Imprime 7
+
+        // ClASES/OBJETOS
+        int[] c = {0, 0, 0};
+        int[] d = c; //CUIDADO! ESTO COPIA LA REFERENCIA
+
+        c[0] = 1; //Al tener c y d la misma referencia, cada cambio en c se hace en d también, ya que apuntan al mismo objeto
+
+        for (int i = 0; i < d.length; i++) {
+            System.out.print(d[i] + " ");
+        }
+
+        //Para clonar sus valores habria que hacer lo siguiente:
+        int[] original = {1, 2, 3};
+        int[] copia = new int[original.length];
+
+        for (int i = 0; i < copia.length; i++) {
+            copia[i] = original[i];
+        }
+
+        //Imprimimos ambos a ver:
+
+        System.out.print("\nOriginal: ");
+        for (int i = 0; i < original.length; i++) {
+            System.out.print(original[i] + " ");
+        }
+        System.out.print("\nCopia: ");
+
+        for (int i = 0; i < copia.length; i++) {
+            System.out.print(copia[i] + " ");
+        }
+
+        //Cambiamos un valor del original
+        original[0] = 9;
+
+        //Volvemos a imprimir
+        System.out.print("\nOriginal tras cambio: ");
+        for (int i = 0; i < original.length; i++) {
+            System.out.print(original[i] + " ");
+        }
+        System.out.print("\nCopia tras cambio en el original: ");
+
+        for (int i = 0; i < copia.length; i++) {
+            System.out.print(copia[i] + " ");
+        }
+        System.out.println();
+
+        System.out.println("--------------------------------------------------------");
+
+        /*OTRA COSA IMPORTANTE:
+            Si tenemos el array: {1, 2, 3, 4, 5} y tenemos que sustituir el valor de cada posición por la suma
+            del valor de su izquierda mas el valor de su derecha, de tal manera que el resultado fuese: {2,4,6,8,4}
+            Si hacemos un for paso a paso, al sustituir el valor de la primera posicion y empezar a calcular el de la
+            segunda, el valor de la posicion anterior ESTA SUSTITUIDO, por tanto, ya aparecerá 2 en vez de uno, y
+            haremos la suma mal. La forma de hacerlo es clonando el original. Solución:
+         */
+        int[] ejOriginal = {1, 2, 3, 4, 5};
+        int[] ejCopia = new int[ejOriginal.length];
+
+        for (int i = 0; i < ejCopia.length; i++) {
+            for (int k = i - 1; k <= i + 1; k++) {
+                if (k != i && k >= 0 && k < ejCopia.length) {
+                    ejCopia[i] += ejOriginal[k];
+                }
+            }
+        }
+
+        System.out.print("\nArray Original: ");
+        for (int i = 0; i < ejOriginal.length; i++) {
+            System.out.print(ejOriginal[i] + " ");
+        }
+        System.out.print("\nArray Copia: ");
+
+        for (int i = 0; i < ejCopia.length; i++) {
+            System.out.print(ejCopia[i] + " ");
+        }
+        System.out.println();
     }
 }
