@@ -5,32 +5,32 @@ public class TeoriaArraysBidimensionales {
         // ARRAYS BIDIMENSIONALES
 
         // Formas clásicas de declarar arrays de 1 dimensión.
-        char[] arr1D = {'a','b','c'};
+        char[] arr1D = {'a', 'b', 'c'};
         char[] arr1Dbis = new char[3];
 
         // Formas para declarar arrays de 2 dimensiones.
         char[][] arr2Dbis = new char[5][3]; // El primero indica la altura y el segundo la anchura.
         char[][] arr2D = {
-                {'a','b','c'},
-                {'d','e','f'},
-                {'g','h','i'},
-                {'g','h','i','f','r'},
-                {'g','h'},
+                {'a', 'b', 'c'},
+                {'d', 'e', 'f'},
+                {'g', 'h', 'i'},
+                {'g', 'h', 'i', 'f', 'r'},
+                {'g', 'h'},
         };
 
-        System.out.println("Tamaño del arr2D: " +arr1D.length);
-        System.out.println("Número de filas de arr2D: " +arr2D.length);
-        System.out.println("Número de filas de arr2Dbis: " +arr2Dbis.length);
-        System.out.println("Número de columnas de arr2Dbis: " +arr2Dbis[0].length);
-        System.out.println("Número de columnas de arr2Dbis: " +arr2Dbis[1].length);
-        System.out.println("Número de columnas de arr2Dbis: " +arr2Dbis[2].length);
-        System.out.println("Número de columnas de arr2Dbis: " +arr2Dbis[3].length);
-        System.out.println("Número de columnas de arr2Dbis: " +arr2Dbis[4].length);
-        System.out.println("Tamaño de arr2D: [" + arr2D.length + "," +arr2D[0].length + "]");
+        System.out.println("Tamaño del arr2D: " + arr1D.length);
+        System.out.println("Número de filas de arr2D: " + arr2D.length);
+        System.out.println("Número de filas de arr2Dbis: " + arr2Dbis.length);
+        System.out.println("Número de columnas de arr2Dbis: " + arr2Dbis[0].length);
+        System.out.println("Número de columnas de arr2Dbis: " + arr2Dbis[1].length);
+        System.out.println("Número de columnas de arr2Dbis: " + arr2Dbis[2].length);
+        System.out.println("Número de columnas de arr2Dbis: " + arr2Dbis[3].length);
+        System.out.println("Número de columnas de arr2Dbis: " + arr2Dbis[4].length);
+        System.out.println("Tamaño de arr2D: [" + arr2D.length + "," + arr2D[0].length + "]");
         System.out.println("********* ACCESO DATOS *********");
-        System.out.println("Mostrar [0,1] de arr2D: " +arr2D[0][1]); // Imprimir coordenadas
-        System.out.println("Mostrar [2,2] de arr2D: " +arr2D[2][2]);
-        System.out.println("Mostrar [1,0] de arr2D: " +arr2D[1][0]);
+        System.out.println("Mostrar [0,1] de arr2D: " + arr2D[0][1]); // Imprimir coordenadas
+        System.out.println("Mostrar [2,2] de arr2D: " + arr2D[2][2]);
+        System.out.println("Mostrar [1,0] de arr2D: " + arr2D[1][0]);
         System.out.println("********* MODIFICAR DATOS *********");
         arr2D[0][0] = 'J';
         arr2D[0][2] = 'J';
@@ -38,8 +38,8 @@ public class TeoriaArraysBidimensionales {
         System.out.println("********* IMPRIMIR LA MATRIZ ENTERA *********");
 
         int[][] arr = {
-                {1,3},
-                {3,6},
+                {1, 3},
+                {3, 6},
         };
 
         System.out.println(arr);
@@ -48,41 +48,41 @@ public class TeoriaArraysBidimensionales {
 
         for (int i = 0; i < arr2D.length; i++) {
             for (int j = 0; j < arr2D[i].length; j++) {
-                System.out.print(" | " + arr2D[i][j]+ " | ");
+                System.out.print(" | " + arr2D[i][j] + " | ");
             }
             System.out.println();
         }
         System.out.println("FIN EJERCICIO");
-        
+
         // Ejemplo de recorrido de arrays bidimensionales solo con un bucle
-        
+
         int[][] arrayInt = {
-                {0,2},
-                {3,1},
-                {4,7},
+                {0, 2},
+                {3, 1},
+                {4, 7},
         };
 
         for (int i = 0; i < arrayInt.length; i++) {
             // arrayInt[i] es la fila número i, o sub-array i
             System.out.print("{");
             for (int j = 0; j < arrayInt[i].length; j++) {
-                System.out.print( arrayInt[i][j] + "");
+                System.out.print(arrayInt[i][j] + "");
             }
             System.out.println("}");
         }
         System.out.println("FIN EJERCICIO");
 
         int[][] arrayInt2 = {
-                {0,2},
-                {3,1,8,7},
-                {4,7},
+                {0, 2},
+                {3, 1, 8, 7},
+                {4, 7},
         };
 
         for (int i = 0; i < arrayInt2.length; i++) {
             // arrayInt[i] es la fila número i, o sub-array i
             System.out.print("{");
             for (int j = 0; j < arrayInt2[i].length; j++) {
-                System.out.print( arrayInt2[i][j] + ",");
+                System.out.print(arrayInt2[i][j] + ",");
             }
             System.out.println("}");
         }
@@ -169,5 +169,60 @@ public class TeoriaArraysBidimensionales {
             System.out.print(ejCopia[i] + " ");
         }
         System.out.println();
+        // 27 de Enero de 2023
+        // Comprobar si dos arrays tienen el mismo contenido
+        // (suponiendo que no podemos ver el contenido de cada uno visualmente)
+        int[] arr1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] arr2 = {0, 1, 2, 3, 4, 5, 6, 7, 0, 9};
+
+        // Codigo de validacion
+        // 1. Comprobar si alguno de los datos es null
+        if (arr1 == null || arr2 == null) {
+            System.out.println("Al menos uno de los arrays es null");
+            return;
+        }
+
+        if (arr1 == arr2) {
+            System.out.println("Ambos son el mismo array -> contenido identico");
+            return;
+        }
+
+        if (arr1.length != arr2.length) {
+            System.out.println("El contenido no es el mismo");
+            return;
+        }
+
+        // En este punto los arrays tienen el mismo tamaño
+        boolean iguales = true;
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] != arr2[i]) { // son distintos, tengo que forzar la salida del bucle
+                iguales = false;
+                break;
+            }
+        }
+
+        if (iguales) {
+            System.out.println("Son identicos");
+        } else {
+            System.out.println("Son distintos");
+        }
+
+        System.out.println("Fin del programa");
+
+        // Partiendo de dos arrays 2D validos y de las mismas dimensiones,
+        // intercambiar la fila con indice 1 de ambos arrays
+        int[][] arrA = {
+                {0, 1},
+                {2, 3},
+                {4, 5},
+                {6, 7}
+        };
+
+        int[][] arrB = {
+                {0, 0},
+                {1, 1},
+                {2, 2},
+                {3, 3}
+        };
     }
 }
