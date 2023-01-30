@@ -73,6 +73,7 @@ public class BoletinArraysMultidimensionales2 {
                 }
             }
         }
+
         // Imprimiendo array
         for (int i = 0; i < arrayString.length; i++) {
             System.out.print("{");
@@ -96,6 +97,7 @@ public class BoletinArraysMultidimensionales2 {
         nombre por pantalla y sustituir el nombre que exista en esa posición. Debe repetirse la operación
         hasta que el usuario introduzca una posición inválida. Antes de finalizar, imprima la matriz.
         */
+
         int fila = 0, columna = 0;
         String nuevoNombre;
         String[][] arrayString = {
@@ -300,6 +302,7 @@ public class BoletinArraysMultidimensionales2 {
                 arrayInt2[i][j] = rand.nextInt(10);
             }
         }
+
         // Se llena la matriz arraySuma con los valores de arrayInt y arrayInt2.
         int[][] arraySuma = new int[3][3];
 
@@ -308,6 +311,7 @@ public class BoletinArraysMultidimensionales2 {
                 arraySuma[i][j] = arrayInt[i][j] + arrayInt2[i][j];
             }
         }
+
         // Imprimir arrayInt1
         System.out.println("Contenido de arrayInt1: ");
         for (int i = 0; i < arrayInt.length; i++) {
@@ -359,16 +363,124 @@ public class BoletinArraysMultidimensionales2 {
         (ambas matrices serán de tamaño nxn).
         */
 
+        Random rand = new Random();
+        int random = 0;
+        int n = rand.nextInt(10);
 
+        int[][] arrayInt = new int[n][n];
+
+        // Se llena la matriz arrayInt de valores aleatorios de números entre 0 y 9.
+        for (int i = 0; i < arrayInt.length; i++) {
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                arrayInt[i][j] = rand.nextInt(10);
+            }
+        }
+
+        int[][] arrayInt2 = new int[n][n];
+
+        // Se llena la matriz arrayInt2 de valores aleatorios de números entre 0 y 9.
+        for (int i = 0; i < arrayInt2.length; i++) {
+            for (int j = 0; j < arrayInt2[i].length; j++) {
+                arrayInt2[i][j] = rand.nextInt(10);
+            }
+        }
+
+        // Se llena la matriz arraySuma con los valores de arrayInt y arrayInt2.
+        int[][] arraySuma = new int[n][n];
+
+        for (int i = 0; i < arraySuma.length; i++) {
+            for (int j = 0; j < arraySuma[0].length; j++){
+                arraySuma[i][j] = arrayInt[i][j] + arrayInt2[i][j];
+            }
+        }
+
+        // Imprimir arrayInt1.
+        System.out.println("Contenido de arrayInt1: ");
+        for (int i = 0; i < arrayInt.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayInt[i].length; j++) {
+                if (j == arrayInt[i].length - 1) {
+                    System.out.print(arrayInt[i][j] + "");
+                } else {
+                    System.out.print(arrayInt[i][j] + ", ");
+                }
+            }
+            System.out.println("}");
+        }
+
+        // Imprimir arrayInt2.
+        System.out.println("Contenido de arrayInt2: ");
+        for (int i = 0; i < arrayInt2.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayInt2[i].length; j++) {
+                if (j == arrayInt2[i].length - 1) {
+                    System.out.print(arrayInt2[i][j] + "");
+                } else {
+                    System.out.print(arrayInt2[i][j] + ", ");
+                }
+            }
+            System.out.println("}");
+        }
+
+        // Imprimir arraySuma.
+        System.out.println("Contenido de arraySuma: ");
+        for (int i = 0; i < arraySuma.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arraySuma[i].length; j++) {
+                if (j == arraySuma[i].length-1) {
+                    System.out.print(arraySuma[i][j] + "");
+                } else {
+                    System.out.print(arraySuma[i][j] + ", ");
+                }
+            }
+            System.out.println("}");
+        }
         System.out.println("FIN");
     }
 
     public void ejercicio7() {
         /*
         Ejercicio 7:
-        Dadas las matrices del ejercicio 3, desarrollar un programa para multiplicarlas.
+        Dadas las matrices del ejercicio 4, desarrollar un programa para multiplicarlas.
         Busque en internet como se multiplican dos matrices.
         */
+
+        int[][] arrayInt = {
+                {6,8,9},
+                {4,2,0},
+                {3,1,1}
+        };
+
+        int[][] arrayInt2 = {
+                {2,4,1},
+                {8,7,7},
+                {6,6,2}
+        };
+
+        int[][] arrayMultiplicacion = new int[arrayInt.length][arrayInt2[0].length];
+        for (int i = 0; i < arrayInt.length; i++) {
+            for (int j = 0; j < arrayInt2[0].length; j++) {
+                for (int k = 0; k < arrayInt[0].length; k++) {
+                    arrayMultiplicacion[i][j] += arrayInt[i][k] * arrayInt2[k][j];
+                }
+            }
+        }
+
+        // Imprimir arraySuma.
+        System.out.println("Contenido de arraySuma: ");
+        for (int i = 0; i < arrayMultiplicacion.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayMultiplicacion[i].length; j++) {
+                if (j == arrayMultiplicacion[i].length-1) {
+                    System.out.print(arrayMultiplicacion[i][j] + "");
+                } else {
+                    System.out.print(arrayMultiplicacion[i][j] + ", ");
+                }
+            }
+            System.out.println("}");
+        }
+        System.out.println("FIN");
+
 
         System.out.println("FIN");
     }
