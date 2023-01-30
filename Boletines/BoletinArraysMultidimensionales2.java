@@ -480,9 +480,6 @@ public class BoletinArraysMultidimensionales2 {
             System.out.println("}");
         }
         System.out.println("FIN");
-
-
-        System.out.println("FIN");
     }
 
     public static void main(String[] args) {
