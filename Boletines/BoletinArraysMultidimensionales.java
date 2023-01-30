@@ -507,6 +507,50 @@ public class BoletinArraysMultidimensionales {
         4.0 3.125 2.4
         2.33 2.4 2.67
         */
+
+        /* Se declaran dos matrices a y b, donde a es una matriz de tres filas y tres columnas con todos sus elementos
+        igual a 1 y b es una matriz vacía con la misma dimensión que a.*/
+
+        int[][] a = {{1,1,1}, {1,1,1}, {1,1,1}};
+        int[][] b = new int[a.length][a.length];
+        int c;
+
+        for (int i = 0; i < a.length; i++) { //Inicia un bucle anidado para recorrer cada elemento de la matriz a.
+            for (int j = 0; j < a[i].length; j++) { // Dentro del bucle, inicia otro bucle anidado para recorrer cada
+                // elemento en los elementos adyacentes a cada elemento en a
+                c = 0;
+                for (int k = i-1; k <= i+1 ; k++) {
+                    for (int l = j-1; l <= j+1; l++) {
+                        if (!(i==k && j==l) && k>= 0 && k< a.length && l>=0 && l<a[i].length) {
+                            // Si el elemento actual no es el mismo que el elemento original, se verifica si se
+                            // encuentra dentro de los límites de la matriz y, si es así, se suma a la matriz b en
+                            // la misma posición.
+                            b[i][j] += a[k][l];
+                            c++;
+                        }
+                    }
+                }
+                b[i][j]/=c; // Finalmente, se divide el valor de b en la posición actual por el número de
+                // elementos adyacentes que se han sumado para obtener la media.
+            }
+        }
+        // Se imprimen ambas matrices, a y b, en la salida estándar.
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[i].length; j++) {
+                System.out.printf("%02d ",a[i][j]);
+            }
+            System.out.println();
+        }
+
+        System.out.println("------------------------------------------");
+        //  El formato de impresión utiliza una anchura de dos caracteres y un espacio adicional para asegurar que
+        //  se muestren dos dígitos para cada elemento de la matriz.
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b[i].length; j++) {
+                System.out.printf("%02d ",b[i][j]);
+            }
+            System.out.println();
+        }
     }
 
     public static void main(String[] args) {
