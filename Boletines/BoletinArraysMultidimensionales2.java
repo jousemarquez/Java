@@ -59,18 +59,16 @@ public class BoletinArraysMultidimensionales2 {
         */
 
         System.out.print("Introducir un número: ");
-        int n = scan.nextInt();
+        int size = scan.nextInt();
 
-        float[][] arrayString = new float[n][n];
+        String[][] arrayString = new String[size][size];
 
+        float cont = 1.0f; // Se añade un contador para pasar posteriormente a float.
         // Rellenando array
         for (int i = 0; i < arrayString.length; i++) {
             for (int j = 0; j < arrayString[0].length; j++){
-                if (i % 2 == 1) {
-                    arrayString[i][j] += 1;
-                } else if (i % 2 == 0) {
-                    arrayString[0][j] += 4;
-                }
+                arrayString[i][j] = Float.toString(cont); // Se convierte float a string.
+                cont++; // Se incrementa en uno el contador de float.
             }
         }
 
@@ -98,8 +96,7 @@ public class BoletinArraysMultidimensionales2 {
         hasta que el usuario introduzca una posición inválida. Antes de finalizar, imprima la matriz.
         */
 
-        int fila = 0, columna = 0;
-        String nuevoNombre;
+
         String[][] arrayString = {
                 {"Alberto", "Joaquín", "Jorge", "Edu"},
                 {"Chema", "Luis", "Ángel", "Jose"},
@@ -107,20 +104,16 @@ public class BoletinArraysMultidimensionales2 {
 
         // Pedir al usuario un número de la posición de la matriz
 
-        do {
-            System.out.print("Introducir el número de fila: ");
+        System.out.print("Introduce los índices de filas y columnas: ");
+        int fila = scan.nextInt(), columna = scan.nextInt();
+        while ((fila >= 0 && fila < 2) && (columna >= 0 && columna < 4)) {
+            System.out.print("Introduce un nombre: ");
+            String nombre = scan.next();
+            arrayString[fila][columna] = nombre;
+            System.out.print("Introduce los índices de filas y columnas: ");
             fila = scan.nextInt();
-        } while (fila < 0 || fila > 1);
-
-        do {
-            System.out.print("Introducir el número de columna: ");
             columna = scan.nextInt();
-        } while (columna < 0 || columna > 3);
-
-        System.out.print("Introducir un nombre a sustituir: ");
-        nuevoNombre = scan.next();
-
-        arrayString[fila][columna] = nuevoNombre;
+        }
 
         // Imprimiendo array
         for (int i = 0; i < arrayString.length; i++) {
@@ -147,56 +140,42 @@ public class BoletinArraysMultidimensionales2 {
         A continuación, imprimir la matriz.
         */
 
-        int fila = 0, columna = 0;
-        String nuevoNombre;
         String[][] arrayString = {
                 {"Alberto", "Joaquín", "Jorge", "Edu"},
                 {"Chema", "Luis", "Ángel", "Jose"},
         };
 
         // Pedir al usuario un número de la posición de la matriz
-
-        do {
-            System.out.print("Introducir el número de fila: ");
+        System.out.print("Introduce los índices de filas y columnas: ");
+        int fila = scan.nextInt(), columna = scan.nextInt();
+        while ((fila >= 0 && fila < 2) && (columna >= 0 && columna < 4)) {
+            System.out.print("Introduce un nombre: ");
+            String nombre = scan.next();
+            arrayString[fila][columna] = nombre;
+            System.out.print("Introduce los índices de filas y columnas: ");
             fila = scan.nextInt();
-        } while (fila < 0 || fila > 1);
-
-        do {
-            System.out.print("Introducir el número de columna: ");
             columna = scan.nextInt();
-        } while (columna < 0 || columna > 3);
+        }
 
-        System.out.print("Introducir un nombre a sustituir: ");
-        nuevoNombre = scan.next();
+        System.out.println("Imprimir todo en MAYUSCULAS o en minusculas?: ");
+        String cadena = scan.next();
 
-        arrayString[fila][columna] = nuevoNombre;
-
-        if (nuevoNombre.equals(nuevoNombre.toUpperCase())) {
-            // Imprimiendo array
-            for (int i = 0; i < arrayString.length; i++) {
-                System.out.print("{");
-                for (int j = 0; j < arrayString[i].length; j++) {
-                    if (j == arrayString[i].length-1) {
-                        System.out.print(arrayString[i][j].toUpperCase() + "");
-                    } else {
-                        System.out.print(arrayString[i][j].toUpperCase() + ", ");
-                    }
+        // Imprimiendo array
+        for (int i = 0; i < arrayString.length; i++) {
+            System.out.print("{");
+            for (int j = 0; j < arrayString[i].length; j++) {
+                if (cadena.equals("MAYUSCULAS")) {
+                    arrayString[i][j] = arrayString[i][j].toUpperCase();
+                } else if (cadena.equals("minuscula")) {
+                    arrayString[i][j] = arrayString[i][j].toLowerCase();
                 }
-                System.out.println("}");
-            }
-        } else if (nuevoNombre.equals(nuevoNombre.toLowerCase())) {
-            // Imprimiendo array
-            for (int i = 0; i < arrayString.length; i++) {
-                System.out.print("{");
-                for (int j = 0; j < arrayString[i].length; j++) {
-                    if (j == arrayString[i].length-1) {
-                        System.out.print(arrayString[i][j].toLowerCase() + "");
-                    } else {
-                        System.out.print(arrayString[i][j].toLowerCase() + ", ");
-                    }
+                if (j == arrayString[i].length-1) {
+                    System.out.print(arrayString[i][j] + "");
+                } else {
+                    System.out.print(arrayString[i][j] + ", ");
                 }
-                System.out.println("}");
             }
+            System.out.println("}");
         }
         System.out.println("FIN");
     }
@@ -229,7 +208,7 @@ public class BoletinArraysMultidimensionales2 {
 
         for (int i = 0; i < arraySuma.length; i++) {
             for (int j = 0; j < arraySuma[0].length; j++){
-                arraySuma[i][j] = arrayInt[i][j] + arrayInt2[i][j];
+                arraySuma[i][j] = arrayInt[i][j] + arrayInt2[i][j]; // Suma de cada elemento
             }
         }
         // Imprimir arrayInt1
@@ -282,15 +261,13 @@ public class BoletinArraysMultidimensionales2 {
         Repetir el ejercicio anterior para que el contenido de M1 y M2 se genere de forma aleatoria
         (números entre 0 y 9).
         */
-        Random rand = new Random();
-        int random = 0;
 
         int[][] arrayInt = new int[3][3];
 
         // Se llena la matriz arrayInt de valores aleatorios de números entre 0 y 9.
         for (int i = 0; i < arrayInt.length; i++) {
             for (int j = 0; j < arrayInt[i].length; j++) {
-                arrayInt[i][j] = rand.nextInt(10);
+                arrayInt[i][j] = (int)(Math.random()*10);
             }
         }
 
@@ -299,7 +276,7 @@ public class BoletinArraysMultidimensionales2 {
         // Se llena la matriz arrayInt2 de valores aleatorios de números entre 0 y 9.
         for (int i = 0; i < arrayInt2.length; i++) {
             for (int j = 0; j < arrayInt2[i].length; j++) {
-                arrayInt2[i][j] = rand.nextInt(10);
+                arrayInt2[i][j] = (int)(Math.random()*10);
             }
         }
 
@@ -365,28 +342,28 @@ public class BoletinArraysMultidimensionales2 {
 
         Random rand = new Random();
         int random = 0;
-        int n = rand.nextInt(10);
+        int size = (int)(Math.random()*9+1); // Así se fuerza que al menos sea 1 el tamaño.
 
-        int[][] arrayInt = new int[n][n];
+        int[][] arrayInt = new int[size][size];
 
         // Se llena la matriz arrayInt de valores aleatorios de números entre 0 y 9.
         for (int i = 0; i < arrayInt.length; i++) {
             for (int j = 0; j < arrayInt[i].length; j++) {
-                arrayInt[i][j] = rand.nextInt(10);
+                arrayInt[i][j] = (int)(Math.random()*10);
             }
         }
 
-        int[][] arrayInt2 = new int[n][n];
+        int[][] arrayInt2 = new int[size][size];
 
         // Se llena la matriz arrayInt2 de valores aleatorios de números entre 0 y 9.
         for (int i = 0; i < arrayInt2.length; i++) {
             for (int j = 0; j < arrayInt2[i].length; j++) {
-                arrayInt2[i][j] = rand.nextInt(10);
+                arrayInt2[i][j] = (int)(Math.random()*10);
             }
         }
 
         // Se llena la matriz arraySuma con los valores de arrayInt y arrayInt2.
-        int[][] arraySuma = new int[n][n];
+        int[][] arraySuma = new int[size][size];
 
         for (int i = 0; i < arraySuma.length; i++) {
             for (int j = 0; j < arraySuma[0].length; j++){
