@@ -3,7 +3,7 @@
     <CLASSES />
     <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/Boletines" />
+      <root url="file://$PROJECT_DIR$/src" />
     </SOURCES>
   </library>
 </component>
