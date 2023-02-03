@@ -13,8 +13,8 @@ public class CalculadoraDeMano {
     public static void menuCalculadora() {
 
         Scanner scan = new Scanner(System.in);
-        String opc;
-        double numero, numero2;
+        String opc = "";
+        double numero = 0, numero2 = 0;
         do {
             System.out.println("Elegir la operación deseada (1-8, 0 = SALIR):\n" +
                     "1 - SUMAR \n" +
@@ -26,16 +26,7 @@ public class CalculadoraDeMano {
                     "7 - RAIZ CUADRADA\n" +
                     "8 - ELEVAR\n");
 
-            opc = scan.next();
-
-            if(!opc.equals("0")) {
-                System.out.print("Introducir el primer operando: ");
-                numero = scan.nextFloat();
-                System.out.print("Introducir el segundo operando: ");
-                numero2 = scan.nextFloat();
-            } else {
-                break;
-            }
+            eleccion(opc);
 
             switch (opc) {
                 case "1":
@@ -62,9 +53,6 @@ public class CalculadoraDeMano {
                 case "8":
                     System.out.println(elevar(numero,numero2));
                     break;
-                case "0":
-                    System.out.println("Gracias por usar la aplicación. Vuelva Pronto");
-                    break;
                 default:
                     System.out.println("Selección inválida.");
                     break;
@@ -72,7 +60,19 @@ public class CalculadoraDeMano {
         } while (!opc.equals("0"));
     }
 
-
+    public static String eleccion(String opc){
+        Scanner scan = new Scanner(System.in);
+        double numero, numero2;
+        if(!opc.equals("0")) {
+            System.out.print("Introducir el primer operando: ");
+            numero = scan.nextFloat();
+            System.out.print("Introducir el segundo operando: ");
+            numero2 = scan.nextFloat();
+        } else {
+            System.out.println("Gracias por usar la aplicación. Vuelva Pronto");
+        }
+        return opc;
+    }
     public static double sumar(double numero, double numero2) {
         return (numero + numero2);
     }
