@@ -3,7 +3,7 @@ package POO.MetodosEstaticos;
 import java.util.Random;
 import java.util.Scanner;
 
-public class MetodosEstaticos {
+public class Main {
 
     /*
     * Cree primero el código del método. Puede crearlo en el mismo fichero de código fuente donde tenga el main,
@@ -44,6 +44,9 @@ public class MetodosEstaticos {
                     break;
                 case "7":
                     ejercicio7();
+                    break;
+                case "0":
+                    System.out.println("Gracias por usar la aplicación.");
                     break;
                 default:
                     System.out.println("Gracias por usar la aplicación. Vuelva Pronto");
@@ -468,7 +471,7 @@ public class MetodosEstaticos {
     }
 
     public static void main(String[] args) {
-        MetodosEstaticos fc = new MetodosEstaticos();
+        Main fc = new Main();
         fc.menuArray();
     }
 }

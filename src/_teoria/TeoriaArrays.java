@@ -152,7 +152,7 @@ public class TeoriaArrays {
 
         System.out.println(arrayNumeros.length/2 + ", " + arrayNumeros[arrayNumeros.length/2]);
 
-        System.out.println("Parte c) Duplicar el contenido del array.");
+        System.out.println("Parte c) Operaciones el contenido del array.");
         for (int i = 0; i < arrayNumeros.length; i++) { // Se lanza el bucle para recorrer el array.
             arrayNumeros[i] = arrayNumeros[i] * 2; // Se multiplica el contenido por 2.
         }
