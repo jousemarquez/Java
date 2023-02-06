@@ -1,12 +1,9 @@
-package POO.MetodosEstaticos;
+package MetodosEstaticos;
+
+import java.security.PublicKey;
+import java.util.Scanner;
 
 public class Operaciones {
-
-    public static void main(String[] args) {
-
-        float num = 4.0f;
-        System.out.println(duplicar(num));
-    }
 
     /*
     * 1. Crear un método estático que tenga la siguiente firma:
@@ -18,6 +15,7 @@ public class Operaciones {
     public static float duplicar(float num) {
         return (num * 2);
     }
+
     /*
     * 2. Crear un método estático que tenga la siguiente firma:
 
@@ -30,7 +28,6 @@ public class Operaciones {
         System.out.println("Hola " + nombre);
         return nombre;
     }
-
 
     /*
     * 3. Observe la siguiente firma y responda antes de desarrollar cualquier código:
@@ -63,10 +60,11 @@ public class Operaciones {
     EJERCICIO 5
     ******************
     * */
-    public static void imprimirCabecera(String ejercicio) {
+    public static int imprimirCabecera(int ejercicio) {
         System.out.println("******************");
         System.out.println("EJERCICIO " + ejercicio + "");
         System.out.println("******************");
+        return ejercicio;
     }
 
     /*
@@ -80,7 +78,8 @@ public class Operaciones {
 
     ****
     EJERCICIO 2
-    *****/
+    ****
+    */
     public static void imprimirCabeceraCompleta(String ejercicio, int asteriscos) {
         for (int i = 0; i < asteriscos; i++) {
             System.out.print("*");
@@ -109,7 +108,64 @@ public class Operaciones {
     Pruebe el método imprimiendo la tabla de multiplicar de todos los números del 1 al 10
     */
 
-    public static void TablaMultiplicar(int multiplicando){
-    String ejercicio = "TABLA DE MULTIPLICAR DEL";
+    public static int TablaMultiplicar(int multiplicando) {
+        int ejercicio = multiplicando;
+        System.out.println("TABLA DE MULTIPLICAR DEL " + imprimirCabecera(ejercicio));
+        for (int i = 0; i <= 10; i++) {
+            if (i * multiplicando < 10) {
+                System.out.printf("%d x %d = 0%d\n", multiplicando, i, multiplicando * i);
+            } else {
+                System.out.printf("%d x %d = %d\n", multiplicando, i, multiplicando * i);
+            }
+        }
+        System.out.println("=========================");
+        return multiplicando;
     }
+
+    /*
+     * 8. Crear un método estático de nombre esPositivo, que reciba un número entero y devuelva un valor
+     * booleano indicando si el número es positivo (true) o no (false).*/
+
+    public static boolean esPositivo(int numero) {
+        if (numero >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /*
+     * 9. Crear un método estático de nombre contarPositivos. Este método lee por pantalla números enteros
+     * continuamente, y para únicamente cuando el usuario introduce un cero. Cuando esto ocurre, el método
+     * devuelve la cantidad de números positivos que el usuario ha introducido por pantalla.*/
+
+    /*public static void contarPositivos{
+        int numero;
+    }*/
+
+    public static void contarPositivos(int numero) {
+        String opc = " ";
+        Scanner scan = new Scanner(System.in);
+
+        do {
+            System.out.print("----- Menú Principal -----"
+                    + "\nIngrese una opción (1-31) - 0 para salir: ");
+
+            opc = scan.nextLine();
+
+            switch (opc) {
+                case "1":
+                    System.out.println(MetodosEstaticos.Operaciones.duplicar(3));
+                    break;
+                case "0":
+                    System.out.println("Cerrando programa...");
+                    break;
+                default:
+                    System.out.println("Gracias por usar la aplicación. Vuelva Pronto");
+                    break;
+            }
+
+        } while (!opc.equals("0"));
+    }
+
 }
