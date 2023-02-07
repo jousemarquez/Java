@@ -36,7 +36,7 @@ public class Main {
                     System.out.println(MetodosEstaticos.Operaciones.duplicar(3));
                     break;
                 case "5":
-                    System.out.println(MetodosEstaticos.Operaciones.imprimirCabecera(5));
+                    System.out.println("Falta añadir");
                     break;
                 case "6":
                     System.out.println(MetodosEstaticos.Operaciones.duplicar(3));

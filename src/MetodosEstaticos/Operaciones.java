@@ -1,9 +1,11 @@
 package MetodosEstaticos;
 
-import java.security.PublicKey;
 import java.util.Scanner;
 
 public class Operaciones {
+
+    public static void main(String[] args) {
+    }
 
     /*
     * 1. Crear un método estático que tenga la siguiente firma:
@@ -12,6 +14,7 @@ public class Operaciones {
 
     e implementarlo: el método debe devolver el valor num multiplicado por 2.
     */
+
     public static float duplicar(float num) {
         return (num * 2);
     }
@@ -60,11 +63,10 @@ public class Operaciones {
     EJERCICIO 5
     ******************
     * */
-    public static int imprimirCabecera(int ejercicio) {
+    public static void imprimirCabecera(String titulo) {
         System.out.println("******************");
-        System.out.println("EJERCICIO " + ejercicio + "");
+        System.out.println(titulo.toUpperCase());
         System.out.println("******************");
-        return ejercicio;
     }
 
     /*
@@ -85,7 +87,7 @@ public class Operaciones {
             System.out.print("*");
         }
         System.out.println();
-        System.out.println(ejercicio);
+        System.out.println(ejercicio.toUpperCase());
         for (int i = 0; i < asteriscos; i++) {
             System.out.print("*");
         }
@@ -108,9 +110,9 @@ public class Operaciones {
     Pruebe el método imprimiendo la tabla de multiplicar de todos los números del 1 al 10
     */
 
-    public static int TablaMultiplicar(int multiplicando) {
+    public static void TablaMultiplicar(int multiplicando) {
         int ejercicio = multiplicando;
-        System.out.println("TABLA DE MULTIPLICAR DEL " + imprimirCabecera(ejercicio));
+        imprimirCabecera("Tabla de Multiplicar del" + multiplicando);
         for (int i = 0; i <= 10; i++) {
             if (i * multiplicando < 10) {
                 System.out.printf("%d x %d = 0%d\n", multiplicando, i, multiplicando * i);
@@ -119,19 +121,14 @@ public class Operaciones {
             }
         }
         System.out.println("=========================");
-        return multiplicando;
     }
 
     /*
      * 8. Crear un método estático de nombre esPositivo, que reciba un número entero y devuelva un valor
      * booleano indicando si el número es positivo (true) o no (false).*/
 
-    public static boolean esPositivo(int numero) {
-        if (numero >= 0) {
-            return true;
-        } else {
-            return false;
-        }
+    public static boolean esPositivo(int n) {
+        return n >= 0;
     }
 
     /*
@@ -143,29 +140,47 @@ public class Operaciones {
         int numero;
     }*/
 
-    public static void contarPositivos(int numero) {
-        String opc = " ";
-        Scanner scan = new Scanner(System.in);
-
+    public static int contarPositivos() {
+        Scanner sc = new Scanner(System.in);
+        int contador = 0, num;
         do {
-            System.out.print("----- Menú Principal -----"
-                    + "\nIngrese una opción (1-31) - 0 para salir: ");
-
-            opc = scan.nextLine();
-
-            switch (opc) {
-                case "1":
-                    System.out.println(MetodosEstaticos.Operaciones.duplicar(3));
-                    break;
-                case "0":
-                    System.out.println("Cerrando programa...");
-                    break;
-                default:
-                    System.out.println("Gracias por usar la aplicación. Vuelva Pronto");
-                    break;
+            System.out.println("\nIntroduce un numero positivo: ");
+            num = sc.nextInt();
+            if (num > 0) {
+                contador++;
             }
-
-        } while (!opc.equals("0"));
+        } while (num != 0);
+        return contador;
+    }
+    /*
+     * 10:*/
+    public static float areaRectangulo(float base, float altura) {
+        return (base * altura);
     }
 
+    /*11:*/
+    public static float areaRectangulo(float lado) {
+        return areaRectangulo(lado*lado);
+    }
+
+    /*12:*/
+    public static float areaTriangulo(float base, float altura) {
+        return areaRectangulo(base*altura)/2;
+    }
+
+    /*14:*/
+    public static float cambioMonedaEuroADolar(float euros){
+        return (euros * 1.08f);
+    }
+
+    /*15:*/
+    public static float cambioMonedaDolarAEuro(float dolar){
+        return (dolar * 0.98f);
+    }
+
+    /*16:*/
+    public static float cambioMonedaEuroALibra(float euros){
+        return (euros * 1.18f);
+    }
 }
+
