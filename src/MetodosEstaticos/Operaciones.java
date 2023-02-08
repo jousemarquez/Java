@@ -5,7 +5,16 @@ import java.util.Scanner;
 public class Operaciones {
 
     public static void main(String[] args) {
+
+
+        System.out.println(posicionEntera(28837903,3));
+        System.out.println(invertirStrings("Joaquin"));
+        System.out.println(palindromear("Ala"));
+        System.out.println(factorializarVariosEnteros(3,45));
+        System.out.println(stringsRepetidos("La lluvia en Sevilla es una maravilla en Sevilla","Sevilla"));
     }
+
+
 
     /*
     * 1. Crear un método estático que tenga la siguiente firma:
@@ -152,6 +161,7 @@ public class Operaciones {
         } while (num != 0);
         return contador;
     }
+
     /*
      * 10:*/
     public static float areaRectangulo(float base, float altura) {
@@ -160,27 +170,131 @@ public class Operaciones {
 
     /*11:*/
     public static float areaRectangulo(float lado) {
-        return areaRectangulo(lado*lado);
+        return areaRectangulo(lado * lado);
     }
 
     /*12:*/
     public static float areaTriangulo(float base, float altura) {
-        return areaRectangulo(base*altura)/2;
+        return areaRectangulo(base * altura) / 2;
     }
 
     /*14:*/
-    public static float cambioMonedaEuroADolar(float euros){
+    public static float cambioMonedaEuroADolar(float euros) {
         return (euros * 1.08f);
     }
 
     /*15:*/
-    public static float cambioMonedaDolarAEuro(float dolar){
+    public static float cambioMonedaDolarAEuro(float dolar) {
         return (dolar * 0.98f);
     }
 
     /*16:*/
-    public static float cambioMonedaEuroALibra(float euros){
+    public static float cambioMonedaEuroALibra(float euros) {
         return (euros * 1.18f);
     }
+
+    /*
+    17: Crear un método estático que reciba un número entero y una posición,
+    y devuelva el dígito que se encuentra en dicha posición.
+    */
+
+    public static int posicionEntera(int numero, int posicion) {
+        // Se convierte el número en un array de String y se aplica el método split para separarlo por piezas
+        String arr[] = invertirStrings(String.valueOf(numero)).split("");
+        return Integer.parseInt(arr[posicion]);
+    }
+
+    /*OTRA FORMA DE HACER EJERCICIO 17*/
+
+    public static int localizarPorPosicion(int numero, int posicion) {
+        for (int i = posicion; i > 0; i--) {
+            numero /= 10;
+        }
+        return numero % 10;
+    }
+
+    /*OTRA FORMA DE HACER EJERCICIO 17 PASANDO A CADENA Y EMPEZANDO DESDE EL FINAL*/
+
+    public static int devolverPosicion(long numero, int posicion) {
+        String numStr = String.valueOf(numero);
+        posicion = numStr.length() - posicion; // Comienza desde la primera posición y empezando como posición 1.
+        return Integer.parseInt(String.valueOf(numStr.charAt(posicion)));
+    }
+
+    /*18: Crear un método estático que reciba un String, y lo devuelva del revés.*/
+    public static String invertirStrings(String palabra) {
+        // Se recibe un String y se mete dentro de un bucle para invertir la cadena
+        String invertida = "";
+        for (int i = palabra.length() - 1; i >= 0; i--) {
+            invertida += palabra.charAt(i);
+        }
+        return invertida;
+    }
+
+    /*19. Crear un método estático que reciba un String, y compruebe si es un palíndromo.
+    Debe usar el método del ejercicio anterior.*/
+    public static boolean palindromear(String palabra) {
+        return (palabra.equalsIgnoreCase(invertirStrings(palabra)));
+    }
+
+    /*20. Crear un método estático que reciba un número entero y devuelva el factorial de dicho número.*/
+    public static int factorializarEnteros(int numero){
+        for (int i = numero; i > 0 ; i--) {
+            numero=numero*i;
+        }
+        return numero;
+    }
+
+    /*21. Crear un método estático que reciba dos números enteros n y r, y devuelva el número combinatorio n sobre r.
+    Utilice para ello el método creado en el ejercicio anterior.*/
+    public static long factorializarVariosEnteros(long n, long r){
+        long resultado = 0;
+        resultado = factorializarEnteros((int) n)/((factorializarEnteros((int) n)-factorializarEnteros((int) r)*factorializarEnteros((int) r)));
+        return resultado;
+    }
+
+    /*22. Crear un método estático que reciba dos String, y cuente la cantidad de veces que
+    el segundo se repite en el primero.*/
+    public static int stringsRepetidos(String cadenaBase, String cadenaAComprobar){
+        int contador = 0;
+        while (cadenaBase.indexOf(cadenaAComprobar) > -1) {
+            cadenaBase = cadenaBase.substring(cadenaBase.indexOf(cadenaAComprobar)+cadenaAComprobar.length(),cadenaBase.length());
+            contador++;
+        }
+        return contador;
+    }
+
+    /*ALBERTO*/
+
+    public static int contarString (String cadena, String busqueda){
+        int cont = 0;
+        do{
+            if (cadena.contains(busqueda)){
+                cont++;
+                cadena = cadena.substring(cadena.indexOf(busqueda)+busqueda.length());
+            }
+            else {
+                cadena = cadena.substring(cadena.length());
+            }
+        }while(!cadena.equals(""));
+        return cont;
+    }
+
+    /*23. Crear un método estático que reciba un array de algún tipo primitivo y lo imprima por pantalla.*/
+    public static void imprimirArrays(){
+
+
+
+        /*SEGUIMOS POR AQUÍ*/
+    }
 }
+
+
+
+
+
+
+
+
+
 
