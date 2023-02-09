@@ -6,15 +6,14 @@ public class Operaciones {
 
     public static void main(String[] args) {
 
-
+        System.out.println(duplicar(30));
+        System.out.println(saludar("Jouse"));
         System.out.println(posicionEntera(28837903,3));
         System.out.println(invertirStrings("Joaquin"));
         System.out.println(palindromear("Ala"));
         System.out.println(factorializarVariosEnteros(3,45));
         System.out.println(stringsRepetidos("La lluvia en Sevilla es una maravilla en Sevilla","Sevilla"));
     }
-
-
 
     /*
     * 1. Crear un método estático que tenga la siguiente firma:
