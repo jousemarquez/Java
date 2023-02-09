@@ -8,11 +8,23 @@ public class Operaciones {
 
         System.out.println(duplicar(30));
         System.out.println(saludar("Jouse"));
-        System.out.println(posicionEntera(28837903,3));
+        System.out.println(posicionEntera(28837903, 3));
         System.out.println(invertirStrings("Joaquin"));
         System.out.println(palindromear("Ala"));
-        System.out.println(factorializarVariosEnteros(3,45));
-        System.out.println(stringsRepetidos("La lluvia en Sevilla es una maravilla en Sevilla","Sevilla"));
+        System.out.println(factorializarVariosEnteros(3, 45));
+        System.out.println(stringsRepetidos("La lluvia en Sevilla es una maravilla en Sevilla", "Sevilla"));
+
+        int[] array = {3, 2, 1, 3, 4, 55, 31, 2, 33, 1, 0};
+        System.out.println(buscar(array, 2));
+
+        int[] arrayBinario = {0, 4, 7, 10, 14, 23, 45, 47, 53};
+        System.out.println(buscarBinarios(arrayBinario, 53));
+        int pos = buscarBinarios(arrayBinario,53);
+        if (pos == -1)
+            System.out.println("El elemento no esta presente");
+        else
+            System.out.println("Elemento encontrado en: "
+                    + "indice " + pos);
     }
 
     /*
@@ -237,27 +249,27 @@ public class Operaciones {
     }
 
     /*20. Crear un método estático que reciba un número entero y devuelva el factorial de dicho número.*/
-    public static int factorializarEnteros(int numero){
-        for (int i = numero; i > 0 ; i--) {
-            numero=numero*i;
+    public static int factorializarEnteros(int numero) {
+        for (int i = numero; i > 0; i--) {
+            numero = numero * i;
         }
         return numero;
     }
 
     /*21. Crear un método estático que reciba dos números enteros n y r, y devuelva el número combinatorio n sobre r.
     Utilice para ello el método creado en el ejercicio anterior.*/
-    public static long factorializarVariosEnteros(long n, long r){
+    public static long factorializarVariosEnteros(long n, long r) {
         long resultado = 0;
-        resultado = factorializarEnteros((int) n)/((factorializarEnteros((int) n)-factorializarEnteros((int) r)*factorializarEnteros((int) r)));
+        resultado = factorializarEnteros((int) n) / ((factorializarEnteros((int) n) - factorializarEnteros((int) r) * factorializarEnteros((int) r)));
         return resultado;
     }
 
     /*22. Crear un método estático que reciba dos String, y cuente la cantidad de veces que
     el segundo se repite en el primero.*/
-    public static int stringsRepetidos(String cadenaBase, String cadenaAComprobar){
+    public static int stringsRepetidos(String cadenaBase, String cadenaAComprobar) {
         int contador = 0;
         while (cadenaBase.indexOf(cadenaAComprobar) > -1) {
-            cadenaBase = cadenaBase.substring(cadenaBase.indexOf(cadenaAComprobar)+cadenaAComprobar.length(),cadenaBase.length());
+            cadenaBase = cadenaBase.substring(cadenaBase.indexOf(cadenaAComprobar) + cadenaAComprobar.length(), cadenaBase.length());
             contador++;
         }
         return contador;
@@ -265,30 +277,107 @@ public class Operaciones {
 
     /*ALBERTO*/
 
-    public static int contarString (String cadena, String busqueda){
+    public static int contarString(String cadena, String busqueda) {
         int cont = 0;
-        do{
-            if (cadena.contains(busqueda)){
+        do {
+            if (cadena.contains(busqueda)) {
                 cont++;
-                cadena = cadena.substring(cadena.indexOf(busqueda)+busqueda.length());
-            }
-            else {
+                cadena = cadena.substring(cadena.indexOf(busqueda) + busqueda.length());
+            } else {
                 cadena = cadena.substring(cadena.length());
             }
-        }while(!cadena.equals(""));
+        } while (!cadena.equals(""));
         return cont;
     }
 
     /*23. Crear un método estático que reciba un array de algún tipo primitivo y lo imprima por pantalla.*/
-    public static void imprimirArrays(){
-
-
+    public static void imprimirArrays() {
 
         /*SEGUIMOS POR AQUÍ*/
     }
+
+    /*26. Crear un método que reciba un array 1D de enteros y un número,
+    y busque dicho número en el array (búsqueda lineal).*/
+
+    public static int buscar(int[] array, int numero) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == numero) {
+                return i;
+            }
+        }
+        return -1; // Este truco se hace porque un array nunca tiene valores negativos, es un estándar.
+    }
+
+    /*27. Repetir el anterior pero haciendo una búsqueda binaria.
+    Tenga en cuenta los requisitos de este tipo de búsqueda.*/
+
+    // Para que este algoritmo funcione, se debe comprobar si el array está ordenado o no.
+    // Primero nos tenemos que posicionar en el elemento central del array.
+
+    // MÉTODO DEL ALGORITMO DE BÚSQUEDA LINEA DE ELEMENTO EN ARRAY
+    /*
+    Partiendo de un array de enteros ordenado, implemente un algoritmo de búsqueda binaria
+    utilizando la plantilla que se le proporciona. El funcionamiento de este algoritmo es el
+    siguiente:
+    *
+    Aprovechando que el array se encuentra ordenado ascendentemente, la idea de la búsqueda
+    binaria es comprobar si el elemento que estamos buscando se encuentra en la posición central
+    del array (a diferencia de la búsqueda lineal, que comienza en la posición inicial). En caso de
+    estar ahí, hemos terminado. En caso de no estar ahí, puede estar en la primera mitad (los
+    elementos a la izquierda de la posición central) o en la segunda mitad (los elementos a la
+    derecha de la posición central):
+    *
+    - Si el número que estamos buscando tiene un valor inferior a lo que hay en la posición
+    central, entonces nos quedaremos con la primera mitad del array y repetiremos el
+    proceso con ella, descartando el resto. En este caso la nueva posición final sería la
+    posición central que hemos comprobado menos una unidad.
+    *
+    - Si el número que buscamos tiene un valor superior a lo que hay en la posición central,
+    entonces nos quedaremos con la segunda mitad del array y repetiremos el proceso
+    con ella, descartando el resto. En este caso la nueva posición inicial sería la posición
+    central que hemos comprobado más una unidad.
+    *
+    Recuerde que en todo momento debe tener declaradas tres variables: inicio (que apunta al
+    primer elemento de la parte del array que se está examinando), fin (que apunta al último
+    elemento de la parte del array que se está examinando) y central (que es el punto medio de
+    los dos anteriores).
+    */
+    public static int buscarBinarios(int[] array, int elemento) {
+        int pos = -1;
+        int inicio = 0;
+        int fin = array.length - 1;
+        int centro;
+
+        while (inicio <= fin) {
+            centro = (inicio + fin) / 2;
+            if (array[centro] == elemento) {
+                pos = centro;
+                break;
+            } else if (array[centro] < elemento) { // Si el número de centro es menor que el elemento
+                inicio = centro + 1;
+            } else {
+                // Como el array está ESTRICTAMENTE ordenado, si el valor centro sea menor que el elemento,se mueve el fin.
+                fin = centro - 1;
+            }
+        }
+        return pos;
+    }
+
+    // MÉTODO DEL ALGORITMO DE LA BURBUJA EN ARRAY DESORDENADO
+
+    /*
+    Debe ordenar los elementos del array siguiendo la técnica empleada en clase.
+    En ningún momento puede crear un nuevo array, debe trabajar sobre el original.
+    Tras ordenar el array, debe devolverlo e imprimirlo en el main.
+    */
+
+    public static int buscarBurbuja(int[] array, int elemento){
+        int pos = -1;
+        return pos;
+
+        // HASTA AQUÍ
+    }
 }
-
-
 
 
 

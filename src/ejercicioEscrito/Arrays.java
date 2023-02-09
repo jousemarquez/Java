@@ -1,33 +1,32 @@
 package ejercicioEscrito;
 
 public class Arrays {
-    // Método que devuelve una matriz booleana
-    public static boolean[][] getMatrizBooleana(int[][] matrizEnteros, String[][] matrizStrings) {
+    // Método que devuelve un array booleano
+    public static boolean[][] getMatrizBooleana(int[][] arrayInt, String[][] arrayStrings) {
         // Comprobar que ambas matrices tienen las mismas dimensiones
-        if (matrizEnteros.length != matrizStrings.length || matrizEnteros[0].length != matrizStrings[0].length) {
+        if (arrayInt.length != arrayStrings.length || arrayInt[0].length != arrayStrings[0].length) {
             return null;
         }
 
-        // Instanciar la matriz booleana con las mismas dimensiones que las matrices de enteros y de Strings
-        boolean[][] matrizBooleana = new boolean[matrizEnteros.length][matrizEnteros[0].length];
+        // Instanciar el array booleana con las mismas dimensiones que los arrays de enteros y de Strings
+        boolean[][] arrayBooleana = new boolean[arrayInt.length][arrayInt[0].length];
 
-        // Recorrer la matriz booleana
-        for (int i = 0; i < matrizBooleana.length; i++) {
-            for (int j = 0; j < matrizBooleana[0].length; j++) {
-                // Almacenar en la matriz booleana el resultado de la comprobación en cada posición (i,j)
-                matrizBooleana[i][j] = matrizStrings[i][j].charAt(0) == (char) matrizEnteros[i][j];
+        // Recorrer el array booleana
+        for (int i = 0; i < arrayBooleana.length; i++) {
+            for (int j = 0; j < arrayBooleana[0].length; j++) {
+                // Almacenar en el array booleana el resultado de la comprobación en cada posición (i,j)
+                arrayBooleana[i][j] = arrayStrings[i][j].charAt(0) == (char) arrayInt[i][j];
             }
         }
-
-        // Devolver la matriz booleana
-        return matrizBooleana;
+        // Devolver el array booleana
+        return arrayBooleana;
     }
 
-    // Método que imprime una matriz booleana
-    public static void imprimirMatrizBooleana(boolean[][] matriz) {
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[0].length; j++) {
-                System.out.print(matriz[i][j] + " ");
+    // Método que imprime una array booleana
+    public static void imprimirMatrizBooleana(boolean[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
+                System.out.print(array[i][j] + " ");
             }
             System.out.println();
         }
@@ -35,18 +34,18 @@ public class Arrays {
 
     public static void main(String[] args) {
         // Ejemplos de matrices de enteros y de Strings
-        int[][] matrizEnteros = {{97, 98, 99}, {100, 101, 102}};
-        String[][] matrizStrings = {{"a", "b", "c"}, {"d", "e", "f"}};
+        int[][] arrayInt = {{97, 98, 99}, {100, 101, 102}};
+        String[][] arrayStrings = {{"a", "b", "c"}, {"d", "e", "f"}};
 
-        // Llamar al método que devuelve una matriz booleana
-        boolean[][] matrizBooleana = getMatrizBooleana(matrizEnteros, matrizStrings);
+        // Llamar al método que devuelve una array booleana
+        boolean[][] arrayBoolean = getMatrizBooleana(arrayInt, arrayStrings);
 
-        // Comprobar si la matriz booleana no es null
-        if (matrizBooleana != null) {
-            // Imprimir la matriz booleana
-            imprimirMatrizBooleana(matrizBooleana);
+        // Comprobar si el array booleano no es null
+        if (arrayBoolean != null) {
+            // Imprimir el array booleana
+            imprimirMatrizBooleana(arrayBoolean);
         } else {
-            System.out.println("Las matrices no tienen las mismas dimensiones.");
+            System.out.println("Los arrays no tienen las mismas dimensiones.");
         }
     }
 }
