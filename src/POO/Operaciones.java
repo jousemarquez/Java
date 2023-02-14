@@ -1,14 +1,12 @@
-package MetodosEstaticos;
+package POO;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
-
-
-
-
-
-
-
-
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.io.IOException;
 
 public class Operaciones {
 
@@ -510,5 +508,44 @@ public class Operaciones {
             }
         }
         imprimirArray(array);
+    }
+    /*33. Crear un método que permita escribir un fichero de texto desde un array.*/
+
+    public static void writeFile1(){
+        File fout = new File("out.txt");
+        try{
+            FileOutputStream fos = new FileOutputStream(fout);
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+            for (int i = 0; i < 10; i++) {
+                bw.write("something".concat(String.valueOf(i)));
+                bw.newLine();
+            }
+            bw.close();
+        }catch (IOException e){
+            System.out.println("Excepcion al ejecutar");
+        }
+    }
+
+    /*34: Boletin 1:*/
+
+    public static void imprimirDivision() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Intrduce los dos números que quieres dividir: ");
+        try{
+            System.out.println(scan.nextInt() / scan.nextInt());
+        } catch(ArithmeticException e) {
+            System.out.println("Excepcion de tipo aritmético");
+            e.printStackTrace(); //Se imprime en la salida de error (orden diferente a la salida estándar)
+        } catch (InputMismatchException e){
+            System.out.println("Excepcion de tipo input mismatch");
+        } catch (Exception e){
+            System.out.println("Excepcion generica (clase padre)");
+        } finally {
+            System.out.println("Me ejecuto haya o no excepcion");
+        }
+        //LANZAMIENTO DE EXCEPCION (comentado para que el código funcione)
+        //throw new ArithmeticException("Lanzando excepción genérica");
+        System.out.println("FIN");
+
     }
 }

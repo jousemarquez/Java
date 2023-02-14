@@ -1,4 +1,4 @@
-package MetodosEstaticos;
+package POO;
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class Main {
 
         do {
             System.out.print("----- Menú Principal -----"
-                    + "\nIngrese una opción (1-32) - 0 para salir: ");
+                    + "\nIngrese una opción (1-34) - 0 para salir: ");
 
             opc = scan.nextLine();
 
@@ -120,6 +120,12 @@ public class Main {
                 case "32":
                     int[]array = {2, 4, 5, 6, 1};
                     Operaciones.burbuja(array);
+                    break;
+                case "33":
+                    Operaciones.writeFile1();
+                    break;
+                case "34":
+                    Operaciones.imprimirDivision();
                     break;
                 case "0":
                     System.out.println("Cerrando programa...");
