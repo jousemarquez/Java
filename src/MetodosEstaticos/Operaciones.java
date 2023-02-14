@@ -2,10 +2,19 @@ package MetodosEstaticos;
 
 import java.util.Scanner;
 
+
+
+
+
+
+
+
+
 public class Operaciones {
 
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
         System.out.println(duplicar(30));
         System.out.println(saludar("Jouse"));
         System.out.println(posicionEntera(28837903, 3));
@@ -20,11 +29,12 @@ public class Operaciones {
         int[] arrayBinario = {0, 4, 7, 10, 14, 23, 45, 47, 53};
         System.out.println(buscarBinarios(arrayBinario, 53));
         int pos = buscarBinarios(arrayBinario,53);
-        if (pos == -1)
+        if (pos == -1){
             System.out.println("El elemento no esta presente");
-        else
+        } else {
             System.out.println("Elemento encontrado en: "
                     + "indice " + pos);
+        }
     }
 
     /*
@@ -83,9 +93,10 @@ public class Operaciones {
     EJERCICIO 5
     ******************
     * */
-    public static void imprimirCabecera(String titulo) {
+    public static void imprimirCabecera(String ejercicio){
+        ejercicio = "ejercicio 5".toUpperCase();
         System.out.println("******************");
-        System.out.println(titulo.toUpperCase());
+        System.out.println(ejercicio);
         System.out.println("******************");
     }
 
@@ -131,7 +142,6 @@ public class Operaciones {
     */
 
     public static void TablaMultiplicar(int multiplicando) {
-        int ejercicio = multiplicando;
         imprimirCabecera("Tabla de Multiplicar del" + multiplicando);
         for (int i = 0; i <= 10; i++) {
             if (i * multiplicando < 10) {
@@ -145,7 +155,8 @@ public class Operaciones {
 
     /*
      * 8. Crear un método estático de nombre esPositivo, que reciba un número entero y devuelva un valor
-     * booleano indicando si el número es positivo (true) o no (false).*/
+     * booleano indicando si el número es positivo (true) o no (false).
+     */
 
     public static boolean esPositivo(int n) {
         return n >= 0;
@@ -154,18 +165,19 @@ public class Operaciones {
     /*
      * 9. Crear un método estático de nombre contarPositivos. Este método lee por pantalla números enteros
      * continuamente, y para únicamente cuando el usuario introduce un cero. Cuando esto ocurre, el método
-     * devuelve la cantidad de números positivos que el usuario ha introducido por pantalla.*/
+     * devuelve la cantidad de números positivos que el usuario ha introducido por pantalla.
+     */
 
     /*public static void contarPositivos{
         int numero;
     }*/
 
     public static int contarPositivos() {
-        Scanner sc = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         int contador = 0, num;
         do {
             System.out.println("\nIntroduce un numero positivo: ");
-            num = sc.nextInt();
+            num = scan.nextInt();
             if (num > 0) {
                 contador++;
             }
@@ -173,33 +185,44 @@ public class Operaciones {
         return contador;
     }
 
-    /*
-     * 10:*/
-    public static float areaRectangulo(float base, float altura) {
+    //10: Crear un método estático que reciba la base y la altura de un rectángulo y devuelva su área.
+
+    public static double areaRectangulo(double base, double altura) {
         return (base * altura);
     }
 
-    /*11:*/
-    public static float areaRectangulo(float lado) {
+    //11. Crear un método estático que reciba el lado de un cuadrado y devuelva su área.
+
+    public static double areaRectangulo(double lado) {
         return areaRectangulo(lado * lado);
     }
 
-    /*12:*/
-    public static float areaTriangulo(float base, float altura) {
+    //12. Crear un método estático que reciba la base y la altura de un triángulo y devuelva su área.
+    public static double areaTriangulo(double base, double altura) {
         return areaRectangulo(base * altura) / 2;
     }
 
-    /*14:*/
+    //13. Crear un método estático que reciba la base y la altura de un triángulo y devuelva su área.
+    public static double areaTriangulo2() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introducir base: ");
+        double base = scan.nextDouble();
+        System.out.println("Introducir altura: ");
+        double altura  = scan.nextDouble();
+        return areaRectangulo(base * altura) / 2;
+    }
+
+    //14. Crear un método estático que reciba un valor en euros y lo devuelva convertido a dólares americanos.
     public static float cambioMonedaEuroADolar(float euros) {
         return (euros * 1.08f);
     }
 
-    /*15:*/
+    //15. Crear un método estático que haga lo contrario.
     public static float cambioMonedaDolarAEuro(float dolar) {
         return (dolar * 0.98f);
     }
 
-    /*16:*/
+    //16. Crear un método estático que reciba un valor en libras y lo devuelva convertido a euros.
     public static float cambioMonedaEuroALibra(float euros) {
         return (euros * 1.18f);
     }
@@ -260,7 +283,8 @@ public class Operaciones {
     Utilice para ello el método creado en el ejercicio anterior.*/
     public static long factorializarVariosEnteros(long n, long r) {
         long resultado = 0;
-        resultado = factorializarEnteros((int) n) / ((factorializarEnteros((int) n) - factorializarEnteros((int) r) * factorializarEnteros((int) r)));
+        resultado = factorializarEnteros((int) n) / ((factorializarEnteros((int) n) - factorializarEnteros((int) r)
+                * factorializarEnteros((int) r)));
         return resultado;
     }
 
@@ -269,13 +293,14 @@ public class Operaciones {
     public static int stringsRepetidos(String cadenaBase, String cadenaAComprobar) {
         int contador = 0;
         while (cadenaBase.indexOf(cadenaAComprobar) > -1) {
-            cadenaBase = cadenaBase.substring(cadenaBase.indexOf(cadenaAComprobar) + cadenaAComprobar.length(), cadenaBase.length());
+            cadenaBase = cadenaBase.substring(cadenaBase.indexOf(cadenaAComprobar) + cadenaAComprobar.length(),
+                    cadenaBase.length());
             contador++;
         }
         return contador;
     }
 
-    /*ALBERTO*/
+    /*MÉTODO DE ALBERTO*/
 
     public static int contarString(String cadena, String busqueda) {
         int cont = 0;
@@ -291,9 +316,43 @@ public class Operaciones {
     }
 
     /*23. Crear un método estático que reciba un array de algún tipo primitivo y lo imprima por pantalla.*/
-    public static void imprimirArrays() {
+    public static void imprimirArray(int[] array){
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
 
-        /*SEGUIMOS POR AQUÍ*/
+    //24. Cree un método que reciba un array de enteros, y por cada entero del array
+    //imprima su tabla de multiplicar.
+    public static void imprimirTablaMultiplicarArray(int[] array){
+        for (int i = 0; i < array.length; i++) {
+            TablaMultiplicar(array[i]);
+        }
+    }
+
+    //25. Crear un método que reciba un array 1D de enteros y lo ordene.
+    public static void ordenarEnteros(int[] array){
+        int cont = 0;
+        boolean ordenado = false;
+        while(!ordenado) {
+            for (int i = 0; i < array.length-1; i++) {
+                if (array[i] > array[i + 1]) {
+                    int aux = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = aux;
+                    cont++;
+                }
+            }
+            if (cont == 0) {
+                ordenado = true;
+            }
+            cont = 0;
+        }
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
     }
 
     /*26. Crear un método que reciba un array 1D de enteros y un número,
@@ -363,6 +422,74 @@ public class Operaciones {
         return pos;
     }
 
+    //28. Crear un método que reciba un array de enteros, un número y una posición, y
+    //devuelva un nuevo array que tenga los mismos contenidos del original, pero
+    //con sus elementos desplazados a partir de la posición especificada, donde se
+    //almacenará además el número pasado en el segundo argumento.
+    //Por ejemplo, si el método recibe los siguientes datos:
+    //[3, 8, 9]
+    //Número: 13
+    //Posición: 1
+    //El nuevo array devuelto por el método debe ser el siguiente:
+    //[3, 13, 8, 9]
+    public static int[] introducirValorArray (int[] array, int n, int pos){
+        int[] arrayFinal = new int[array.length+1];
+        boolean colocado = false;
+        for (int i = 0; i < array.length+1; i++) {
+            if(i==pos){
+                arrayFinal[i] = n;
+                colocado = true;
+            }else {
+                if(colocado){
+                    arrayFinal[i] = array[i-1];
+                } else{
+                    arrayFinal[i] = array[i];
+                }
+            }
+        }
+        return arrayFinal;
+    }
+    //29. Crear un método que reciba dos arrays y un entero, y copie tantos elementos
+    //del segundo array en el primer array como diga el entero, comenzando desde
+    //la posición cero en ambos. Suponga que no se saldrá de los límites.
+    //Por ejemplo, si array1 = [7,2,1,0] y array2=[3,2,2,7,6] y entero=3, al acabar el
+    //método el primer array se modificará y su contenido será array1=[3,2,2,0] (en
+    //negrita están las posiciones que se han modificado).
+    public static int[] modificarArray1(int[] array1, int[] array2, int contenido){
+        int[] arrayResult = new int[array1.length];
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < contenido; i++, j++) {
+                arrayResult[i] = array2[i];
+            }
+            arrayResult[i] = array1[i];
+        }
+        return arrayResult;
+    }
+    //30. Repetir lo anterior, pero añadiendo un cuarto argumento, que indique la
+    //posición del segundo array a partir de la cual se empezará.
+    public static int[] modificarArray2(int[] array1, int[] array2, int contenido, int posArray2){
+        int[] arrayResult = new int[array1.length];
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = posArray2; j < contenido; i++, j++) {
+                arrayResult[i] = array2[i+posArray2];
+            }
+            arrayResult[i] = array1[i];
+        }
+        return arrayResult;
+    }
+    //31. Repetir lo anterior, pero añadiendo un quinto argumento, que indique la
+    //posición del primer array a partir de la cual se empezará
+    public static int[] modificarArray3(int[] array1, int[] array2, int contenido, int posArray2, int posArray1){
+        int[] arrayResult = new int[array1.length];
+        for (int i = posArray1; i < array1.length-1; i++) {
+            for (int j = posArray2; j < contenido; i++, j++) {
+                arrayResult[i] = array2[i+posArray2];
+            }
+            arrayResult[i] = array1[i+posArray1];
+        }
+        return arrayResult;
+    }
+
     // MÉTODO DEL ALGORITMO DE LA BURBUJA EN ARRAY DESORDENADO
 
     /*
@@ -371,18 +498,17 @@ public class Operaciones {
     Tras ordenar el array, debe devolverlo e imprimirlo en el main.
     */
 
-    public static int buscarBurbuja(int[] array, int elemento){
-        int pos = -1;
-        return pos;
-
-        // HASTA AQUÍ
+    public static void burbuja(int[] array) {
+        int aux;
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j + 1] < array[j]) {
+                    aux = array[j + 1];
+                    array[j + 1] = array[j];
+                    array[j] = aux;
+                }
+            }
+        }
+        imprimirArray(array);
     }
 }
-
-
-
-
-
-
-
-

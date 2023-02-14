@@ -18,7 +18,7 @@ public class Main {
 
         do {
             System.out.print("----- Menú Principal -----"
-                    + "\nIngrese una opción (1-31) - 0 para salir: ");
+                    + "\nIngrese una opción (1-32) - 0 para salir: ");
 
             opc = scan.nextLine();
 
@@ -31,16 +31,16 @@ public class Main {
                     System.out.println(Operaciones.saludar("Hola"));
                     break;
                 case "3":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println();
                     break;
                 case "4":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println(Operaciones.saludar("Jouse"));
                     break;
                 case "5":
-                    System.out.println("Falta añadir");
+                    Operaciones.imprimirCabecera("ejercicio 5");
                     break;
                 case "6":
-                    System.out.println(Operaciones.duplicar(3));
+                    Operaciones.imprimirCabeceraCompleta("Ejercicio 6", 6);
                     break;
                 case "7":
                     Operaciones.TablaMultiplicar(3);
@@ -49,73 +49,77 @@ public class Main {
                     System.out.println(Operaciones.esPositivo(3));
                     break;
                 case "9":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println(Operaciones.contarPositivos());
                     break;
                 case "10":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println(Operaciones.areaRectangulo(3, 5));
                     break;
                 case "11":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println(Operaciones.areaRectangulo(3, 3));
                     break;
                 case "12":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println(Operaciones.areaTriangulo(3, 3));
                     break;
                 case "13":
-                    System.out.println(Operaciones.duplicar(3));
+                    Operaciones.areaTriangulo2();
                     break;
                 case "14":
-                    Operaciones.TablaMultiplicar(3);
+                    System.out.println(Operaciones.cambioMonedaEuroADolar(3));
                     break;
                 case "15":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println(Operaciones.cambioMonedaDolarAEuro(8));
                     break;
                 case "16":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println(Operaciones.cambioMonedaEuroALibra(8));
                     break;
                 case "17":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println(Operaciones.posicionEntera(8, 5));
                     break;
                 case "18":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println(Operaciones.invertirStrings("Jouse me llamo"));
                     break;
                 case "19":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println(Operaciones.palindromear("Ana"));
                     break;
                 case "20":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println(Operaciones.factorializarEnteros(56));
                     break;
                 case "21":
-                    Operaciones.TablaMultiplicar(3);
+                    System.out.println(Operaciones.factorializarVariosEnteros(3, 5));
                     break;
                 case "22":
-                    System.out.println(Operaciones.duplicar(3));
+                    System.out.println(Operaciones.stringsRepetidos("La lluvia de Sevilla es una maravilla", "Sevilla"));
                     break;
                 case "23":
-                    System.out.println(Operaciones.duplicar(3));
+                    Operaciones.imprimirArray(new int[]{9, 3, 2, 1, 3, 4, 1});
                     break;
                 case "24":
-                    System.out.println(Operaciones.duplicar(3));
+                    Operaciones.imprimirTablaMultiplicarArray(new int[]{9, 3, 2, 1, 3, 4, 1});
                     break;
                 case "25":
-                    System.out.println(Operaciones.duplicar(3));
+                    Operaciones.ordenarEnteros(new int[]{9, 3, 2, 1, 3, 4, 1});
                     break;
                 case "26":
-                    System.out.println(Operaciones.duplicar(3));
+                    Operaciones.buscar(new int[]{9, 3, 2, 1, 3, 4, 1}, 4);
                     break;
                 case "27":
-                    System.out.println(Operaciones.duplicar(3));
+                    Operaciones.buscarBinarios(new int[]{9, 3, 2, 1, 3, 4, 1}, 4);
                     break;
                 case "28":
-                    Operaciones.TablaMultiplicar(3);
+                    Operaciones.introducirValorArray(new int[]{9, 3, 2, 1, 3, 4, 1}, 4, 5);
                     break;
                 case "29":
-                    System.out.println(Operaciones.duplicar(3));
+                    Operaciones.modificarArray1(new int[]{9, 3, 2, 1, 3, 4, 1}, new int[]{4, 1, 2, 1, 3, 4, 1}, 4);
                     break;
                 case "30":
-                    System.out.println(Operaciones.duplicar(3));
+                    Operaciones.modificarArray2(new int[]{9, 3, 2, 1, 3, 4, 1}, new int[]{4, 1, 2, 1, 3, 4, 1}, 4, 2);
                     break;
                 case "31":
                     Operaciones.TablaMultiplicar(3);
+                    break;
+                case "32":
+                    int[]array = {2, 4, 5, 6, 1};
+                    Operaciones.burbuja(array);
                     break;
                 case "0":
                     System.out.println("Cerrando programa...");
