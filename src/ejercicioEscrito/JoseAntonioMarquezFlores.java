@@ -2,7 +2,7 @@ package ejercicioEscrito;
 
 import java.util.Scanner;
 
-public class Main {
+public class JoseAntonioMarquezFlores {
     public static void main(String[] args) {
         // Creación de un objeto Scanner para leer la entrada por teclado
         Scanner input = new Scanner(System.in);

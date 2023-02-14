@@ -2,7 +2,7 @@ package ejercicioEscrito;
 
 public class Arrays {
     // Método que devuelve un array booleano
-    public static boolean[][] getMatrizBooleana(int[][] arrayInt, String[][] arrayStrings) {
+    public static boolean[][] obtenerArrayBooleano(int[][] arrayInt, String[][] arrayStrings) {
         // Comprobar que ambas matrices tienen las mismas dimensiones
         if (arrayInt.length != arrayStrings.length || arrayInt[0].length != arrayStrings[0].length) {
             return null;
@@ -34,11 +34,17 @@ public class Arrays {
 
     public static void main(String[] args) {
         // Ejemplos de matrices de enteros y de Strings
-        int[][] arrayInt = {{97, 98, 99}, {100, 101, 102}};
-        String[][] arrayStrings = {{"a", "b", "c"}, {"d", "e", "f"}};
+        int[][] arrayInt = {
+                {21, 2, 32, 98},
+                {23, 43, 99, 122}
+                };
+        String[][] arrayStrings = {
+                {"Jouse", "Maria", "Edu"},
+                {"Joquin", "Alberto", "Ricardo"}
+                };
 
         // Llamar al método que devuelve una array booleana
-        boolean[][] arrayBoolean = getMatrizBooleana(arrayInt, arrayStrings);
+        boolean[][] arrayBoolean = obtenerArrayBooleano(arrayInt, arrayStrings);
 
         // Comprobar si el array booleano no es null
         if (arrayBoolean != null) {
