@@ -1,18 +1,13 @@
 package POO;
 
+import java.io.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
-import java.io.IOException;
 
 public class Operaciones {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
         System.out.println(duplicar(30));
         System.out.println(saludar("Jouse"));
         System.out.println(posicionEntera(28837903, 3));
@@ -511,9 +506,9 @@ public class Operaciones {
     }
     /*33. Crear un método que permita escribir un fichero de texto desde un array.*/
 
-    public static void writeFile1(){
-        File fout = new File("out.txt");
-        try{
+    public static void writeFile1() {
+        try {
+            File fout = new File("out.txt");
             FileOutputStream fos = new FileOutputStream(fout);
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
             for (int i = 0; i < 10; i++) {
@@ -521,8 +516,17 @@ public class Operaciones {
                 bw.newLine();
             }
             bw.close();
-        }catch (IOException e){
-            System.out.println("Excepcion al ejecutar");
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichero no encontrado");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Error de E/S");
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Error genérico");
+            e.printStackTrace();
+        } finally {
+            System.out.println("Me ejecuto porque sí");
         }
     }
 

@@ -11,10 +11,9 @@ public class Main {
      */
 
     Scanner scan = new Scanner(System.in);
-    private int num;
 
     public void menuMetodosEstaticos() {
-        String opc = " ";
+        String opc;
 
         do {
             System.out.print("----- Menú Principal -----"
