@@ -3,89 +3,73 @@ package POO.CuentasBancarias;
 public class CCC {
 
     private double saldoDeCuenta;
-    private String nombreDeTitular;
+    private String nombreDelTitular;
     private long numeroDeCuenta;
 
-
-    public CCC(){
-        nombreDeTitular = "DefaultName";
+    public CCC() {
+        numeroDeCuenta = 0;
+        nombreDelTitular = "DefaultName";
+        saldoDeCuenta = 0;
     }
 
-    public Television(String marca, String modelo) {
-        this.marca = marca;
-        this.modelo = modelo;
+    public CCC(String nombreDelTitular, double saldoDeCuenta) {
+        this.nombreDelTitular = nombreDelTitular;
+        this.saldoDeCuenta = saldoDeCuenta;
+        numeroDeCuenta = (long) (Math.random()*Long.MAX_VALUE+1);
     }
 
-    public Television(String marca, String modelo, int volumen, int brillo, int contraste, int canal) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.volumen = volumen;
-        this.brillo = brillo;
-        this.contraste = contraste;
-        this.canal = canal;
+    public void setSaldoDeCuenta(double saldoDeCuenta) {
+        if(saldoDeCuenta >= 0) {
+            this.saldoDeCuenta = saldoDeCuenta;
+        } else {
+            throw new IllegalArgumentException("En Disney no hay saldos negativos");
+        }
     }
 
-    // GETTERS Y SETTERS
-    // No recibe un valor sino devuelve un argumento
-    public String getMarca(){
-        return marca;
-    }
-    // Siempre es void y no retorna nada sino que recibe un argumento.
-    public void setMarca(String marca){
-        this.marca = marca;
+    public double getSaldoDeCuenta() {
+        return saldoDeCuenta;
     }
 
-    public String getModelo(){
-        return modelo;
-    }
-    // Siempre es void y no retorna nada sino que recibe un argumento.
-    public void setModelo(String modelo){
-        this.modelo = modelo;
+/*
+public String getDatosCuenta() {
+return this.toString();
+}
+*/
+
+    public String[] getDatosCuenta() {
+        String[] arr = {String.valueOf(saldoDeCuenta), nombreDelTitular,
+                String.valueOf(numeroDeCuenta)};
+
+        return arr;
     }
 
-    public int getVolumen(){
-        return volumen;
-    }
-    // Siempre es void y no retorna nada sino que recibe un argumento.
-    public void setVolumen(int volumen){
-        this.volumen = volumen;
-    }
-
-    public int getBrillo() {
-        return brillo;
+    public void setIngreso(double ingreso) {
+        if(ingreso > 0) {
+            saldoDeCuenta += ingreso;
+        } else {
+            throw new IllegalArgumentException("En Disney no hay ingresos <= 0");
+        }
     }
 
-    public void setBrillo(int brillo) {
-        this.brillo = brillo;
+    public void setReintegro(double reintegro) {
+        if(reintegro > 0) {
+            saldoDeCuenta -= reintegro;
+        } else {
+            throw new IllegalArgumentException("En Disney no hay reintegros <= 0");
+        }
     }
 
-    public int getContraste() {
-        return contraste;
+    public long getNumeroDeCuenta() {
+        return numeroDeCuenta;
     }
 
-    public void setContraste(int contraste) {
-        this.contraste = contraste;
-    }
+    public String toString() {
+        String res = "CCC{";
+        res += "nombreDelTitular: " + nombreDelTitular;
+        res += ",saldoDeCuenta: " + saldoDeCuenta;
+        res += ",numeroDeCuenta: " + numeroDeCuenta;
+        res += "}";
 
-    public int getCanal() {
-        return canal;
-    }
-
-    public void setCanal(int canal) {
-        this.canal = canal;
-    }
-
-    // Los métodos se ponen SIEMPRE debajo de todos los constructores por convención.
-    /*public String toString(){
-        // Genera una cadena que tenga representación de este métod y devolverlo.
-        String cad = "Television: " +marca+ "/" +modelo+ "/" +volumen+ "/" +brillo+ "/" +contraste+ "/" +canal;
-        return cad;
-    }*/
-
-    // This
-    // Es la referencia sobre el objeto que se está invocando el método.
-    public void imprimirReferencia(){
-        System.out.print("La referenia de este objeto es: ");
-        System.out.println(this);
+        return res;
     }
 }
