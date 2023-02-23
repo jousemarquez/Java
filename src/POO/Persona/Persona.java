@@ -19,18 +19,18 @@ public class Persona {
     }
 
     public Persona(String nombre, int edad, String dni, char sexo, float peso, float altura) {
-        this.nombre = "Jouse";
-        this.edad = 36;
+        this.nombre = nombre;
+        this.edad = edad;
         this.dni = dni;
-        this.sexo = 'H';
+        this.sexo = sexo;
         this.peso = peso;
         this.altura = altura;
     }
 
     public Persona(String nombre, int edad, char sexo) {
-        this.nombre = "Alberto";
-        this.edad = 15;
-        this.sexo = 'H';
+        this.nombre = nombre;
+        this.edad = edad;
+        this.sexo = sexo;
     }
 
     /* SETTERS AND GETTERS */
@@ -43,23 +43,23 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public int getEdad(){
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad){
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
-    public char getSexo(){
+    public char getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo){
+    public void setSexo(char sexo) {
         this.sexo = sexo;
     }
 
-    public int getPeso() {
+    public float getPeso() {
         return peso;
     }
 
@@ -67,7 +67,7 @@ public class Persona {
         this.peso = peso;
     }
 
-    public int getAltura() {
+    public float getAltura() {
         return altura;
     }
 
@@ -76,44 +76,72 @@ public class Persona {
     }
 
     /* MÉTODOS */
-    public calcularIMC (int peso, int altura){
 
+    /* calcularIMC(): calculara si la persona está en su peso ideal
+    (peso en kg/(altura^2  en m)), si esta fórmula devuelve un
+    valor menor que 20, el método devuelve un -1, si devuelve un
+    número entre 20 y 25 (incluidos), significa que está por
+    debajo de su peso ideal el método devuelve un 0  y si
+    devuelve un valor mayor que 25 significa que tiene
+    sobrepeso, el método devuelve un 1. Te recomiendo que uses
+    constantes para devolver estos valores.*/
+
+    public int calcularIMC(int peso, int altura) {
+        double imc = peso / Math.pow(altura, 2);
+        if (imc < 20) {
+            return -1;
+        } else if (imc <= 25) {
+            return 0;
+        } else {
+            return 1;
+        }
     }
-    
-    public boolean esMayorDeEdad(int edad){
-        if(edad < 18){
-            return false;    
+
+    /* esMayorDeEdad(): indica si es mayor de edad,
+    devuelve un booleano.*/
+
+    public boolean esMayorDeEdad(int edad) {
+        if (edad < 18) {
+            return false;
         }
         return true;
     }
-    
-    /*
-    * o calcularIMC(): calculara si la persona está en su peso ideal
-(peso en kg/(altura^2  en m)), si esta fórmula devuelve un
-valor menor que 20, el método devuelve un -1, si devuelve un
-número entre 20 y 25 (incluidos), significa que está por
-debajo de su peso ideal el método devuelve un 0  y si
-devuelve un valor mayor que 25 significa que tiene
-sobrepeso, el método devuelve un 1. Te recomiendo que uses
-constantes para devolver estos valores.
- esMayorDeEdad(): indica si es mayor de edad,
-devuelve un booleano.
- comprobarSexo(char sexo): comprueba que el sexo
-introducido es correcto. Si no es correcto, será H. No
-será visible al exterior.
- toString(): devuelve toda la información del objeto.
- generaDNI(): genera un número aleatorio de 8 cifras,
-genera a partir de este su número su letra
-correspondiente. Este método será invocado cuando*/
 
-    /*
+    /* comprobarSexo(char sexo): comprueba que el sexo
+    introducido es correcto. Si no es correcto, será H. No
+    será visible al exterior.*/
+
+    public char comprobarSexo(char sexo) {
+        if (sexo == HOMBRE) {
+            return HOMBRE;
+        }
+        return MUJER;
+    }
+
+    /* toString(): devuelve toda la información del objeto.*/
+
     public String toString() {
-        String res = "CCC{";
-        res += "nombreDelTitular: " + nombreDelTitular;
-        res += ",saldoDeCuenta: " + saldoDeCuenta;
-        res += ",numeroDeCuenta: " + numeroDeCuenta;
+        String res = "Persona{";
+        res += "nombre: " + nombre;
+        res += ",edad: " + edad;
+        res += ",dni: " + dni;
+        res += ",sexo: " + sexo;
+        res += ",peso: " + peso;
+        res += ",altura: " + altura;
         res += "}";
-
         return res;
-    }*/
+    }
+
+    /* generaDNI(): genera un número aleatorio de 8 cifras,
+    genera a partir de este su número su letra
+    correspondiente. Este método será invocado cuando. */
+
+    public String generarDNI() {
+        String[] letras = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"};
+        // Finalmente, para conseguir un entero, quitamos los decimales usando la clase Math.floor() y hacemos el cast a int.
+        int dniSoloNumero = (int)Math.floor(Math.random()*100000000+1);
+        int conseguirLetra = dniSoloNumero % 23;
+        String dniLetra = letras[conseguirLetra];
+        return dniSoloNumero+dniLetra;
+       }
 }

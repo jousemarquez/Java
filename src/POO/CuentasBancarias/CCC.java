@@ -72,4 +72,10 @@ return this.toString();
 
         return res;
     }
+
+    /*Método 1*/
+    public void realizarTransferenciaEntreCuentas(CCC cuentaDestino, double cantidad) {
+        setReintegro(cantidad);
+        cuentaDestino.setIngreso(cantidad);
+    }
 }
