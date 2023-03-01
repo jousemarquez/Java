@@ -1,4 +1,4 @@
-package JuegoDeRol;
+package POO.JuegoDeRol;
 
 public class PersonajePrincipal {
 

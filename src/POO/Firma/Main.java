@@ -1,4 +1,4 @@
-package firma;
+package POO.Firma;
 
 import java.util.Scanner;
 

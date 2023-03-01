@@ -2,6 +2,12 @@ package POO.Persona;
 
 public class Persona {
 
+    public static final char HOMBRE = 'H';
+    public static final char MUJER = 'M';
+    public static final int PESOBAJO = -1;
+    public static final int PESOMEDIO = 0;
+    public static final int PESOALTO = 1;
+
     private String nombre;
     private int edad;
     private String dni;
@@ -9,13 +15,18 @@ public class Persona {
     private float peso;
     private float altura;
 
-    private static final char HOMBRE = 'H';
-    private static final char MUJER = 'M';
-
+    // Constructor por defecto
     public Persona() {
         nombre = "DefaultName";
         dni = "";
         sexo = HOMBRE;
+    }
+
+    public Persona(String nombre, int edad, char sexo) {
+        this.nombre = nombre;
+        dni = "";
+        this.edad = edad;
+        this.sexo = sexo;
     }
 
     public Persona(String nombre, int edad, String dni, char sexo, float peso, float altura) {
@@ -27,10 +38,13 @@ public class Persona {
         this.altura = altura;
     }
 
-    public Persona(String nombre, int edad, char sexo) {
+    public Persona(String nombre, int edad, char sexo, float peso, float altura) {
         this.nombre = nombre;
         this.edad = edad;
+        dni = "";
         this.sexo = sexo;
+        this.peso = peso;
+        this.altura = altura;
     }
 
     /* SETTERS AND GETTERS */
@@ -43,12 +57,16 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
-        return edad;
+    public int getEdad(int edad) {
+        return this.edad;
     }
 
     public void setEdad(int edad) {
-        this.edad = edad;
+        if(edad >= 0) {
+            this.edad = edad;
+        } else {
+            throw new IllegalArgumentException("No existe la edades negativas.");
+        }
     }
 
     public char getSexo() {
@@ -56,22 +74,30 @@ public class Persona {
     }
 
     public void setSexo(char sexo) {
-        this.sexo = sexo;
+        if(sexo != 'H' || sexo != 'M') {
+            this.sexo = sexo;
+        } else {
+            throw new IllegalArgumentException("No existe esa elección.");
+        }
     }
 
     public float getPeso() {
         return peso;
     }
 
-    public void setPeso(int peso) {
-        this.peso = peso;
+    public void setPeso(float peso) {
+        if(peso > 0) {
+            this.peso = peso;
+        } else {
+            throw new IllegalArgumentException("No existe peso negativo.");
+        }
     }
 
     public float getAltura() {
         return altura;
     }
 
-    public void setAltura(int altura) {
+    public void setAltura(float altura) {
         this.altura = altura;
     }
 
@@ -86,21 +112,21 @@ public class Persona {
     sobrepeso, el método devuelve un 1. Te recomiendo que uses
     constantes para devolver estos valores.*/
 
-    public int calcularIMC(int peso, int altura) {
+    public int calcularIMC() {
         double imc = peso / Math.pow(altura, 2);
         if (imc < 20) {
-            return -1;
+            return PESOBAJO;
         } else if (imc <= 25) {
-            return 0;
+            return PESOMEDIO;
         } else {
-            return 1;
+            return PESOALTO;
         }
     }
 
     /* esMayorDeEdad(): indica si es mayor de edad,
     devuelve un booleano.*/
 
-    public boolean esMayorDeEdad(int edad) {
+    public boolean esMayorDeEdad() {
         if (edad < 18) {
             return false;
         }
@@ -111,15 +137,19 @@ public class Persona {
     introducido es correcto. Si no es correcto, será H. No
     será visible al exterior.*/
 
-    public char comprobarSexo(char sexo) {
-        if (sexo == HOMBRE) {
+    // Modo uno
+
+    private char comprobarSexo(char sexo) {
+        if(sexo != HOMBRE && sexo != MUJER){
             return HOMBRE;
+        } else {
+            return sexo;
         }
-        return MUJER;
     }
 
     /* toString(): devuelve toda la información del objeto.*/
 
+    @Override
     public String toString() {
         String res = "Persona{";
         res += "nombre: " + nombre;
@@ -136,12 +166,14 @@ public class Persona {
     genera a partir de este su número su letra
     correspondiente. Este método será invocado cuando. */
 
-    public String generarDNI() {
+    private String generarDNI() {
+        int limiteInferior = 1;
+        int limiteSuperior = 100000000;
         String[] letras = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"};
         // Finalmente, para conseguir un entero, quitamos los decimales usando la clase Math.floor() y hacemos el cast a int.
-        int dniSoloNumero = (int)Math.floor(Math.random()*100000000+1);
+        int dniSoloNumero = (int) Math.floor(Math.random() * 100000000);
         int conseguirLetra = dniSoloNumero % 23;
         String dniLetra = letras[conseguirLetra];
-        return dniSoloNumero+dniLetra;
-       }
+        return dniSoloNumero + dniLetra;
+    }
 }

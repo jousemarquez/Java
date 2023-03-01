@@ -1,7 +1,6 @@
-package juegos;
+package Juegos;
 
 import java.util.Scanner;
-import java.util.Random;
 
 public class LanzarDados {
     public static void main (String [] arg){

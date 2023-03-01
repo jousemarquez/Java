@@ -31,7 +31,7 @@ public class Operaciones {
     }
 
     /*
-    * 1. Crear un método estático que tenga la siguiente firma:
+    * 1. Crear un método estático que tenga la siguiente POO.firma:
 
     public static float duplicar(float num)
 
@@ -43,7 +43,7 @@ public class Operaciones {
     }
 
     /*
-    * 2. Crear un método estático que tenga la siguiente firma:
+    * 2. Crear un método estático que tenga la siguiente POO.firma:
 
     public static void saludar(String nombre)
 
@@ -56,7 +56,7 @@ public class Operaciones {
     }
 
     /*
-    * 3. Observe la siguiente firma y responda antes de desarrollar cualquier código:
+    * 3. Observe la siguiente POO.firma y responda antes de desarrollar cualquier código:
 
     public static void saludar()
 

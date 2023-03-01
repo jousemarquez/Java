@@ -2,9 +2,9 @@ package POO.CuentasBancarias;
 
 public class CCC {
 
-    private double saldoDeCuenta;
-    private String nombreDelTitular;
-    private long numeroDeCuenta;
+    public double saldoDeCuenta;
+    public String nombreDelTitular;
+    public long numeroDeCuenta;
 
     public CCC() {
         numeroDeCuenta = 0;

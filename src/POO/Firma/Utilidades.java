@@ -1,8 +1,8 @@
-package firma;
+package POO.Firma;
 
 public class Utilidades {
 
-    // firma o signature
+    // POO.firma o signature
     public static void imprimirSaludo() {
         // cuerpo del metodo o implementacion
         System.out.println("Hola");

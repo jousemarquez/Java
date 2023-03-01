@@ -9,7 +9,7 @@ public class Arrays {
         }
 
         // Instanciar el array booleana con las mismas dimensiones que los arrays de enteros y de Strings
-        boolean[][] arrayBooleana = new boolean[arrayInt.length][arrayInt[0].length];
+        boolean[][] arrayBooleana = new boolean[arrayInt.length][];
 
         // Recorrer el array booleana
         for (int i = 0; i < arrayBooleana.length; i++) {

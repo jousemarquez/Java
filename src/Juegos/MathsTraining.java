@@ -1,6 +1,5 @@
-package juegos;
+package Juegos;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class MathsTraining {

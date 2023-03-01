@@ -1,4 +1,4 @@
-package excepciones;
+package Excepciones;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -145,12 +145,12 @@ public class Excepciones {
         System.out.println("8. LEER NOMBRES DE USUARIO");
         if (usuario1.length() > 1 && usuario2.length() > 1) {
             if (isLetter(usuario1.charAt(0)) && isLetter(usuario2.charAt(0))) {
-                System.out.println("Both usernames are correctly created");
+                System.out.println("Ambos usuarios han sido creados correctamente.");
             } else {
-                throw new IllegalArgumentException("First character of the username has to be a letter");
+                throw new IllegalArgumentException("El primer caracter del usuario debe ser una letra.");
             }
         } else {
-            throw new IllegalArgumentException("Name is equals or shorter than 1 character");
+            throw new IllegalArgumentException("El nombre es igual o interior a un caracter.");
         }
     }
 }

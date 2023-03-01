@@ -1,0 +1,29 @@
+1. Realice un programa que lea por pantalla dos n�meros enteros, e imprima el resultado de
+dividirlos. Observe la excepci�n que se lanza al dividir por cero, y tras ello modifique su c�digo 
+para que capture dicha excepci�n.
+
+2. Realice un programa que cree un array de 10 posiciones inicializado con n�meros crecientes
+a partir de 1. Escriba un bucle que vaya desde i=0 hasta i<=longitud y los imprima por pantalla. Observe
+la excepci�n que se lanza, y tras ello modifique su c�digo para que capture dicha excepci�n.
+
+3. Realice un programa que lea por pantalla un n�mero entero mediante la clase Scanner y nextInt.
+Observe la excepci�n que se lanza al introducir una palabra, y tras ello modifique su c�digo 
+para que capture dicha excepci�n.
+
+4. Realice un programa que lea por pantalla un n�mero entero mediante la clase Scanner y nextLine.
+Convierta el String a un n�mero entero con la clase Integer y parseInt. Observe la excepci�n que se 
+lanza al introducir un n�mero con decimales, y tras ello modifique su c�digo para que capture dicha excepci�n.
+
+5. Realice un programa  que lea por pantalla una cadena mediante la clase Scanner y nextLine. Imprima
+mediante charAt y un bucle que vaya desde i=0 hasta i<=longitud todas las posiciones de la cadena.
+Observe la excepci�n que se lanza y tras ello modifique su c�digo para que capture 
+dicha excepci�n.
+
+6. Escriba un m�todo que reciba un String y lo imprima por pantalla en may�sculas. Pruebe a llamar al m�todo
+pasando como argumento el valor null, observe la excepci�n que se lanza y modifique el c�digo para capturarla.
+
+7. Realice un �nico programa que implemente todo lo anterior, y capture todas las Excepciones que se puedan lanzar.
+
+8. Realice un programa que lea dos nombres de usuario (dos cadenas que empiecen por una letra y tengan longitud
+superior a 1). En caso de que alguno de los nombres de usuario no sea v�lido, lance usted una excepci�n
+del tipo IllegalArgumentException proporcionando un mensaje de error.

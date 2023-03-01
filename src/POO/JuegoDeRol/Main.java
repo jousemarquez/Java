@@ -1,4 +1,4 @@
-package JuegoDeRol;
+package POO.JuegoDeRol;
 
 public class Main {
     public static void main(String[] args) {
