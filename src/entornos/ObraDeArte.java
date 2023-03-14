@@ -1,5 +1,7 @@
 package entornos;
 
+import java.util.List;
+
 public class ObraDeArte {
     private long idVendedor;
     private String titulo;
@@ -11,7 +13,6 @@ public class ObraDeArte {
     private String dimensiones;
     private boolean estaVendida;
 
-    // Constructor
     public ObraDeArte(long idVendedor, String titulo, float precio, List<String> tipoDeObra, List<String> fotos, List<String> tecnica, String material, String dimensiones, boolean estaVendida) {
         this.idVendedor = idVendedor;
         this.titulo = titulo;
@@ -24,6 +25,15 @@ public class ObraDeArte {
         this.estaVendida = estaVendida;
     }
 
-    // Métodos para editar, eliminar y añadir una obra de arte
     public void editarFicha() {
-        // código para editar la ficha de la obra de arte
+        // Implementación de la función para editar la ficha de la obra de arte
+    }
+
+    public void eliminarObra() {
+        // Implementación de la función para eliminar la obra de arte
+    }
+
+    public void anhadirColeccion() {
+        // Implementación de la función para añadir la obra de arte a una colección
+    }
+}
