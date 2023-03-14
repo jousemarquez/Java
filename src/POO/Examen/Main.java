@@ -25,9 +25,9 @@ public class Main {
 
         Libro libro = new Libro(isbn, titulo, autor, numeroDePaginas, editorial);
 
-        Libro[] libros = {libro1, libro2};
+/*        Libro[] libros = {libro1, libro2};
 
         ColeccionLibros coleccion = new ColeccionLibros(libros);
-        System.out.println(libro.toString());
+        System.out.println(libro.toString());*/
     }
 }
