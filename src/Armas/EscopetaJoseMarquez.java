@@ -10,11 +10,9 @@ public class EscopetaJoseMarquez extends ArmaJoseMarquez {
     }
 
     //
-    public EscopetaJoseMarquez(String modelo, int municion_maxima, int municion_actual, int rareza, boolean culata){
-        this.modelo = modelo;
-        this.municionMaximaCargador = municionMaximaCargador;
-        this.municionActualCargador = municionActualCargador;
-        this.rareza = rareza;
+    public EscopetaJoseMarquez(String modelo, int municionMaximaCargador, int municionActualCargador, int rareza,
+                               boolean culata){
+        super(modelo, municionMaximaCargador, municionActualCargador, rareza); // Herencia de clase padre
         this.culata = culata;
     }
 

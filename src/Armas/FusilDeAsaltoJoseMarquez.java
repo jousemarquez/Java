@@ -6,15 +6,13 @@ public class FusilDeAsaltoJoseMarquez extends ArmaJoseMarquez{
     public FusilDeAsaltoJoseMarquez(){
         super();
         modelo = "Carabina M4";
-        silenciador = false;
+        silenciador = false; // No sería necesario declararlo porque el boolean da un valor por defecto.
     }
 
     //
-    public FusilDeAsaltoJoseMarquez(String modelo, int municion_maxima, int municion_actual, int rareza, boolean silenciador){
-        this.modelo = modelo;
-        this.municionMaximaCargador = municionMaximaCargador;
-        this.municionActualCargador = municionActualCargador;
-        this.rareza = rareza;
+    public FusilDeAsaltoJoseMarquez(String modelo, int municionMaximaCargador, int municionActualCargador, int rareza,
+                                    boolean silenciador){
+        super(modelo, municionMaximaCargador, municionActualCargador, rareza); // Herencia de clase padre
         this.silenciador = silenciador;
     }
 
