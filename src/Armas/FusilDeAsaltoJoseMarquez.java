@@ -1,4 +1,4 @@
-package POO.Armas;
+package Armas;
 
 public class FusilDeAsaltoJoseMarquez extends ArmaJoseMarquez{
 
@@ -23,7 +23,7 @@ public class FusilDeAsaltoJoseMarquez extends ArmaJoseMarquez{
     }
 
     public void setSilenciador(boolean silenciador) {
-        if(silenciador!=true||silenciador!=false){
+        if(silenciador!=true && silenciador!=false){
             throw new IllegalArgumentException("El valor de silenciador sólo puede ser true o false.");
         } else {
             this.silenciador = silenciador;

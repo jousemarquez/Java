@@ -1,4 +1,4 @@
-package POO.Armas;
+package Armas;
 
 public class ArmaJoseMarquez {
     public static final String RAREZAS[] = {"\033[0;37m", "\033[0;32m",
@@ -70,9 +70,9 @@ public class ArmaJoseMarquez {
 
     public void setRareza(int rareza) {
         if(rareza < 0 || rareza > 4) {
-            this.rareza = rareza;
-        } else {
             throw new IllegalArgumentException("La rareza del arma debe estar entre 0 y 4");
+        } else {
+            this.rareza = rareza;
         }
     }
 

@@ -1,4 +1,4 @@
-package POO.Armas;
+package Armas;
 
 public class MetodosEstaticosDeJoseMarquez {
     /*
@@ -47,7 +47,7 @@ public class MetodosEstaticosDeJoseMarquez {
 
     public static void imprimirInventario(InventarioJoseMarquez inventario){
         for (int i = 0; i < inventario.getArmeria().length; i++) {
-            inventario.getArmeria()[i].toString();
+            System.out.print(inventario.getArmeria()[i]);
         }
     }
 }

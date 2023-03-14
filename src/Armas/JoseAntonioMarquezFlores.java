@@ -1,13 +1,12 @@
-package POO.Armas;
+package Armas;
 
 public class JoseAntonioMarquezFlores {
     public static void main(String[] args) {
 
-        // Testeo
+        // Testeo inicio
         ArmaJoseMarquez ArmaJoseMarquez1 = null;
         try {
-            ArmaJoseMarquez1 = new ArmaJoseMarquez("Magnum", 20, 20, 2);
-            // ArmaJoseMarquez1 = new ArmaJoseMarquez(null, -23, -11, -4);
+            ArmaJoseMarquez1 = new ArmaJoseMarquez(null, -23, -11, -4);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             ArmaJoseMarquez1 = new ArmaJoseMarquez();
@@ -34,14 +33,17 @@ public class JoseAntonioMarquezFlores {
             EscopetaJoseMarquez1 = new EscopetaJoseMarquez();
         }
         EscopetaJoseMarquez1.setRareza(2);
+        // Testeo final
+
+
+        ArmaJoseMarquez[] arrayArmas = {
+                new ArmaJoseMarquez(),
+                new EscopetaJoseMarquez(),
+                new FusilDeAsaltoJoseMarquez()
+        };
+
+        InventarioJoseMarquez miArmeria = new InventarioJoseMarquez (arrayArmas);
+
+        MetodosEstaticosDeJoseMarquez.imprimirInventario(miArmeria);
     }
-
-    JoseAntonioMarquezFlores[] miArmeria = {
-            new ArmaJoseMarquez(),
-            new EscopetaJoseMarquez(),
-            new FusilDeAsaltoJoseMarquez(),
-    };
-
-    InventarioJoseMarquez inventario = new InventarioJoseMarquez(miArmeria);
-        MetodosEstaticosDeJoseMarquez.imprimirInventario(inventario);
 }

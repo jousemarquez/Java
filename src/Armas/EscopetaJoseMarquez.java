@@ -1,6 +1,6 @@
-package POO.Armas;
+package Armas;
 
-public class EscopetaJoseMarquez extends ArmaJoseMarquez{
+public class EscopetaJoseMarquez extends ArmaJoseMarquez {
 
     public boolean culata;
     public EscopetaJoseMarquez(){
