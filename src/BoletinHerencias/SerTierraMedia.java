@@ -17,4 +17,8 @@ public abstract class SerTierraMedia {
     public abstract void hablar(String frase);
     public abstract void moverse(String lugar);
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main
