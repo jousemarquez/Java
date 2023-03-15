@@ -62,9 +62,35 @@ public class MetodosEstaticosDeJoseMarquez {
      * toString del inventario. Éste método sería más correcto desarrollarlo en la clase InventarioNombreApellido1.
      * Pista: usar métodos anteriores.*/
 
-    public static void imprimirInventario(InventarioJoseMarquez inventario){
-        for (int i = 0; i < inventario.getArmeria().length; i++) {
-            System.out.print(inventario.getArmeria()[i]);
+    public static void imprimirArmas(InventarioJoseMarquez inv) {
+
+        String[][] lineas = new String[inv.getArmeria().length][];
+        int maxRows = 0;
+        int maxColumns = 0;
+        for (int i = 0; i < inv.getArmeria().length; i++) {
+            lineas[i] = inv.getArmeria()[i].toString().split("\n");
+            if (lineas[i].length > maxRows) {
+                maxRows = lineas[i].length;
+            }
+            for (int j = 0; j < lineas[i].length; j++) {
+                if (lineas[i][j].length() > maxColumns) {
+                    maxColumns = lineas[i][j].length();
+                }
+            }
         }
+        for (int i = 0; i < lineas.length; i++) {
+            lineas[i] = MetodosEstaticosDeJoseMarquez.desplazar(lineas[i], maxRows);
+            for (int j = 0; j < lineas[i].length; j++) {
+                lineas[i][j] = MetodosEstaticosDeJoseMarquez.ampliar(lineas[i][j], maxColumns);
+            }
+        }
+        String[] sol = new String[maxRows];
+        for (int i = 0; i < maxRows; i++) {
+            sol[i] = "";
+            for (int j = 0; j < lineas.length; j++) {
+                sol[i] += lineas[j][i];
+            }
+        }
+        imprimirStrings(sol);
     }
 }
