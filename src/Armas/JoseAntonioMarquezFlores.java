@@ -45,5 +45,15 @@ public class JoseAntonioMarquezFlores {
         InventarioJoseMarquez miArmeria = new InventarioJoseMarquez (arrayArmas);
 
         MetodosEstaticosDeJoseMarquez.imprimirInventario(miArmeria);
+
+        // Testeo imprimirString
+        String[] arrayStr = {"Hola", "Adios"};
+        MetodosEstaticosDeJoseMarquez.imprimirStrings(arrayStr);
+
+        // Testeo ampliar
+        System.out.println(MetodosEstaticosDeJoseMarquez.ampliar("Hola", 7));
+
+        // Testeo desplazar
+        MetodosEstaticosDeJoseMarquez.imprimirStrings(MetodosEstaticosDeJoseMarquez.desplazar(arrayStr, 2));
     }
 }

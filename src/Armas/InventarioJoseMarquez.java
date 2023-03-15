@@ -17,9 +17,9 @@ public class InventarioJoseMarquez {
         this.armeria = coleccionDeArmas;
     }
 
-    public void validarArmeria(ArmaJoseMarquez[] armeria) {
+    public ArmaJoseMarquez[] validarArmeria(ArmaJoseMarquez[] armeria) {
+        if (armeria == null) {
         for (int i = 0; i < armeria.length; i++) {
-            if (armeria[i] == null) {
                 throw new IllegalArgumentException("No puede haber un arma nula");
             }
         }
@@ -29,7 +29,9 @@ public class InventarioJoseMarquez {
             for (int i = 0; i < this.armeria.length; i++) {
                 armeria[i] = copiaArmeria[i];
             }
+            return copiaArmeria;
         }
+        return armeria;
     }
 
     public String toString() {

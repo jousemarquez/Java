@@ -6,6 +6,9 @@ public class MetodosEstaticosDeJoseMarquez {
      * El método imprimirá cada String en una línea distinta.
      */
     public static void imprimirStrings(String[] arrayString){
+        if (arrayString == null){
+            throw new NullPointerException("No puede ser null");
+        }
         for (int i = 0; i < arrayString.length; i++) {
             System.out.println(arrayString[i]);
         }
@@ -16,6 +19,13 @@ public class MetodosEstaticosDeJoseMarquez {
      * (Por ejemplo, si ejecuto ampliar(“Hola”, 7) devolverá “Hola ”). Pista: usar método repeat.
      */
     public static String ampliar(String cadena, int numero){
+        if (cadena == null){
+            throw new NullPointerException("No puede ser null");
+        }
+
+        if (numero < 0){
+            throw new IllegalArgumentException("El úmero no puede ser negativo.");
+        }
         int numEspacios = numero - cadena.length();
         if (numEspacios <= 0) {
             return cadena;
@@ -30,6 +40,13 @@ public class MetodosEstaticosDeJoseMarquez {
      * (Por ejemplo, si ejecuto desplazar({“Hola”,“Mundo”}, 5) devolverá {“”,“”,“”,“Hola”,“Mundo”}).
      */
     public static String[] desplazar(String[] arrayString, int numero){
+        if (arrayString == null){
+            throw new IllegalArgumentException("No puede ser null.");
+        }
+
+        if (numero < 0) {
+            throw new IllegalArgumentException("El número no puede ser negativo.");
+        }
         String[] arrayGenerado = new String[numero];
         for (int i = arrayString.length; i > 0;i--) {
             arrayGenerado[i] = arrayString[i];
