@@ -1,6 +1,6 @@
 package BoletinHerencias;
 
-public class Hombres extends SerTierraMedia{
+public class HombresMortales extends SerTierraMedia{
 
     /*
     * Ejercicio 4: los siguientes fueron los hombres mortales, raza hermana de los elfos y
@@ -11,21 +11,20 @@ public class Hombres extends SerTierraMedia{
     usar la espada.
     */
 
-    void morir(){
-        System.out.println("Este personaje ha cascado");
+    public HombresMortales() {
+        super();
     }
+
+    public HombresMortales(String nombre, String apellido, String apodo) {
+        super(nombre, apellido, apodo);
+    }
+
+    private void morir(){
+        System.out.println(nombre + " ha muerto");
+    }
+
 
     private void usarEspada(String target){
-        // Golpea con la espada al objetivo.
-    }
-
-    @Override
-    void hablar(String frase) {
-
-    }
-
-    @Override
-    void moverse(String lugar) {
-
+        System.out.println(nombre + " usó espada contra " + target);
     }
 }

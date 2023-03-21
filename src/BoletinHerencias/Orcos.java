@@ -9,7 +9,22 @@ public class Orcos extends Elfos{
     Implemente dicho método como los anteriores.
     */
 
-    void envenenarFlechas(){
-        // Envenena flechas.
+    public Orcos() {
+        super();
+    }
+
+    public Orcos(String nombre, String apellido, String apodo) {
+        super(nombre, apellido, apodo);
+    }
+
+    @Override
+    public String toString() {
+        return "Orcos desciende de " +
+                super.toString() +
+                "}";
+    }
+
+    public void envenenarFlecha(String flecha){
+        System.out.println(nombre + " envenenó la flecha " + flecha);
     }
 }

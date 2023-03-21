@@ -1,5 +1,7 @@
 package BoletinHerencias;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Hobbits extends Hombres{
 
     /*
@@ -10,19 +12,38 @@ public class Hobbits extends Hombres{
     Saben disparar el arco, tirar piedras pero no usar la espada.
     */
 
-    void fumarPipa(){
-        // Fuman de una pipa
+    public Hobbits() {
+        super();
     }
 
-    void comerComoSiNoHubieraUnManhana(){
-        // Se jartan de comé.
+    public Hobbits(String nombre, String apellido, String apodo) {
+        super(nombre, apellido, apodo);
     }
 
-    void dispararArco(String target){
-        // Método que dispara con un arco al objetivo.
+    @Override
+    public String toString() {
+        return "Hobbits desciende de " +
+                super.toString() +
+                "}";
     }
 
-    void tirarPiedras(String target){
-        // Método que tira piedras al objetivo.
+    public void fumarPipa(){
+        System.out.println(nombre + "ha fumado pipa.");
+    }
+
+    public void comer(){
+        System.out.println(nombre + "está comiendo.");
+    }
+
+    public void dispararArco(String target){
+        System.out.println(nombre + " disparó una flecha a " + target);
+    }
+
+    public void lanzarPiedra(String target){
+        System.out.println(nombre + " tiró una piedra a " + target);
+    }
+
+    public void usarEspada(String target) throws OperationNotSupportedException {
+        throw new OperationNotSupportedException("Los hobbits no saben usar espada.");
     }
 }

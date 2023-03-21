@@ -9,21 +9,26 @@ public class Enanos extends SerTierraMedia{
     Éstos métodos no devuelven nada, y reciben una cadena.
     */
 
-    void usarHacha(String target){
-        // Golpea con el hacha al objetivo.
+    public Enanos() {
+        super();
     }
 
-    void crearArmadura(String target){
-        // Crea una armadura al objetivo.
-    }
-
-    @Override
-    void hablar(String frase) {
-
+    public Enanos(String nombre, String apellido, String apodo) {
+        super(nombre, apellido, apodo);
     }
 
     @Override
-    void moverse(String lugar) {
+    public String toString() {
+        return "Enanos{" +
+                super.toString() +
+                "}";
+    }
 
+    public void usarHacha(String target){
+        System.out.println(nombre + " usó hacha contra " + target);
+    }
+
+    public void crearArmadura(String armadura){
+        System.out.println(nombre + " creó la armadura " + armadura);
     }
 }
