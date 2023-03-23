@@ -2,7 +2,7 @@ package _teoria;
 
 public class TeoriaPOO {
     public static void main(String[] Arg) {
-        // POO Métodos Estáticos
+        // poo Métodos Estáticos
         // Para evitar una masificación de tipos primitivos, con los objetos se pueden contener datos de diverso tipo
         // a la vez, con una inicialización más sencilla y poder realizar operaciones sobre esos mismos datos.
 
