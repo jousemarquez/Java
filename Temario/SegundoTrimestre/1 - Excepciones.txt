@@ -22,7 +22,7 @@ dicha excepci�n.
 6. Escriba un m�todo que reciba un String y lo imprima por pantalla en may�sculas. Pruebe a llamar al m�todo
 pasando como argumento el valor null, observe la excepci�n que se lanza y modifique el c�digo para capturarla.
 
-7. Realice un �nico programa que implemente todo lo anterior, y capture todas las Excepciones que se puedan lanzar.
+7. Realice un �nico programa que implemente todo lo anterior, y capture todas las excepciones que se puedan lanzar.
 
 8. Realice un programa que lea dos nombres de usuario (dos cadenas que empiecen por una letra y tengan longitud
 superior a 1). En caso de que alguno de los nombres de usuario no sea v�lido, lance usted una excepci�n
