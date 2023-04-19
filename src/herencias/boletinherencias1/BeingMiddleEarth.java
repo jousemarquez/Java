@@ -14,32 +14,32 @@ public abstract class BeingMiddleEarth {
     se quiere decir y el lugar al que se quiere mover.
     */
 
-    String name;
+    String nombre;
     String lastName;
     String handle;
 
     public BeingMiddleEarth(){
-        name = "";
+        nombre = "";
         lastName = "";
         handle = "";
     }
 
-    public BeingMiddleEarth(String name, String lastName, String handle) {
-        validateName(name);
-        this.name = name;
+    public BeingMiddleEarth(String nombre, String lastName, String handle) {
+        validateName(nombre);
+        this.nombre = nombre;
         validateLastName(lastName);
         this.lastName = lastName;
         validateHandle(handle);
         this.handle = handle;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        validateName(name);
-        this.name = name;
+    public void setNombre(String nombre) {
+        validateName(nombre);
+        this.nombre = nombre;
     }
 
     public String getLastName() {
@@ -77,7 +77,7 @@ public abstract class BeingMiddleEarth {
             throw new IllegalArgumentException("Null handle are not supported.");
         }
 
-        if (handle.length() <= name.length()){
+        if (handle.length() <= nombre.length()){
             throw new IllegalArgumentException("Handle must be shorter than name.");
         }
     }
@@ -86,7 +86,7 @@ public abstract class BeingMiddleEarth {
     @Override
     public String toString() {
         return "BeingMiddleEarth{" +
-                "Name='" + name + '\'' +
+                "Name='" + nombre + '\'' +
                 ", Lastname='" + lastName + '\'' +
                 ", Handle='" + handle + '\'' +
                 '}';
@@ -98,19 +98,19 @@ public abstract class BeingMiddleEarth {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         BeingMiddleEarth that = (BeingMiddleEarth) o;
-        /*Se modifica el return solo a Name porque en el ejercicio indica
-        "Los seres de esta raza inicial tenían un Name que los identificaba a
-        cada uno de ellos y los distinguía del resto."
-        */
-        return Objects.equals(name, that.name);
+
+        if (!Objects.equals(nombre, that.nombre)) return false;
+        if (!Objects.equals(lastName, that.lastName)) return false;
+        return Objects.equals(handle, that.handle);
     }
 
     public void speak(String phrase){
-        System.out.println(name + " says: " + phrase);
+        System.out.println(nombre + " says: " + phrase);
     }
 
     public void move(String position){
-        System.out.println(name + " has move to " + position);
+        System.out.println(nombre + " has move to " + position);
     }
 }

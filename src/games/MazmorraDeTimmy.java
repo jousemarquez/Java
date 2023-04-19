@@ -2,7 +2,9 @@ package games;
 
 import java.util.Scanner;
 
-public class    MazmorraDeTimmy {
+public class MazmorraDeTimmy {
+
+    public static final String BOMB = "\uD83D\uDCA3";
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean fin = false; // Boolean para indicar que acaba el juego
